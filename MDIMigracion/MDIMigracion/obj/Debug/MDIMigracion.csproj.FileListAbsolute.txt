@@ -1,0 +1,12 @@
+D:\Escritorio\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe.config
+D:\Escritorio\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe
+D:\Escritorio\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.pdb
+D:\Escritorio\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.dll
+D:\Escritorio\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.pdb
+D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csprojAssemblyReference.cache
+D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.Properties.Resources.resources
+D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.GenerateResource.cache
+D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CoreCompileInputs.cache
+D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
+D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
+D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb
