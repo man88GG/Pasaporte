@@ -1,0 +1,6 @@
+D:\Escritorio\Migración\CapaModelo\bin\Debug\CapaModelo.dll
+D:\Escritorio\Migración\CapaModelo\bin\Debug\CapaModelo.pdb
+D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.csprojAssemblyReference.cache
+D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.dll
+D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.pdb

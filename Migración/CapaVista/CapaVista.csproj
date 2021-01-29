@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F655D03-E0A6-44B2-AA0B-3BAF497512A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaVista</RootNamespace>
+    <AssemblyName>CapaVista</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CapaControlador">
+      <HintPath>..\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAgendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendar.Designer.cs">
+      <DependentUpon>frmAgendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendarCita.Designer.cs">
+      <DependentUpon>frmAgendarCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmacion.Designer.cs">
+      <DependentUpon>frmConfirmacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmacionDeCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmacionDeCita.Designer.cs">
+      <DependentUpon>frmConfirmacionDeCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImpresion de constancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImpresion de constancia.Designer.cs">
+      <DependentUpon>frmImpresion de constancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformacion.Designer.cs">
+      <DependentUpon>frmInformacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuCita.Designer.cs">
+      <DependentUpon>frmMenuCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidarBoleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmValidarBoleta.Designer.cs">
+      <DependentUpon>frmValidarBoleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAgendar.resx">
+      <DependentUpon>frmAgendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendarCita.resx">
+      <DependentUpon>frmAgendarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmacion.resx">
+      <DependentUpon>frmConfirmacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmacionDeCita.resx">
+      <DependentUpon>frmConfirmacionDeCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImpresion de constancia.resx">
+      <DependentUpon>frmImpresion de constancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformacion.resx">
+      <DependentUpon>frmInformacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuCita.resx">
+      <DependentUpon>frmMenuCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmValidarBoleta.resx">
+      <DependentUpon>frmValidarBoleta.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
