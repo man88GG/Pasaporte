@@ -76,6 +76,7 @@ namespace CapaVista
             this.btnIngresar.TabIndex = 77;
             this.btnIngresar.Text = "Generar cita";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // groupBox1
             // 

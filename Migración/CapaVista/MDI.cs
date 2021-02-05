@@ -10,13 +10,18 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmImpresion_de_constancia : Form
+    public partial class MDI : Form
     {
-        static Form FormularioPadre;
-        public frmImpresion_de_constancia(Form formularioPadre)
+        public MDI()
         {
             InitializeComponent();
-            FormularioPadre = formularioPadre;
+        }
+
+        private void gestionarCitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMenuCita Boleta = new frmMenuCita(this);
+            Boleta.MdiParent = this;
+            Boleta.Show();
         }
     }
 }
