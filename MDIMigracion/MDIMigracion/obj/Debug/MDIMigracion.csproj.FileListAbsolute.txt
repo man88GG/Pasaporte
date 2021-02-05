@@ -10,3 +10,15 @@ D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CoreCompil
 D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
 D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
 D:\Escritorio\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe.config
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.pdb
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.dll
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.pdb
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csprojAssemblyReference.cache
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.Properties.Resources.resources
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.GenerateResource.cache
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CoreCompileInputs.cache
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb

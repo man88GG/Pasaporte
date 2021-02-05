@@ -95,6 +95,7 @@ namespace CapaVista
             this.btnIngresar.TabIndex = 81;
             this.btnIngresar.Text = "Validar Boleta";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // textBox3
             // 

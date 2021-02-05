@@ -12,9 +12,18 @@ namespace CapaVista
 {
     public partial class frmConfirmacion : Form
     {
-        public frmConfirmacion()
+       static Form FormularioPadre;
+        public frmConfirmacion(Form formularioPadre)
         {
             InitializeComponent();
+            FormularioPadre = formularioPadre;
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            frmAgendar Confirmar = new frmAgendar(FormularioPadre);
+            Confirmar.MdiParent = FormularioPadre;
+            Confirmar.Show();
         }
     }
 }

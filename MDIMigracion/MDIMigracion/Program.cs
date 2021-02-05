@@ -17,7 +17,7 @@ namespace MDIMigracion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmImpresion_de_constancia());
+            Application.Run(new MDI());
         }
     }
 }

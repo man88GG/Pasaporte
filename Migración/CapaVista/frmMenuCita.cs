@@ -12,9 +12,18 @@ namespace CapaVista
 {
     public partial class frmMenuCita : Form
     {
-        public frmMenuCita()
+        static Form FormularioPadre;
+        public frmMenuCita(Form formularioPadre)
         {
             InitializeComponent();
+            FormularioPadre = formularioPadre;
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            frmValidarBoleta Validar = new frmValidarBoleta(FormularioPadre);
+            Validar.MdiParent = FormularioPadre;
+            Validar.Show();
         }
     }
 }

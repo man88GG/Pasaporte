@@ -204,6 +204,7 @@ namespace CapaVista
             this.btnIngresar.TabIndex = 79;
             this.btnIngresar.Text = "Buscar";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnAyuda
             // 
