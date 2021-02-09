@@ -4,3 +4,9 @@ D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.csprojAssemblyReference
 D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.dll
 D:\Escritorio\Migración\CapaModelo\obj\Debug\CapaModelo.pdb
+D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\bin\Debug\CapaModelo.dll
+D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\bin\Debug\CapaModelo.pdb
+D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csprojAssemblyReference.cache
+D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.dll
+D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.pdb
