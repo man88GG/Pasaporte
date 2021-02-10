@@ -29,9 +29,9 @@ namespace CapaControlador
             string  Dato = Sn.funcDatos(Codigo,Campo,Tabla,nombreId);
             return Dato;
         }
-        public string[] funcItemsComboBox(string Tabla1,string Tabla2,string Campo1,int Id,string nombreID)
+        public string[] funcItemsComboBox(string Tabla1,string Campo1,int Id,string nombreID)
         {
-            string[] Items = Sn.funcLlenarComboEspecifico(Tabla1,Tabla2,Campo1,Id,nombreID);
+            string[] Items = Sn.funcLlenarComboEspecifico(Tabla1,Campo1,Id,nombreID);
             return Items;
         }
     }

@@ -70,11 +70,15 @@ namespace CapaModelo
             return Dato;
         }
         //funcion para llenar un comboBox con un codigo en especifico
-        public string[] funcLlenarComboEspecifico(string Tabla1,string Tabla2, string Campo1,int Id, string nombreID)
+        public string[] funcLlenarComboEspecifico(string Tabla1,string Campo1,int Id,string nombreID)
         {
+            string campoTabla = Campo1;
+            string nombreTabla = Tabla1;
+            int Codigo = Id;
+            string nombreCodigo = nombreID;
             string[] Campos = new string[100];
             int I = 0;
-            string Sql = "SELECT " + Campo1 + " FROM "+Tabla1+" Tabla1, "+Tabla2+" Tabla2 WEHRE Tabla1."+nombreID+" = Tabla2."+nombreID+" and "+nombreID+" = "+Id+";";
+            string Sql = "SELECT "+campoTabla+" FROM "+nombreTabla+"  WHERE  "+nombreCodigo+" = "+Codigo+"    ; ";
             try
             {
                 OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());

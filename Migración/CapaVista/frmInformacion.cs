@@ -33,8 +33,8 @@ namespace CapaVista
         private void frmInformacion_Load(object sender, EventArgs e)
         {
             //llenado de comboBox Departamento y su Codigo
-            cmbCodigoDepartamento.Items.Add("Seleccione...");
-            cmbDepartamento.Items.Add("Seleccione...");
+          //  cmbCodigoDepartamento.Items.Add("Seleccione...");
+          //  cmbDepartamento.Items.Add("Seleccione...");
             procLlenarCmb("DEPARTAMENTO", "idDepartamento", cmbCodigoDepartamento);
             procLlenarCmb("DEPARTAMENTO", "departamento", cmbDepartamento);
             cmbDepartamento.SelectedIndex = 0;
@@ -79,10 +79,27 @@ namespace CapaVista
             }
         }
 
-        //procedimiento para llenar un comboBox en especifico
-        public void procLlenarComboBox(string Tabla1,string Tabla2,string Campo1,int Id,string nombreID, ComboBox CmbAgregar)
+     
+
+        private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] Items = Cn.funcItemsComboBox(Tabla1,Tabla2,Campo1,Id,nombreID);
+            cmbMunicipio.Items.Clear();
+            cmbCodigoMunicipio.Items.Clear();
+            cmbCodigoDepartamento.SelectedIndex = cmbDepartamento.SelectedIndex;
+            int Codigo = Int32.Parse(cmbCodigoDepartamento.SelectedItem.ToString());
+            //llenado de ComboBox Caso y su Codigo
+             cmbCodigoMunicipio.Items.Add("Seleccione...");
+             cmbMunicipio.Items.Add("Seleccione...");
+             cmbMunicipio.SelectedIndex = 0;
+             procLlenarComboBox("MUNICIPIO","idMunicipio",Codigo,"idDepartamento",cmbCodigoMunicipio);
+             procLlenarComboBox("MUNICIPIO","Municipio", Codigo, "idDepartamento",cmbMunicipio);
+            // 
+        }
+
+        //procedimiento para llenar un comboBox en especifico
+        public void procLlenarComboBox(string Tabla1,string Campo1, int Id, string nombreID, ComboBox CmbAgregar)
+        {
+            string[] Items = Cn.funcItemsComboBox(Tabla1, Campo1, Id, nombreID);
             for (int I = 0; I < Items.Length; I++)
             {
                 if (Items[I] != null)
@@ -93,18 +110,6 @@ namespace CapaVista
                     }
                 }
             }
-        }
-
-        private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbCodigoDepartamento.SelectedIndex = cmbDepartamento.SelectedIndex;
-            int Codigo = Int32.Parse(cmbCodigoDepartamento.SelectedItem.ToString());
-            //llenado de ComboBox Caso y su Codigo
-            cmbCodigoMunicipio.Items.Add("Seleccione...");
-            cmbMunicipio.Items.Add("Seleccione...");
-            procLlenarComboBox("MUNICIPIO", "DEPARTAMENTO","idMunicipio",Codigo,"idDepartamento",cmbCodigoMunicipio);
-            procLlenarComboBox("MUNICIPIO", "DEPARTAMENTO", "Municipio", Codigo, "idDepartamento", cmbMunicipio);
-            cmbMunicipio.SelectedIndex = 0;
         }
 
         private void cmbOcupacion_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,11 +141,19 @@ namespace CapaVista
             string fechaNacimiento = Cn.funcObtenerDato(DPI, "fechaNacimiento", "RENAP", "dpi");
             string sexo = Cn.funcObtenerDato(DPI, "sexo", "RENAP", "dpi");
             string estadoCivil = Cn.funcObtenerDato(DPI, "estadoCivil", "RENAP", "dpi");
+            string nacionalidad = Cn.funcObtenerDato(DPI, "nacionalidad", "RENAP", "dpi");
 
             txtNombreCompleto.Text = nombreCompleto;
             txtEstadoCivil.Text = estadoCivil;
             txtFechaNacimiento.Text = fechaNacimiento;
             txtSexo.Text = sexo;
+            txtNacionalidad.Text = nacionalidad;
+        }
+
+        private void cmbMunicipio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            cmbCodigoMunicipio.SelectedIndex = cmbMunicipio.SelectedIndex;
         }
     }
 }

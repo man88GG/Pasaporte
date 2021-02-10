@@ -54,6 +54,11 @@ namespace CapaVista
             this.btnAceptar = new System.Windows.Forms.Button();
             this.tabInformacionPersonal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cmbMunicipio = new System.Windows.Forms.ComboBox();
+            this.cmbCodigoOcupacion = new System.Windows.Forms.ComboBox();
+            this.cmbOcupacion = new System.Windows.Forms.ComboBox();
+            this.cmbCodigoMunicipio = new System.Windows.Forms.ComboBox();
+            this.cmbCodigoDepartamento = new System.Windows.Forms.ComboBox();
             this.cmbPais = new System.Windows.Forms.ComboBox();
             this.lblOcupacion = new System.Windows.Forms.Label();
             this.lblMunicipio = new System.Windows.Forms.Label();
@@ -75,15 +80,10 @@ namespace CapaVista
             this.txtCorreoDeConfirmacion = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.cmbCodigoTramite = new System.Windows.Forms.ComboBox();
-            this.cmbCodigoPasaporte = new System.Windows.Forms.ComboBox();
             this.cmbCodigoCaso = new System.Windows.Forms.ComboBox();
-            this.cmbCodigoDepartamento = new System.Windows.Forms.ComboBox();
-            this.cmbCodigoMunicipio = new System.Windows.Forms.ComboBox();
-            this.cmbOcupacion = new System.Windows.Forms.ComboBox();
-            this.cmbCodigoOcupacion = new System.Windows.Forms.ComboBox();
-            this.cmbMunicipio = new System.Windows.Forms.ComboBox();
+            this.cmbCodigoPasaporte = new System.Windows.Forms.ComboBox();
+            this.cmbCodigoTramite = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabInformacionPersonal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -378,6 +378,53 @@ namespace CapaVista
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacion personal";
             // 
+            // cmbMunicipio
+            // 
+            this.cmbMunicipio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMunicipio.FormattingEnabled = true;
+            this.cmbMunicipio.Location = new System.Drawing.Point(651, 63);
+            this.cmbMunicipio.Name = "cmbMunicipio";
+            this.cmbMunicipio.Size = new System.Drawing.Size(240, 28);
+            this.cmbMunicipio.TabIndex = 104;
+            this.cmbMunicipio.SelectedIndexChanged += new System.EventHandler(this.cmbMunicipio_SelectedIndexChanged);
+            // 
+            // cmbCodigoOcupacion
+            // 
+            this.cmbCodigoOcupacion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodigoOcupacion.FormattingEnabled = true;
+            this.cmbCodigoOcupacion.Location = new System.Drawing.Point(502, 428);
+            this.cmbCodigoOcupacion.Name = "cmbCodigoOcupacion";
+            this.cmbCodigoOcupacion.Size = new System.Drawing.Size(95, 28);
+            this.cmbCodigoOcupacion.TabIndex = 103;
+            // 
+            // cmbOcupacion
+            // 
+            this.cmbOcupacion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOcupacion.FormattingEnabled = true;
+            this.cmbOcupacion.Location = new System.Drawing.Point(26, 428);
+            this.cmbOcupacion.Name = "cmbOcupacion";
+            this.cmbOcupacion.Size = new System.Drawing.Size(453, 28);
+            this.cmbOcupacion.TabIndex = 102;
+            this.cmbOcupacion.SelectedIndexChanged += new System.EventHandler(this.cmbOcupacion_SelectedIndexChanged);
+            // 
+            // cmbCodigoMunicipio
+            // 
+            this.cmbCodigoMunicipio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodigoMunicipio.FormattingEnabled = true;
+            this.cmbCodigoMunicipio.Location = new System.Drawing.Point(897, 64);
+            this.cmbCodigoMunicipio.Name = "cmbCodigoMunicipio";
+            this.cmbCodigoMunicipio.Size = new System.Drawing.Size(70, 28);
+            this.cmbCodigoMunicipio.TabIndex = 101;
+            // 
+            // cmbCodigoDepartamento
+            // 
+            this.cmbCodigoDepartamento.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodigoDepartamento.FormattingEnabled = true;
+            this.cmbCodigoDepartamento.Location = new System.Drawing.Point(553, 63);
+            this.cmbCodigoDepartamento.Name = "cmbCodigoDepartamento";
+            this.cmbCodigoDepartamento.Size = new System.Drawing.Size(71, 28);
+            this.cmbCodigoDepartamento.TabIndex = 100;
+            // 
             // cmbPais
             // 
             this.cmbPais.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -600,6 +647,33 @@ namespace CapaVista
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Informacion de pasaporte";
             // 
+            // cmbCodigoCaso
+            // 
+            this.cmbCodigoCaso.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodigoCaso.FormattingEnabled = true;
+            this.cmbCodigoCaso.Location = new System.Drawing.Point(440, 242);
+            this.cmbCodigoCaso.Name = "cmbCodigoCaso";
+            this.cmbCodigoCaso.Size = new System.Drawing.Size(94, 28);
+            this.cmbCodigoCaso.TabIndex = 109;
+            // 
+            // cmbCodigoPasaporte
+            // 
+            this.cmbCodigoPasaporte.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodigoPasaporte.FormattingEnabled = true;
+            this.cmbCodigoPasaporte.Location = new System.Drawing.Point(440, 151);
+            this.cmbCodigoPasaporte.Name = "cmbCodigoPasaporte";
+            this.cmbCodigoPasaporte.Size = new System.Drawing.Size(94, 28);
+            this.cmbCodigoPasaporte.TabIndex = 108;
+            // 
+            // cmbCodigoTramite
+            // 
+            this.cmbCodigoTramite.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodigoTramite.FormattingEnabled = true;
+            this.cmbCodigoTramite.Location = new System.Drawing.Point(440, 58);
+            this.cmbCodigoTramite.Name = "cmbCodigoTramite";
+            this.cmbCodigoTramite.Size = new System.Drawing.Size(94, 28);
+            this.cmbCodigoTramite.TabIndex = 107;
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
@@ -622,79 +696,6 @@ namespace CapaVista
             this.tabPage3.Size = new System.Drawing.Size(1011, 486);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Informacion de documento de identificacion";
-            // 
-            // cmbCodigoTramite
-            // 
-            this.cmbCodigoTramite.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodigoTramite.FormattingEnabled = true;
-            this.cmbCodigoTramite.Location = new System.Drawing.Point(440, 58);
-            this.cmbCodigoTramite.Name = "cmbCodigoTramite";
-            this.cmbCodigoTramite.Size = new System.Drawing.Size(94, 28);
-            this.cmbCodigoTramite.TabIndex = 107;
-            // 
-            // cmbCodigoPasaporte
-            // 
-            this.cmbCodigoPasaporte.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodigoPasaporte.FormattingEnabled = true;
-            this.cmbCodigoPasaporte.Location = new System.Drawing.Point(440, 151);
-            this.cmbCodigoPasaporte.Name = "cmbCodigoPasaporte";
-            this.cmbCodigoPasaporte.Size = new System.Drawing.Size(94, 28);
-            this.cmbCodigoPasaporte.TabIndex = 108;
-            // 
-            // cmbCodigoCaso
-            // 
-            this.cmbCodigoCaso.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodigoCaso.FormattingEnabled = true;
-            this.cmbCodigoCaso.Location = new System.Drawing.Point(440, 242);
-            this.cmbCodigoCaso.Name = "cmbCodigoCaso";
-            this.cmbCodigoCaso.Size = new System.Drawing.Size(94, 28);
-            this.cmbCodigoCaso.TabIndex = 109;
-            // 
-            // cmbCodigoDepartamento
-            // 
-            this.cmbCodigoDepartamento.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodigoDepartamento.FormattingEnabled = true;
-            this.cmbCodigoDepartamento.Location = new System.Drawing.Point(553, 63);
-            this.cmbCodigoDepartamento.Name = "cmbCodigoDepartamento";
-            this.cmbCodigoDepartamento.Size = new System.Drawing.Size(71, 28);
-            this.cmbCodigoDepartamento.TabIndex = 100;
-            // 
-            // cmbCodigoMunicipio
-            // 
-            this.cmbCodigoMunicipio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodigoMunicipio.FormattingEnabled = true;
-            this.cmbCodigoMunicipio.Location = new System.Drawing.Point(897, 64);
-            this.cmbCodigoMunicipio.Name = "cmbCodigoMunicipio";
-            this.cmbCodigoMunicipio.Size = new System.Drawing.Size(70, 28);
-            this.cmbCodigoMunicipio.TabIndex = 101;
-            // 
-            // cmbOcupacion
-            // 
-            this.cmbOcupacion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOcupacion.FormattingEnabled = true;
-            this.cmbOcupacion.Location = new System.Drawing.Point(26, 428);
-            this.cmbOcupacion.Name = "cmbOcupacion";
-            this.cmbOcupacion.Size = new System.Drawing.Size(453, 28);
-            this.cmbOcupacion.TabIndex = 102;
-            this.cmbOcupacion.SelectedIndexChanged += new System.EventHandler(this.cmbOcupacion_SelectedIndexChanged);
-            // 
-            // cmbCodigoOcupacion
-            // 
-            this.cmbCodigoOcupacion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodigoOcupacion.FormattingEnabled = true;
-            this.cmbCodigoOcupacion.Location = new System.Drawing.Point(502, 428);
-            this.cmbCodigoOcupacion.Name = "cmbCodigoOcupacion";
-            this.cmbCodigoOcupacion.Size = new System.Drawing.Size(95, 28);
-            this.cmbCodigoOcupacion.TabIndex = 103;
-            // 
-            // cmbMunicipio
-            // 
-            this.cmbMunicipio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMunicipio.FormattingEnabled = true;
-            this.cmbMunicipio.Location = new System.Drawing.Point(651, 63);
-            this.cmbMunicipio.Name = "cmbMunicipio";
-            this.cmbMunicipio.Size = new System.Drawing.Size(240, 28);
-            this.cmbMunicipio.TabIndex = 104;
             // 
             // frmInformacion
             // 
