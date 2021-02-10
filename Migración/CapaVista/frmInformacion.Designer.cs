@@ -29,6 +29,7 @@ namespace CapaVista
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInformacion));
             this.btnAyuda = new System.Windows.Forms.Button();
             this.cmbCaso = new System.Windows.Forms.ComboBox();
@@ -59,7 +60,6 @@ namespace CapaVista
             this.cmbOcupacion = new System.Windows.Forms.ComboBox();
             this.cmbCodigoMunicipio = new System.Windows.Forms.ComboBox();
             this.cmbCodigoDepartamento = new System.Windows.Forms.ComboBox();
-            this.cmbPais = new System.Windows.Forms.ComboBox();
             this.lblOcupacion = new System.Windows.Forms.Label();
             this.lblMunicipio = new System.Windows.Forms.Label();
             this.txtAltura = new System.Windows.Forms.TextBox();
@@ -84,6 +84,15 @@ namespace CapaVista
             this.cmbCodigoPasaporte = new System.Windows.Forms.ComboBox();
             this.cmbCodigoTramite = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtPais = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigoBoleta = new System.Windows.Forms.TextBox();
+            this.lblCodigoBoleta = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.tabInformacionPersonal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -102,6 +111,7 @@ namespace CapaVista
             // 
             // cmbCaso
             // 
+            this.cmbCaso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCaso.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCaso.FormattingEnabled = true;
             this.cmbCaso.Location = new System.Drawing.Point(30, 242);
@@ -112,6 +122,7 @@ namespace CapaVista
             // 
             // cmbPasaporte
             // 
+            this.cmbPasaporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPasaporte.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPasaporte.FormattingEnabled = true;
             this.cmbPasaporte.Location = new System.Drawing.Point(29, 151);
@@ -122,6 +133,7 @@ namespace CapaVista
             // 
             // cmbTramite
             // 
+            this.cmbTramite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTramite.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTramite.FormattingEnabled = true;
             this.cmbTramite.Location = new System.Drawing.Point(30, 58);
@@ -184,7 +196,7 @@ namespace CapaVista
             this.txtEstadoCivil.Location = new System.Drawing.Point(573, 243);
             this.txtEstadoCivil.Multiline = true;
             this.txtEstadoCivil.Name = "txtEstadoCivil";
-            this.txtEstadoCivil.Size = new System.Drawing.Size(240, 24);
+            this.txtEstadoCivil.Size = new System.Drawing.Size(240, 33);
             this.txtEstadoCivil.TabIndex = 120;
             // 
             // txtSexo
@@ -193,7 +205,7 @@ namespace CapaVista
             this.txtSexo.Location = new System.Drawing.Point(289, 243);
             this.txtSexo.Multiline = true;
             this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(240, 24);
+            this.txtSexo.Size = new System.Drawing.Size(240, 33);
             this.txtSexo.TabIndex = 119;
             // 
             // txtNacionalidad
@@ -202,7 +214,7 @@ namespace CapaVista
             this.txtNacionalidad.Location = new System.Drawing.Point(16, 243);
             this.txtNacionalidad.Multiline = true;
             this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(240, 24);
+            this.txtNacionalidad.Size = new System.Drawing.Size(240, 33);
             this.txtNacionalidad.TabIndex = 118;
             // 
             // txtFechaNacimiento
@@ -211,7 +223,7 @@ namespace CapaVista
             this.txtFechaNacimiento.Location = new System.Drawing.Point(573, 157);
             this.txtFechaNacimiento.Multiline = true;
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(240, 24);
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(240, 31);
             this.txtFechaNacimiento.TabIndex = 100;
             // 
             // txtNombreCompleto
@@ -220,7 +232,7 @@ namespace CapaVista
             this.txtNombreCompleto.Location = new System.Drawing.Point(16, 157);
             this.txtNombreCompleto.Multiline = true;
             this.txtNombreCompleto.Name = "txtNombreCompleto";
-            this.txtNombreCompleto.Size = new System.Drawing.Size(531, 24);
+            this.txtNombreCompleto.Size = new System.Drawing.Size(531, 31);
             this.txtNombreCompleto.TabIndex = 117;
             // 
             // lblFechaNacimiento
@@ -301,6 +313,7 @@ namespace CapaVista
             this.txtDPI.Name = "txtDPI";
             this.txtDPI.Size = new System.Drawing.Size(394, 27);
             this.txtDPI.TabIndex = 108;
+            this.txtDPI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDPI_KeyPress);
             // 
             // lblDpi
             // 
@@ -344,12 +357,18 @@ namespace CapaVista
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.tabPage1.Controls.Add(this.txtEstado);
+            this.tabPage1.Controls.Add(this.lblEstado);
+            this.tabPage1.Controls.Add(this.lblCodigoBoleta);
+            this.tabPage1.Controls.Add(this.txtCodigoBoleta);
+            this.tabPage1.Controls.Add(this.lblCodigo);
+            this.tabPage1.Controls.Add(this.txtCodigo);
+            this.tabPage1.Controls.Add(this.txtPais);
             this.tabPage1.Controls.Add(this.cmbMunicipio);
             this.tabPage1.Controls.Add(this.cmbCodigoOcupacion);
             this.tabPage1.Controls.Add(this.cmbOcupacion);
             this.tabPage1.Controls.Add(this.cmbCodigoMunicipio);
             this.tabPage1.Controls.Add(this.cmbCodigoDepartamento);
-            this.tabPage1.Controls.Add(this.cmbPais);
             this.tabPage1.Controls.Add(this.lblOcupacion);
             this.tabPage1.Controls.Add(this.lblMunicipio);
             this.tabPage1.Controls.Add(this.txtAltura);
@@ -380,6 +399,7 @@ namespace CapaVista
             // 
             // cmbMunicipio
             // 
+            this.cmbMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMunicipio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMunicipio.FormattingEnabled = true;
             this.cmbMunicipio.Location = new System.Drawing.Point(651, 63);
@@ -390,15 +410,18 @@ namespace CapaVista
             // 
             // cmbCodigoOcupacion
             // 
+            this.cmbCodigoOcupacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigoOcupacion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCodigoOcupacion.FormattingEnabled = true;
             this.cmbCodigoOcupacion.Location = new System.Drawing.Point(502, 428);
             this.cmbCodigoOcupacion.Name = "cmbCodigoOcupacion";
             this.cmbCodigoOcupacion.Size = new System.Drawing.Size(95, 28);
             this.cmbCodigoOcupacion.TabIndex = 103;
+            this.cmbCodigoOcupacion.Visible = false;
             // 
             // cmbOcupacion
             // 
+            this.cmbOcupacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOcupacion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOcupacion.FormattingEnabled = true;
             this.cmbOcupacion.Location = new System.Drawing.Point(26, 428);
@@ -409,30 +432,25 @@ namespace CapaVista
             // 
             // cmbCodigoMunicipio
             // 
+            this.cmbCodigoMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigoMunicipio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCodigoMunicipio.FormattingEnabled = true;
             this.cmbCodigoMunicipio.Location = new System.Drawing.Point(897, 64);
             this.cmbCodigoMunicipio.Name = "cmbCodigoMunicipio";
             this.cmbCodigoMunicipio.Size = new System.Drawing.Size(70, 28);
             this.cmbCodigoMunicipio.TabIndex = 101;
+            this.cmbCodigoMunicipio.Visible = false;
             // 
             // cmbCodigoDepartamento
             // 
+            this.cmbCodigoDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigoDepartamento.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCodigoDepartamento.FormattingEnabled = true;
             this.cmbCodigoDepartamento.Location = new System.Drawing.Point(553, 63);
             this.cmbCodigoDepartamento.Name = "cmbCodigoDepartamento";
             this.cmbCodigoDepartamento.Size = new System.Drawing.Size(71, 28);
             this.cmbCodigoDepartamento.TabIndex = 100;
-            // 
-            // cmbPais
-            // 
-            this.cmbPais.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPais.FormattingEnabled = true;
-            this.cmbPais.Location = new System.Drawing.Point(26, 64);
-            this.cmbPais.Name = "cmbPais";
-            this.cmbPais.Size = new System.Drawing.Size(262, 28);
-            this.cmbPais.TabIndex = 81;
+            this.cmbCodigoDepartamento.Visible = false;
             // 
             // lblOcupacion
             // 
@@ -462,8 +480,9 @@ namespace CapaVista
             this.txtAltura.Location = new System.Drawing.Point(26, 336);
             this.txtAltura.Multiline = true;
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(205, 24);
+            this.txtAltura.Size = new System.Drawing.Size(205, 34);
             this.txtAltura.TabIndex = 97;
+            this.txtAltura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAltura_KeyPress);
             // 
             // lblDepartamento
             // 
@@ -482,8 +501,9 @@ namespace CapaVista
             this.txtTez.Location = new System.Drawing.Point(240, 336);
             this.txtTez.Multiline = true;
             this.txtTez.Name = "txtTez";
-            this.txtTez.Size = new System.Drawing.Size(205, 24);
+            this.txtTez.Size = new System.Drawing.Size(205, 34);
             this.txtTez.TabIndex = 96;
+            this.txtTez.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTez_KeyPress);
             // 
             // lblPais
             // 
@@ -502,11 +522,13 @@ namespace CapaVista
             this.txtColorDeOjos.Location = new System.Drawing.Point(472, 336);
             this.txtColorDeOjos.Multiline = true;
             this.txtColorDeOjos.Name = "txtColorDeOjos";
-            this.txtColorDeOjos.Size = new System.Drawing.Size(205, 24);
+            this.txtColorDeOjos.Size = new System.Drawing.Size(205, 34);
             this.txtColorDeOjos.TabIndex = 95;
+            this.txtColorDeOjos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtColorDeOjos_KeyPress);
             // 
             // cmbDepartamento
             // 
+            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartamento.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartamento.FormattingEnabled = true;
             this.cmbDepartamento.Location = new System.Drawing.Point(313, 64);
@@ -574,8 +596,9 @@ namespace CapaVista
             this.txtTelefono.Location = new System.Drawing.Point(26, 249);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(205, 24);
+            this.txtTelefono.Size = new System.Drawing.Size(205, 31);
             this.txtTelefono.TabIndex = 91;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblCorreoConfirmacion
             // 
@@ -594,7 +617,7 @@ namespace CapaVista
             this.txtCorreo.Location = new System.Drawing.Point(240, 249);
             this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(357, 24);
+            this.txtCorreo.Size = new System.Drawing.Size(357, 31);
             this.txtCorreo.TabIndex = 90;
             // 
             // lblCorreo
@@ -614,7 +637,7 @@ namespace CapaVista
             this.txtCorreoDeConfirmacion.Location = new System.Drawing.Point(611, 249);
             this.txtCorreoDeConfirmacion.Multiline = true;
             this.txtCorreoDeConfirmacion.Name = "txtCorreoDeConfirmacion";
-            this.txtCorreoDeConfirmacion.Size = new System.Drawing.Size(339, 24);
+            this.txtCorreoDeConfirmacion.Size = new System.Drawing.Size(383, 31);
             this.txtCorreoDeConfirmacion.TabIndex = 89;
             // 
             // lblTelefono
@@ -649,34 +672,43 @@ namespace CapaVista
             // 
             // cmbCodigoCaso
             // 
+            this.cmbCodigoCaso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigoCaso.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCodigoCaso.FormattingEnabled = true;
             this.cmbCodigoCaso.Location = new System.Drawing.Point(440, 242);
             this.cmbCodigoCaso.Name = "cmbCodigoCaso";
             this.cmbCodigoCaso.Size = new System.Drawing.Size(94, 28);
             this.cmbCodigoCaso.TabIndex = 109;
+            this.cmbCodigoCaso.Visible = false;
+            this.cmbCodigoCaso.SelectedIndexChanged += new System.EventHandler(this.cmbCodigoCaso_SelectedIndexChanged);
             // 
             // cmbCodigoPasaporte
             // 
+            this.cmbCodigoPasaporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigoPasaporte.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCodigoPasaporte.FormattingEnabled = true;
             this.cmbCodigoPasaporte.Location = new System.Drawing.Point(440, 151);
             this.cmbCodigoPasaporte.Name = "cmbCodigoPasaporte";
             this.cmbCodigoPasaporte.Size = new System.Drawing.Size(94, 28);
             this.cmbCodigoPasaporte.TabIndex = 108;
+            this.cmbCodigoPasaporte.Visible = false;
             // 
             // cmbCodigoTramite
             // 
+            this.cmbCodigoTramite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigoTramite.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCodigoTramite.FormattingEnabled = true;
             this.cmbCodigoTramite.Location = new System.Drawing.Point(440, 58);
             this.cmbCodigoTramite.Name = "cmbCodigoTramite";
             this.cmbCodigoTramite.Size = new System.Drawing.Size(94, 28);
             this.cmbCodigoTramite.TabIndex = 107;
+            this.cmbCodigoTramite.Visible = false;
+            this.cmbCodigoTramite.SelectedIndexChanged += new System.EventHandler(this.cmbCodigoTramite_SelectedIndexChanged);
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.tabPage3.Controls.Add(this.lblFecha);
             this.tabPage3.Controls.Add(this.txtFechaNacimiento);
             this.tabPage3.Controls.Add(this.txtEstadoCivil);
             this.tabPage3.Controls.Add(this.btnBuscar);
@@ -696,6 +728,91 @@ namespace CapaVista
             this.tabPage3.Size = new System.Drawing.Size(1011, 486);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Informacion de documento de identificacion";
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // txtPais
+            // 
+            this.txtPais.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPais.Location = new System.Drawing.Point(26, 63);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(270, 27);
+            this.txtPais.TabIndex = 105;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(867, 342);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(127, 27);
+            this.txtCodigo.TabIndex = 106;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCodigo.Location = new System.Drawing.Point(700, 347);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(79, 22);
+            this.lblCodigo.TabIndex = 107;
+            this.lblCodigo.Text = "Codigo";
+            // 
+            // txtCodigoBoleta
+            // 
+            this.txtCodigoBoleta.Enabled = false;
+            this.txtCodigoBoleta.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoBoleta.Location = new System.Drawing.Point(867, 382);
+            this.txtCodigoBoleta.Multiline = true;
+            this.txtCodigoBoleta.Name = "txtCodigoBoleta";
+            this.txtCodigoBoleta.Size = new System.Drawing.Size(127, 26);
+            this.txtCodigoBoleta.TabIndex = 108;
+            // 
+            // lblCodigoBoleta
+            // 
+            this.lblCodigoBoleta.AutoSize = true;
+            this.lblCodigoBoleta.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoBoleta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCodigoBoleta.Location = new System.Drawing.Point(700, 388);
+            this.lblCodigoBoleta.Name = "lblCodigoBoleta";
+            this.lblCodigoBoleta.Size = new System.Drawing.Size(141, 22);
+            this.lblCodigoBoleta.TabIndex = 109;
+            this.lblCodigoBoleta.Text = "Codigo Boleta";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEstado.Location = new System.Drawing.Point(700, 428);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(73, 22);
+            this.lblEstado.TabIndex = 110;
+            this.lblEstado.Text = "Estado";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(867, 424);
+            this.txtEstado.Multiline = true;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(127, 26);
+            this.txtEstado.TabIndex = 111;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(569, 432);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(122, 22);
+            this.lblFecha.TabIndex = 121;
+            this.lblFecha.Text = "FechaActual";
+            // 
+            // HoraFecha
+            // 
+            this.HoraFecha.Enabled = true;
+            this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
             // 
             // frmInformacion
             // 
@@ -747,7 +864,6 @@ namespace CapaVista
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TabControl tabInformacionPersonal;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ComboBox cmbPais;
         private System.Windows.Forms.Label lblOcupacion;
         private System.Windows.Forms.Label lblMunicipio;
         private System.Windows.Forms.TextBox txtAltura;
@@ -777,5 +893,14 @@ namespace CapaVista
         private System.Windows.Forms.ComboBox cmbCodigoOcupacion;
         private System.Windows.Forms.ComboBox cmbOcupacion;
         private System.Windows.Forms.ComboBox cmbMunicipio;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtPais;
+        private System.Windows.Forms.Label lblCodigoBoleta;
+        private System.Windows.Forms.TextBox txtCodigoBoleta;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Timer HoraFecha;
     }
 }

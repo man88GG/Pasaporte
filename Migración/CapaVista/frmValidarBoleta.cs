@@ -23,9 +23,19 @@ namespace CapaVista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if(txtBoleta.Text == "" || txtRecibo.Text == "")
+            if(txtBoleta.Text.Length == 0 || txtRecibo.Text.Length == 0)
             {
-                MessageBox.Show("No debe dejar Campos Vacios.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No debe dejar Campos Vacios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }else if(txtBoleta.Text.Length > 10)
+            {
+                MessageBox.Show("El numero de la Boleta no puede Exceder los 10 Digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if(txtRecibo.Text.Length > 10)
+            {
+                MessageBox.Show("El numero del Recibo no puede Exceder los 10 Digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {
@@ -46,6 +56,34 @@ namespace CapaVista
             }
 
 
+        }
+
+        private void txtBoleta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //revisa que puede ingresar letras, tecla de borrar o espacio
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void txtRecibo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //revisa que puede ingresar letras, tecla de borrar o espacio
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
         }
     }
 }

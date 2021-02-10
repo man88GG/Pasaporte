@@ -48,6 +48,7 @@ namespace CapaVista
             this.txtBoleta.Name = "txtBoleta";
             this.txtBoleta.Size = new System.Drawing.Size(389, 31);
             this.txtBoleta.TabIndex = 85;
+            this.txtBoleta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoleta_KeyPress);
             // 
             // lblBoleta
             // 
@@ -104,6 +105,7 @@ namespace CapaVista
             this.txtRecibo.Name = "txtRecibo";
             this.txtRecibo.Size = new System.Drawing.Size(389, 31);
             this.txtRecibo.TabIndex = 87;
+            this.txtRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecibo_KeyPress);
             // 
             // gbBoleta
             // 

@@ -92,5 +92,102 @@ namespace CapaModelo
             catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en asignarCombo, revise los parametros \n -" + Tabla1+ "\n -" + Campo1); }
             return Campos;
         }
+        //funcion para obtener el codigo de una tabla
+        public int funcObtenerCodigo(string NombreTabla, string Campo)
+        {
+            int Codigo = 0;
+            string Sql = "SELECT MAX(" + Campo + ") FROM " + NombreTabla + " ;";
+            try
+            {
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+                if (Reader.Read())
+                {
+                    Codigo = Reader.GetInt32(0);
+                }
+            }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en asignarCombo, revise los parametros \n -\n -"); }
+            return Codigo + 1;
+        }
+        //funcion que permite ingresar datos a la base de datos
+        public void procInsertarDatos(string tabla, List<string> lista)
+        {
+            string sql = " INSERT INTO " + tabla + " VALUES (";
+            string consulta = sql;
+            int contador = lista.Count();
+            int i = 1;
+            foreach (var items in lista)
+            {
+                if (i != contador)
+                {
+                    try
+                    {
+                        //int 
+                        int.Parse(items);
+                        sql += " " + items + ", ";
+                        consulta += " " + items + ", ";
+                    }
+                    catch (Exception e)
+                    {
+                        try
+                        {
+                            //double
+                            double.Parse(items);
+                            sql += " " + items + ", ";
+                            consulta += " " + items + ", ";
+                        }
+                        catch (Exception ex)
+                        {
+                            try
+                            {
+                                //DateTimePicker
+                                DateTime.Parse(items);
+                                sql += " '" + items + "', ";
+                                consulta += " " + items + ", ";
+                            }
+                            catch (Exception exx)
+                            {
+                                //string
+                                sql += " '" + items + "', ";
+                                consulta += " " + items + ", ";
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    break;
+                }
+
+                i++;
+            }
+            var item = lista.Last();
+            try
+            {
+                //int 
+                int.Parse(item);
+                sql += " " + item + ") ";
+            }catch(Exception )
+            {
+                sql += " '" + item + "') ";
+            }
+          /*  string sqlMax = lista.Last();
+            sql += " " + sqlMax + ") ";
+            consulta += " " + sqlMax + ") ";*/
+            try
+            {
+
+                OdbcCommand comm = new OdbcCommand(sql, Con.conexion());
+                OdbcDataReader mostrarC = comm.ExecuteReader();
+                Console.WriteLine("Los Datos se guardaron correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString() + " \nNo existe la tabla o los campos indicados \n -" + tabla + "\n -"+ex+" "+sql);
+
+            }
+
+        }
     }
 }

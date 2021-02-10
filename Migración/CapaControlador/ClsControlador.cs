@@ -34,5 +34,16 @@ namespace CapaControlador
             string[] Items = Sn.funcLlenarComboEspecifico(Tabla1,Campo1,Id,nombreID);
             return Items;
         }
+        //funcion para obtener el codigo de una tabla
+        public int funcCodigoMaximo(string Tabla, string Campo)
+        {
+            int CodigoNuevo = Sn.funcObtenerCodigo(Tabla,Campo);
+            return CodigoNuevo;
+        }
+
+        public void procDatosInsertar(string tabla, List<string> lista)
+        {
+            Sn.procInsertarDatos(tabla,lista);
+        }
     }
 }
