@@ -22,3 +22,7 @@ D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.dll
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.dll
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.pdb
+D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.pdb

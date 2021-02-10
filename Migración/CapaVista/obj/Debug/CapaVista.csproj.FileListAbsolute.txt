@@ -35,3 +35,5 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.C
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaModelo.dll
+D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaModelo.pdb

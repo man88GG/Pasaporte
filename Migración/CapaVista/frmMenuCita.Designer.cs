@@ -31,10 +31,10 @@ namespace CapaVista
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuCita));
             this.btnAyuda = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.btnBuscarCita = new System.Windows.Forms.Button();
+            this.btnGenerarCita = new System.Windows.Forms.Button();
+            this.gbOpcion = new System.Windows.Forms.GroupBox();
+            this.gbOpcion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAyuda
@@ -47,49 +47,49 @@ namespace CapaVista
             this.btnAyuda.TabIndex = 79;
             this.btnAyuda.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnBuscarCita
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(76, 123);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 61);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "Buscar Cita";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscarCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
+            this.btnBuscarCita.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarCita.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCita.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarCita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarCita.Location = new System.Drawing.Point(76, 123);
+            this.btnBuscarCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarCita.Name = "btnBuscarCita";
+            this.btnBuscarCita.Size = new System.Drawing.Size(190, 61);
+            this.btnBuscarCita.TabIndex = 78;
+            this.btnBuscarCita.Text = "Buscar Cita";
+            this.btnBuscarCita.UseVisualStyleBackColor = false;
             // 
-            // btnIngresar
+            // btnGenerarCita
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIngresar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(76, 48);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(190, 61);
-            this.btnIngresar.TabIndex = 77;
-            this.btnIngresar.Text = "Generar cita";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.btnGenerarCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
+            this.btnGenerarCita.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGenerarCita.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarCita.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarCita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerarCita.Location = new System.Drawing.Point(76, 48);
+            this.btnGenerarCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGenerarCita.Name = "btnGenerarCita";
+            this.btnGenerarCita.Size = new System.Drawing.Size(190, 61);
+            this.btnGenerarCita.TabIndex = 77;
+            this.btnGenerarCita.Text = "Generar cita";
+            this.btnGenerarCita.UseVisualStyleBackColor = false;
+            this.btnGenerarCita.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // groupBox1
+            // gbOpcion
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.btnIngresar);
-            this.groupBox1.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(22, 23);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 215);
-            this.groupBox1.TabIndex = 80;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleccione una opción:";
+            this.gbOpcion.Controls.Add(this.btnBuscarCita);
+            this.gbOpcion.Controls.Add(this.btnGenerarCita);
+            this.gbOpcion.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbOpcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbOpcion.Location = new System.Drawing.Point(22, 23);
+            this.gbOpcion.Name = "gbOpcion";
+            this.gbOpcion.Size = new System.Drawing.Size(369, 215);
+            this.gbOpcion.TabIndex = 80;
+            this.gbOpcion.TabStop = false;
+            this.gbOpcion.Text = "Seleccione una opción:";
             // 
             // frmMenuCita
             // 
@@ -97,11 +97,11 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(534, 276);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbOpcion);
             this.Controls.Add(this.btnAyuda);
             this.Name = "frmMenuCita";
             this.Text = "frmMenuCita";
-            this.groupBox1.ResumeLayout(false);
+            this.gbOpcion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -109,8 +109,8 @@ namespace CapaVista
         #endregion
 
         private System.Windows.Forms.Button btnAyuda;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBuscarCita;
+        private System.Windows.Forms.Button btnGenerarCita;
+        private System.Windows.Forms.GroupBox gbOpcion;
     }
 }
