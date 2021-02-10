@@ -100,8 +100,11 @@ namespace CapaVista
             cmbCodigoDepartamento.SelectedIndex = cmbDepartamento.SelectedIndex;
             int Codigo = Int32.Parse(cmbCodigoDepartamento.SelectedItem.ToString());
             //llenado de ComboBox Caso y su Codigo
+            cmbCodigoMunicipio.Items.Add("Seleccione...");
+            cmbMunicipio.Items.Add("Seleccione...");
             procLlenarComboBox("MUNICIPIO", "DEPARTAMENTO","idMunicipio",Codigo,"idDepartamento",cmbCodigoMunicipio);
             procLlenarComboBox("MUNICIPIO", "DEPARTAMENTO", "Municipio", Codigo, "idDepartamento", cmbMunicipio);
+            cmbMunicipio.SelectedIndex = 0;
         }
 
         private void cmbOcupacion_SelectedIndexChanged(object sender, EventArgs e)
