@@ -14,6 +14,7 @@ namespace CapaVista
     public partial class frmInformacion : Form
     {
         ClsControlador Cn = new ClsControlador();
+        private frmConfirmacion confirmacion;
         static Form FormularioPadre;
         int CodigoBoleta = 0;
         public frmInformacion(Form formularioPadre,int Boleta)
@@ -112,9 +113,10 @@ namespace CapaVista
                     DatosFormulario.Add(fechaActual);
                     DatosFormulario.Add(nacionalidad);
                     Cn.procDatosInsertar(Tabla,DatosFormulario);
-                    frmConfirmacion Confirmar = new frmConfirmacion(FormularioPadre);
-                    Confirmar.MdiParent = FormularioPadre;
-                    Confirmar.Show();
+                   
+                        frmAgendar confirmacion = new frmAgendar(FormularioPadre,idBoletaBanco,Dpi);
+                        confirmacion.MdiParent = FormularioPadre;    
+                        confirmacion.Show();               
                 }
             }           
          }

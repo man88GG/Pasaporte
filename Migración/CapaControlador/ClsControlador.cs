@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +46,23 @@ namespace CapaControlador
         public void procDatosInsertar(string tabla, List<string> lista)
         {
             Sn.procInsertarDatos(tabla,lista);
+        }
+
+        public DataTable enviar(string consulta)
+        {
+            try
+            {
+                OdbcDataAdapter dt = Sn.obtener(consulta);
+                DataTable table = new DataTable();
+                dt.Fill(table);
+                return table;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Puede que los parametros seas erroneos, verifique los parametro enviados" + ex);
+                return null;
+            }
+
         }
     }
 }

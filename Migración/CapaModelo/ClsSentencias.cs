@@ -189,5 +189,21 @@ namespace CapaModelo
             }
 
         }
+
+        //funcion que devuelve los datos de una consulta para colocarlos en un DataGridView
+        public OdbcDataAdapter obtener(string consulta)
+        {
+            try
+            {
+                string sql = consulta;
+                OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, Con.conexion());
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Puede que los parametros seas erroneos, verifique los parametro enviados" + ex);
+                return null;
+            }
+        }
     }
 }

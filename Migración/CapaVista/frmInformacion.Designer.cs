@@ -55,6 +55,13 @@ namespace CapaVista
             this.btnAceptar = new System.Windows.Forms.Button();
             this.tabInformacionPersonal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblCodigoBoleta = new System.Windows.Forms.Label();
+            this.txtCodigoBoleta = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtPais = new System.Windows.Forms.TextBox();
             this.cmbMunicipio = new System.Windows.Forms.ComboBox();
             this.cmbCodigoOcupacion = new System.Windows.Forms.ComboBox();
             this.cmbOcupacion = new System.Windows.Forms.ComboBox();
@@ -84,13 +91,6 @@ namespace CapaVista
             this.cmbCodigoPasaporte = new System.Windows.Forms.ComboBox();
             this.cmbCodigoTramite = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtPais = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtCodigoBoleta = new System.Windows.Forms.TextBox();
-            this.lblCodigoBoleta = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.tabInformacionPersonal.SuspendLayout();
@@ -396,6 +396,82 @@ namespace CapaVista
             this.tabPage1.Size = new System.Drawing.Size(1011, 486);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacion personal";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(867, 424);
+            this.txtEstado.Multiline = true;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(127, 26);
+            this.txtEstado.TabIndex = 111;
+            this.txtEstado.Visible = false;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEstado.Location = new System.Drawing.Point(700, 428);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(73, 22);
+            this.lblEstado.TabIndex = 110;
+            this.lblEstado.Text = "Estado";
+            this.lblEstado.Visible = false;
+            // 
+            // lblCodigoBoleta
+            // 
+            this.lblCodigoBoleta.AutoSize = true;
+            this.lblCodigoBoleta.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoBoleta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCodigoBoleta.Location = new System.Drawing.Point(700, 388);
+            this.lblCodigoBoleta.Name = "lblCodigoBoleta";
+            this.lblCodigoBoleta.Size = new System.Drawing.Size(141, 22);
+            this.lblCodigoBoleta.TabIndex = 109;
+            this.lblCodigoBoleta.Text = "Codigo Boleta";
+            this.lblCodigoBoleta.Visible = false;
+            // 
+            // txtCodigoBoleta
+            // 
+            this.txtCodigoBoleta.Enabled = false;
+            this.txtCodigoBoleta.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoBoleta.Location = new System.Drawing.Point(867, 382);
+            this.txtCodigoBoleta.Multiline = true;
+            this.txtCodigoBoleta.Name = "txtCodigoBoleta";
+            this.txtCodigoBoleta.Size = new System.Drawing.Size(127, 26);
+            this.txtCodigoBoleta.TabIndex = 108;
+            this.txtCodigoBoleta.Visible = false;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCodigo.Location = new System.Drawing.Point(700, 347);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(79, 22);
+            this.lblCodigo.TabIndex = 107;
+            this.lblCodigo.Text = "Codigo";
+            this.lblCodigo.Visible = false;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(867, 342);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(127, 27);
+            this.txtCodigo.TabIndex = 106;
+            this.txtCodigo.Visible = false;
+            // 
+            // txtPais
+            // 
+            this.txtPais.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPais.Location = new System.Drawing.Point(26, 63);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(270, 27);
+            this.txtPais.TabIndex = 105;
             // 
             // cmbMunicipio
             // 
@@ -729,76 +805,6 @@ namespace CapaVista
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Informacion de documento de identificacion";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // txtPais
-            // 
-            this.txtPais.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(26, 63);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(270, 27);
-            this.txtPais.TabIndex = 105;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(867, 342);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(127, 27);
-            this.txtCodigo.TabIndex = 106;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCodigo.Location = new System.Drawing.Point(700, 347);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(79, 22);
-            this.lblCodigo.TabIndex = 107;
-            this.lblCodigo.Text = "Codigo";
-            // 
-            // txtCodigoBoleta
-            // 
-            this.txtCodigoBoleta.Enabled = false;
-            this.txtCodigoBoleta.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoBoleta.Location = new System.Drawing.Point(867, 382);
-            this.txtCodigoBoleta.Multiline = true;
-            this.txtCodigoBoleta.Name = "txtCodigoBoleta";
-            this.txtCodigoBoleta.Size = new System.Drawing.Size(127, 26);
-            this.txtCodigoBoleta.TabIndex = 108;
-            // 
-            // lblCodigoBoleta
-            // 
-            this.lblCodigoBoleta.AutoSize = true;
-            this.lblCodigoBoleta.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoBoleta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCodigoBoleta.Location = new System.Drawing.Point(700, 388);
-            this.lblCodigoBoleta.Name = "lblCodigoBoleta";
-            this.lblCodigoBoleta.Size = new System.Drawing.Size(141, 22);
-            this.lblCodigoBoleta.TabIndex = 109;
-            this.lblCodigoBoleta.Text = "Codigo Boleta";
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEstado.Location = new System.Drawing.Point(700, 428);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(73, 22);
-            this.lblEstado.TabIndex = 110;
-            this.lblEstado.Text = "Estado";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(867, 424);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(127, 26);
-            this.txtEstado.TabIndex = 111;
             // 
             // lblFecha
             // 

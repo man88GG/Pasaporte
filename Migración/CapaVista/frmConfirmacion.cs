@@ -21,9 +21,7 @@ namespace CapaVista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmAgendar Confirmar = new frmAgendar(FormularioPadre);
-            Confirmar.MdiParent = FormularioPadre;
-            Confirmar.Show();
+            
         }
     }
 }
