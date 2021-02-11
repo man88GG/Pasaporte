@@ -10,7 +10,6 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csproj
 D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.dll
 D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.pdb
-<<<<<<< HEAD
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaModelo\bin\Debug\CapaModelo.dll
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaModelo\bin\Debug\CapaModelo.pdb
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csprojAssemblyReference.cache
@@ -23,5 +22,3 @@ C:\Users\opfug\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csprojAssemb
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.pdb
-=======
->>>>>>> master
