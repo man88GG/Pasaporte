@@ -35,6 +35,7 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.C
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+<<<<<<< HEAD
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaVista.dll
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaVista.pdb
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaControlador.dll
@@ -81,3 +82,5 @@ C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CoreCom
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+=======
+>>>>>>> master
