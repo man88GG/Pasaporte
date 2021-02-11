@@ -23,15 +23,5 @@ namespace CapaVista
             Boleta.MdiParent = this;
             Boleta.Show();
         }
-<<<<<<< HEAD
-
-        private void generarPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLogin frm = new frmLogin();
-            frm.MdiParent = this;
-            frm.Show();
-        }
-=======
->>>>>>> master
     }
 }

@@ -33,10 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-<<<<<<< HEAD
-    <Reference Include="System.Windows.Forms" />
-=======
->>>>>>> master
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,10 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="clsBitacora.cs" />
-=======
->>>>>>> master
     <Compile Include="ClsConexion.cs" />
     <Compile Include="ClsSentencias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

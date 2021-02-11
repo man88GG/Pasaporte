@@ -25,13 +25,5 @@ namespace CapaVista
             Validar.MdiParent = FormularioPadre;
             Validar.Show();
         }
-<<<<<<< HEAD
-
-        private void frmMenuCita_Load(object sender, EventArgs e)
-        {
-
-        }
-=======
->>>>>>> master
     }
 }
