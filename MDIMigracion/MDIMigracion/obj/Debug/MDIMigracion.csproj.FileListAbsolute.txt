@@ -22,6 +22,7 @@ D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb
+<<<<<<< HEAD
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe.config
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.pdb
@@ -38,3 +39,5 @@ D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMi
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.dll
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.pdb
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.pdb
+=======
+>>>>>>> master

@@ -82,24 +82,30 @@
     <Compile Include="frmInformacion.Designer.cs">
       <DependentUpon>frmInformacion.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> master
     <Compile Include="frmMenuCita.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenuCita.Designer.cs">
       <DependentUpon>frmMenuCita.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmPruebaPasaporte.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPruebaPasaporte.Designer.cs">
       <DependentUpon>frmPruebaPasaporte.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> master
     <Compile Include="frmValidarBoleta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,7 @@
     <EmbeddedResource Include="frmInformacion.resx">
       <DependentUpon>frmInformacion.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +149,11 @@
     <EmbeddedResource Include="frmPruebaPasaporte.resx">
       <DependentUpon>frmPruebaPasaporte.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <EmbeddedResource Include="frmMenuCita.resx">
+      <DependentUpon>frmMenuCita.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> master
     <EmbeddedResource Include="frmValidarBoleta.resx">
       <DependentUpon>frmValidarBoleta.cs</DependentUpon>
     </EmbeddedResource>

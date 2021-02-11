@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using System.Data;
 using System.Data.Odbc;
 
@@ -43,5 +44,12 @@ namespace CapaModelo
         }
 
 
+=======
+
+namespace CapaModelo
+{
+    class ClsSentencias
+    {
+>>>>>>> master
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using CapaModelo;
 using System.Data;
 using System.Data.Odbc;
@@ -20,5 +21,12 @@ namespace CapaControlador
             sn.VerificarLogin(user,password);
         }
 
+=======
+
+namespace CapaControlador
+{
+    class ClsControlador
+    {
+>>>>>>> master
     }
 }

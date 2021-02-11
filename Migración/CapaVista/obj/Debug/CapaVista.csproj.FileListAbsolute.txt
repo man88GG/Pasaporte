@@ -35,6 +35,7 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.C
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+<<<<<<< HEAD
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaVista.dll
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaVista.pdb
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaControlador.dll
@@ -58,3 +59,5 @@ D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migra
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaModelo.dll
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\bin\Debug\CapaModelo.pdb
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmPruebaPasaporte.resources
+=======
+>>>>>>> master
