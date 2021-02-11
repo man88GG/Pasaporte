@@ -22,22 +22,3 @@ D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
 D:\Documentos\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb
-<<<<<<< HEAD
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe.config
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.pdb
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.dll
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.pdb
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csprojAssemblyReference.cache
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.Properties.Resources.resources
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.GenerateResource.cache
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CoreCompileInputs.cache
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.dll
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.dll
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.pdb
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.pdb
-=======
->>>>>>> master
