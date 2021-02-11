@@ -16,3 +16,15 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControla
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb
+<<<<<<< HEAD
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.dll
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.pdb
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.dll
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.pdb
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csprojAssemblyReference.cache
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CoreCompileInputs.cache
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
+D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb
+=======
+>>>>>>> master

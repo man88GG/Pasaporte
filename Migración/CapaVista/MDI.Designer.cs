@@ -31,6 +31,16 @@ namespace CapaVista
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarCitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +49,7 @@ namespace CapaVista
             this.gestionarCitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> master
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +67,12 @@ namespace CapaVista
             this.ayudasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+<<<<<<< HEAD
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(695, 29);
+=======
             this.menuStrip1.Size = new System.Drawing.Size(927, 36);
+>>>>>>> master
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,14 +82,30 @@ namespace CapaVista
             this.cerrarSesionToolStripMenuItem});
             this.inicioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+<<<<<<< HEAD
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 25);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            // 
+=======
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(73, 32);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
+>>>>>>> master
             // mantenimientosToolStripMenuItem
             // 
             this.mantenimientosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
+<<<<<<< HEAD
+            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(135, 25);
+=======
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(168, 32);
+>>>>>>> master
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
             // 
             // procesosToolStripMenuItem
@@ -83,27 +115,69 @@ namespace CapaVista
             this.generarPasaporteToolStripMenuItem});
             this.procesosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
+<<<<<<< HEAD
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
+            this.procesosToolStripMenuItem.Text = "Procesos";
+            // 
+            // gestionarCitaToolStripMenuItem
+            // 
+            this.gestionarCitaToolStripMenuItem.Name = "gestionarCitaToolStripMenuItem";
+            this.gestionarCitaToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.gestionarCitaToolStripMenuItem.Text = "Gestionar Cita";
+            this.gestionarCitaToolStripMenuItem.Click += new System.EventHandler(this.gestionarCitaToolStripMenuItem_Click);
+            // 
+            // generarPasaporteToolStripMenuItem
+            // 
+            this.generarPasaporteToolStripMenuItem.Name = "generarPasaporteToolStripMenuItem";
+            this.generarPasaporteToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.generarPasaporteToolStripMenuItem.Text = "Generar Pasaporte";
+            this.generarPasaporteToolStripMenuItem.Click += new System.EventHandler(this.generarPasaporteToolStripMenuItem_Click);
+            // 
+=======
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(103, 32);
             this.procesosToolStripMenuItem.Text = "Procesos";
             // 
+>>>>>>> master
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
+<<<<<<< HEAD
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(116, 25);
+=======
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(142, 32);
+>>>>>>> master
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+<<<<<<< HEAD
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
+=======
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(103, 32);
+>>>>>>> master
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // ayudasToolStripMenuItem
             // 
             this.ayudasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ayudasToolStripMenuItem.Name = "ayudasToolStripMenuItem";
+<<<<<<< HEAD
+            this.ayudasToolStripMenuItem.Size = new System.Drawing.Size(73, 25);
+            this.ayudasToolStripMenuItem.Text = "Ayudas";
+            // 
+            // MDI
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(695, 366);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
             this.ayudasToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
             this.ayudasToolStripMenuItem.Text = "Ayudas";
             // 
@@ -134,6 +208,7 @@ namespace CapaVista
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+>>>>>>> master
             this.Name = "MDI";
             this.Text = "MDI";
             this.menuStrip1.ResumeLayout(false);
