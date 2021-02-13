@@ -23,7 +23,6 @@ namespace CapaVista
             Boleta.MdiParent = this;
             Boleta.Show();
         }
-<<<<<<< HEAD
 
         private void generarPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -31,7 +30,5 @@ namespace CapaVista
             frm.MdiParent = this;
             frm.Show();
         }
-=======
->>>>>>> master
     }
 }

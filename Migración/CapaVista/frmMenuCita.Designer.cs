@@ -40,17 +40,10 @@ namespace CapaVista
             // btnAyuda
             // 
             this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
-<<<<<<< HEAD
             this.btnAyuda.Location = new System.Drawing.Point(332, 19);
             this.btnAyuda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(54, 58);
-=======
-            this.btnAyuda.Location = new System.Drawing.Point(442, 23);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(72, 72);
->>>>>>> master
             this.btnAyuda.TabIndex = 79;
             this.btnAyuda.UseVisualStyleBackColor = true;
             // 
@@ -61,17 +54,10 @@ namespace CapaVista
             this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(57, 100);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 50);
-=======
-            this.button1.Location = new System.Drawing.Point(76, 123);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 61);
->>>>>>> master
             this.button1.TabIndex = 78;
             this.button1.Text = "Buscar Cita";
             this.button1.UseVisualStyleBackColor = false;
@@ -83,17 +69,10 @@ namespace CapaVista
             this.btnIngresar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
             this.btnIngresar.Location = new System.Drawing.Point(57, 39);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(142, 50);
-=======
-            this.btnIngresar.Location = new System.Drawing.Point(76, 48);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(190, 61);
->>>>>>> master
             this.btnIngresar.TabIndex = 77;
             this.btnIngresar.Text = "Generar cita";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -105,24 +84,17 @@ namespace CapaVista
             this.groupBox1.Controls.Add(this.btnIngresar);
             this.groupBox1.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-<<<<<<< HEAD
             this.groupBox1.Location = new System.Drawing.Point(16, 19);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Size = new System.Drawing.Size(277, 175);
-=======
-            this.groupBox1.Location = new System.Drawing.Point(22, 23);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 215);
->>>>>>> master
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione una opción:";
             // 
             // frmMenuCita
             // 
-<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
@@ -133,16 +105,6 @@ namespace CapaVista
             this.Name = "frmMenuCita";
             this.Text = "frmMenuCita";
             this.Load += new System.EventHandler(this.frmMenuCita_Load);
-=======
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(534, 276);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnAyuda);
-            this.Name = "frmMenuCita";
-            this.Text = "frmMenuCita";
->>>>>>> master
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
