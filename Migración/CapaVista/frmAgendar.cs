@@ -43,11 +43,27 @@ namespace CapaVista
             dtvDatosUsuario.DataSource = dt;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dtvDatosUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmAgendarCita Confirmar = new frmAgendarCita(FormularioPadre);
-            Confirmar.MdiParent = FormularioPadre;
-            Confirmar.Show();
+            lblCodigo.Text = dtvDatosUsuario.CurrentRow.Cells[0].Value.ToString();
         }
+
+        private void btnAgendarCita_Click(object sender, EventArgs e)
+        {
+            if (lblCodigo.Text == "Codigo")
+            {
+                MessageBox.Show("Debe seleccionar un codigo de la tabla.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                return;
+            }
+            else
+            {
+                int idDatosPersonales = Int32.Parse(lblCodigo.Text);
+                frmAgendarCita Confirmar = new frmAgendarCita(FormularioPadre, idDatosPersonales);
+                Confirmar.MdiParent = FormularioPadre;
+                Confirmar.Show();
+            }
+        }
+
+      
     }
 }

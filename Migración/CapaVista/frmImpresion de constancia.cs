@@ -13,10 +13,12 @@ namespace CapaVista
     public partial class frmImpresion_de_constancia : Form
     {
         static Form FormularioPadre;
-        public frmImpresion_de_constancia(Form formularioPadre)
+        int idCita = 0;
+        public frmImpresion_de_constancia(Form formularioPadre,string CodigoCita,int idDatos)
         {
             InitializeComponent();
             FormularioPadre = formularioPadre;
+            idCita = Int32.Parse(CodigoCita);
         }
     }
 }

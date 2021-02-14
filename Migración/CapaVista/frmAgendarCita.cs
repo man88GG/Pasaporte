@@ -7,24 +7,208 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaControlador;
 
 namespace CapaVista
 {
     public partial class frmAgendarCita : Form
     {
         static Form FormularioPadre;
-        public frmAgendarCita(Form formularioPadre)
+        ClsControlador Cn = new ClsControlador();
+        int Datos = 0;
+        string Horario = "";
+        public frmAgendarCita(Form formularioPadre,int idDatosPersonales)
         {
             InitializeComponent();
             FormularioPadre = formularioPadre;
+            Datos = idDatosPersonales;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmConfirmacionDeCita Confirmar = new frmConfirmacionDeCita(FormularioPadre);
-            Confirmar.MdiParent = FormularioPadre;
-            Confirmar.Show();
+           
+            if (cmbCodigoDepartamento.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe seleccionar un Departamento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (cmbCodigoMunicipio.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe seleccionar un Municipio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (cmbCodigoCentro.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe seleccionar un centro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }else if (rbHora8.Checked != true || rbHora9.Checked != true || rbHora10.Checked != true || rbHora11.Checked != true)
+            {
+                int Cantidad = Cn.CantidadDatos("idDatosPersonales", "programarcita", "fechacita", Horario);
+                if(Cantidad == 10)
+                {
+                    MessageBox.Show("Este horario ya esta ocupado, pruebe con otro horario o con otro día.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Asegurese de que todos sus datos esten ingresados correctamente, Si ya los reviso precione Aceptar de lo contrario precione cancelar y vuelva a revisar los datos ingresados.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        string Codigo = txtCodigo.Text;
+                        string idCentro = cmbCodigoCentro.SelectedItem.ToString();
+                        string idCodigoDatosPersonales = Datos.ToString();
+                        List<string> datos = new List<string>();
+                        datos.Add(Codigo);
+                        datos.Add(idCentro);
+                        datos.Add(idCodigoDatosPersonales);
+                        datos.Add(Horario);
+                        Cn.procDatosInsertar("programarcita", datos);
+                
+                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre,Codigo,Datos);
+                       Confirmar.MdiParent = FormularioPadre;
+                       Confirmar.Show();
+                       
+                    }
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+           
+
+        }
+
+        private void frmAgendarCita_Load(object sender, EventArgs e)
+        {
+            //llenado de comboBox Departamento y su Codigo
+            cmbCodigoDepartamento.Items.Add("Seleccione...");
+            cmbDepartamento.Items.Add("Seleccione...");
+            procLlenarCmb("DEPARTAMENTO", "idDepartamento", cmbCodigoDepartamento);
+            procLlenarCmb("DEPARTAMENTO", "departamento", cmbDepartamento);
+            cmbDepartamento.SelectedIndex = 0;
+            CodigoMaximo("programarcita", "idProgramarCita", txtCodigo);
+        }
+
+        //procedimiento para llenar cualquier comboBox 
+        public void procLlenarCmb(string Tabla, string Campo1, ComboBox CmbAgregar)
+        {
+            string[] Items = Cn.funcItems(Tabla, Campo1);
+            for (int I = 0; I < Items.Length; I++)
+            {
+                if (Items[I] != null)
+                {
+                    if (Items[I] != "")
+                    {
+                        CmbAgregar.Items.Add(Items[I]);
+                    }
+                }
+            }
+        }
+        //procedimiento para llenar un comboBox en especifico
+        public void procLlenarComboBox(string Tabla1, string Campo1, int Id, string nombreID, ComboBox CmbAgregar)
+        {
+            string[] Items = Cn.funcItemsComboBox(Tabla1, Campo1, Id, nombreID);
+            for (int I = 0; I < Items.Length; I++)
+            {
+                if (Items[I] != null)
+                {
+                    if (Items[I] != "")
+                    {
+                        CmbAgregar.Items.Add(Items[I]);
+                    }
+                }
+            }
+        }
+        private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbCodigoDepartamento.SelectedIndex = cmbDepartamento.SelectedIndex;
+            cmbMunicipio.Items.Clear();
+            cmbCodigoMunicipio.Items.Clear();
+            cmbCodigoMunicipio.Items.Add("Seleccione...");
+            cmbMunicipio.Items.Add("Seleccione...");
+            cmbMunicipio.SelectedIndex = 0;
+            if (cmbCodigoDepartamento.SelectedIndex != 0)
+            {
+                int Codigo = Int32.Parse(cmbCodigoDepartamento.SelectedItem.ToString());
+                //llenado de ComboBox Caso y su Codigo           
+                procLlenarComboBox("MUNICIPIO", "idMunicipio", Codigo, "idDepartamento", cmbCodigoMunicipio);
+                procLlenarComboBox("MUNICIPIO", "Municipio", Codigo, "idDepartamento", cmbMunicipio);
+            }
+        }
+
+        private void cmbMunicipio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbCodigoMunicipio.SelectedIndex = cmbMunicipio.SelectedIndex;
+            cmbCentro.Items.Clear();
+            cmbCodigoCentro.Items.Clear();
+            cmbCodigoCentro.Items.Add("Seleccione...");
+            cmbCentro.Items.Add("Seleccione...");
+            cmbCentro.SelectedIndex = 0;
+            if (cmbCodigoMunicipio.SelectedIndex != 0)
+            {
+                int Codigo = Int32.Parse(cmbCodigoMunicipio.SelectedItem.ToString());
+                //llenado de ComboBox Caso y su Codigo           
+                procLlenarComboBox("CENTROCITA", "idCentroCita", Codigo, "idMunicipio", cmbCodigoCentro);
+                procLlenarComboBox("CENTROCITA", "nombreCentro", Codigo, "idMunicipio", cmbCentro);
+            }
+        }
+
+        public void CodigoMaximo(string tabla, string campo, TextBox txt)
+        {
+            string tbl = tabla;
+            string cmp1 = campo;
+            TextBox txt1 = txt;
+            int codigo = Cn.funcCodigoMaximo(tbl, cmp1);
+            txt1.Text = codigo.ToString();
+            txt1.Enabled = false;
+        }
+
+        private void cmbCentro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbCodigoCentro.SelectedIndex = cmbCentro.SelectedIndex;
+
+            if (cmbCodigoCentro.SelectedIndex != 0)
+            {
+                int Codigo = Int32.Parse(cmbCodigoCentro.SelectedItem.ToString());
+                string sql = "Select direccion from centrocita where idCentroCita = "+Codigo+";";
+                string Centro = Cn.CualquierDato(sql);
+                lblDireccionCentro.Text = Centro;
+            }else
+            {
+                lblDireccionCentro.Text = "";
+            }
+
+        }
+
+        private void rbHora8_CheckedChanged(object sender, EventArgs e)
+        {
+            Horario = "";
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 08:00");
+         
+        }
+
+        private void rbHora9_CheckedChanged(object sender, EventArgs e)
+        {
+            Horario = "";
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 09:00");
+         
+        }
+
+        private void rbHora10_CheckedChanged(object sender, EventArgs e)
+        {
+            Horario = "";
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 10:00");
+          
+        }
+
+        private void rbHora11_CheckedChanged(object sender, EventArgs e)
+        {
+            Horario = "";
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 11:00");
+          
         }
     }
 }

@@ -9,14 +9,14 @@ using CapaModelo;
 
 namespace CapaControlador
 {
-   public class ClsControlador
+    public class ClsControlador
     {
 
         ClsSentencias Sn = new ClsSentencias();
         //funcion que obtiene el codigo de la boleta que se esta solicitando
-        public int funcObtenerCodigoBoleta(int numeroRecibo,int numeroBoleta)
+        public int funcObtenerCodigoBoleta(int numeroRecibo, int numeroBoleta)
         {
-            int CodigoBoleta = Sn.funcConsultarBoleta(numeroRecibo,numeroBoleta);
+            int CodigoBoleta = Sn.funcConsultarBoleta(numeroRecibo, numeroBoleta);
             return CodigoBoleta;
         }
         //funcion que retorna los todos los datos de una tabla de un campo en especifico
@@ -26,28 +26,27 @@ namespace CapaControlador
             return Items;
         }
         //funcion que permite obtener un campo en especificode una tabla por medio de su ID
-        public string funcObtenerDato(int Codigo,string Campo,string Tabla,string nombreId)
+        public string funcObtenerDato(int Codigo, string Campo, string Tabla, string nombreId)
         {
-            string  Dato = Sn.funcDatos(Codigo,Campo,Tabla,nombreId);
+            string Dato = Sn.funcDatos(Codigo, Campo, Tabla, nombreId);
             return Dato;
         }
-        public string[] funcItemsComboBox(string Tabla1,string Campo1,int Id,string nombreID)
+        public string[] funcItemsComboBox(string Tabla1, string Campo1, int Id, string nombreID)
         {
-            string[] Items = Sn.funcLlenarComboEspecifico(Tabla1,Campo1,Id,nombreID);
+            string[] Items = Sn.funcLlenarComboEspecifico(Tabla1, Campo1, Id, nombreID);
             return Items;
         }
         //funcion para obtener el codigo de una tabla
         public int funcCodigoMaximo(string Tabla, string Campo)
         {
-            int CodigoNuevo = Sn.funcObtenerCodigo(Tabla,Campo);
+            int CodigoNuevo = Sn.funcObtenerCodigo(Tabla, Campo);
             return CodigoNuevo;
         }
 
         public void procDatosInsertar(string tabla, List<string> lista)
         {
-            Sn.procInsertarDatos(tabla,lista);
+            Sn.procInsertarDatos(tabla, lista);
         }
-
         public DataTable enviar(string consulta)
         {
             try
@@ -64,5 +63,19 @@ namespace CapaControlador
             }
 
         }
+
+        public string CualquierDato(string Consulta)
+        {
+            string sql = Sn.obtenerCualquierDato(Consulta);
+            return sql;
+        }
+
+        public int CantidadDatos(string campo1, string tabla, string nombreCampo, string campo2)
+        {
+            int Cantidad = Sn.cantidadDeDatos( campo1, tabla, nombreCampo, campo2);
+            return Cantidad;
+        }
+    
+
     }
 }

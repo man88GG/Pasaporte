@@ -61,6 +61,7 @@ namespace CapaVista
             this.btnBuscarCita.TabIndex = 78;
             this.btnBuscarCita.Text = "Buscar Cita";
             this.btnBuscarCita.UseVisualStyleBackColor = false;
+            this.btnBuscarCita.Click += new System.EventHandler(this.btnBuscarCita_Click);
             // 
             // btnGenerarCita
             // 

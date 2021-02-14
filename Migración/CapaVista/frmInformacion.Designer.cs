@@ -814,6 +814,7 @@ namespace CapaVista
             this.lblFecha.Size = new System.Drawing.Size(122, 22);
             this.lblFecha.TabIndex = 121;
             this.lblFecha.Text = "FechaActual";
+            this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
             // HoraFecha
             // 

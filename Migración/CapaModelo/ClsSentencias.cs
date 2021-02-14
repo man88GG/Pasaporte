@@ -205,5 +205,39 @@ namespace CapaModelo
                 return null;
             }
         }
+        //funcion que obtiene cualquier dato cuando se le envia una consulta
+        public string obtenerCualquierDato(string consulta)
+        {
+                string Dato = "";
+                string Sql = consulta;
+                try
+                {
+                    OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                    OdbcDataReader Reader = Command.ExecuteReader();
+                    while (Reader.Read())
+                    {
+                        Dato = Reader.GetValue(0).ToString();
+                    }
+                }
+                catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
+                return Dato;
+            }
+
+        public int  cantidadDeDatos(string Campo1,string tabla,string nombreCampo,string Campo2)
+        {
+            int Dato = 0;
+            string Sql = "Select COUNT("+Campo1+") FROM "+tabla+" WHERE "+nombreCampo+" = "+Campo2+";" ;
+            try
+            {
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    Dato = Reader.GetInt32(0);
+                }
+            }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
+            return Dato;
+        }
     }
 }

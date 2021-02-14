@@ -114,9 +114,9 @@ namespace CapaVista
                     DatosFormulario.Add(nacionalidad);
                     Cn.procDatosInsertar(Tabla,DatosFormulario);
                    
-                        frmAgendar confirmacion = new frmAgendar(FormularioPadre,idBoletaBanco,Dpi);
-                        confirmacion.MdiParent = FormularioPadre;    
-                        confirmacion.Show();               
+                    frmAgendar confirmacion = new frmAgendar(FormularioPadre,idBoletaBanco,Dpi);
+                    confirmacion.MdiParent = FormularioPadre;    
+                    confirmacion.Show();               
                 }
             }           
          }
@@ -364,6 +364,11 @@ namespace CapaVista
         private void HoraFecha_Tick(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToString();
+        }
+
+        private void lblFecha_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

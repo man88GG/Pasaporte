@@ -15,10 +15,12 @@ namespace CapaVista
     {
         ClsControlador Cn = new ClsControlador();
         static Form FormularioPadre;
-        public frmValidarBoleta(Form formularioPadre)
+        int GestionarObuscar;
+        public frmValidarBoleta(Form formularioPadre,int Proceso)
         {
             InitializeComponent();
             FormularioPadre = formularioPadre;
+            GestionarObuscar = Proceso;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -42,16 +44,43 @@ namespace CapaVista
                 int numeroBoleta = Int32.Parse(txtBoleta.Text);
                 int numeroRecibo = Int32.Parse(txtRecibo.Text);
                 int CodigoBoleta = Cn.funcObtenerCodigoBoleta(numeroRecibo,numeroBoleta);
-                if (CodigoBoleta == 0)
+                string sql = "SELECT D.dpi from datospersonales D, boletabanco B where D.idBoletaBanco = B.idBoleta and D.idBoletaBanco = "+CodigoBoleta+" ;";     
+                string Dpi = Cn.CualquierDato(sql);
+                string sqlIdPersona = "SELECT idDatosPersonales FROM datospersonales WHERE dpi = " + Dpi + " and idBoletaBanco = "+CodigoBoleta+" and estado = 1;";
+                string idDatosPersona = Cn.CualquierDato(sqlIdPersona);
+                if (GestionarObuscar == 1)
                 {
-                    MessageBox.Show("Boleta no Valida, verifique que los datos este ingresados correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                    if (CodigoBoleta == 0)
+                    {
+                        MessageBox.Show("Boleta no Valida, verifique que los datos este ingresados correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    if(idDatosPersona != "")
+                    {
+                        MessageBox.Show("Esta Boleta ya ha sido utilizada, pruebe con la opcion de Buscar Boleta.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Boleta Valida.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmInformacion Validar = new frmInformacion(FormularioPadre, CodigoBoleta);
+                        Validar.MdiParent = FormularioPadre;
+                        Validar.Show();
+                    }
+                } else if(GestionarObuscar == 2)
                 {
-                    MessageBox.Show("Boleta Valida.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmInformacion Validar = new frmInformacion(FormularioPadre,CodigoBoleta);
-                    Validar.MdiParent = FormularioPadre;
-                    Validar.Show();
+                    if (CodigoBoleta == 0)
+                    {
+                        MessageBox.Show("Boleta no Valida, verifique que los datos este ingresados correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string idBoleta = CodigoBoleta.ToString();
+                        MessageBox.Show("Boleta Valida.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmAgendar Validar = new frmAgendar(FormularioPadre, idBoleta, Dpi);
+                        Validar.MdiParent = FormularioPadre;
+                        Validar.Show();
+                    }
                 }
             }
 

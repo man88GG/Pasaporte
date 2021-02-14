@@ -21,9 +21,7 @@ namespace CapaVista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre);
-            Confirmar.MdiParent = FormularioPadre;
-            Confirmar.Show();
+           
 
         }
     }
