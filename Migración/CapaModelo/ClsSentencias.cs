@@ -108,6 +108,34 @@ namespace CapaModelo
             }
         }
 
+        //Muestra datos en combo TipoPasaporte
+        public DataTable funcCmbTipoPass()
+        {
+            DataTable Datos = new DataTable();
+            try
+            {
+                string CargaTipoPass = "SELECT * FROM TIPOPASAPORTE";
+                OdbcCommand Query_Busqueda1 = new OdbcCommand(CargaTipoPass, con.conexion());
+
+                OdbcDataAdapter Lector = new OdbcDataAdapter();
+                Lector.SelectCommand = Query_Busqueda1;
+                Lector.Fill(Datos);
+
+                con.desconexion(con.conexion());
+                return Datos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Datos;
+            }
+        }//fin
+
+
 
 
     }

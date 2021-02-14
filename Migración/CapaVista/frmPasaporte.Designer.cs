@@ -63,6 +63,7 @@ namespace CapaVista
             this.BtnIngresar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.GbxLugarNac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxFoto)).BeginInit();
             this.TbcDatos.SuspendLayout();
@@ -387,6 +388,9 @@ namespace CapaVista
             // 
             this.CmbAutoridad.Enabled = false;
             this.CmbAutoridad.FormattingEnabled = true;
+            this.CmbAutoridad.Items.AddRange(new object[] {
+            "Director",
+            "Sub-Director"});
             this.CmbAutoridad.Location = new System.Drawing.Point(289, 176);
             this.CmbAutoridad.Name = "CmbAutoridad";
             this.CmbAutoridad.Size = new System.Drawing.Size(193, 30);
@@ -435,12 +439,29 @@ namespace CapaVista
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(184, 531);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(190, 61);
+            this.button1.TabIndex = 127;
+            this.button1.Text = "Ingresar Datos";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmPasaporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(852, 602);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.BtnIngresar);
@@ -497,5 +518,6 @@ namespace CapaVista
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.ComboBox CmbAutoridad;
+        private System.Windows.Forms.Button button1;
     }
 }

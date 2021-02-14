@@ -21,7 +21,19 @@ namespace CapaVista
         public frmPasaporte()
         {
             InitializeComponent();
+            funcLlenarTipoPass();
+            CmbTipoPass.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbAutoridad.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbAutoridad.SelectedIndex = +1;
+        }
 
+        //función para llenar el contenido de la tabla hacia el combo
+        public void funcLlenarTipoPass()
+        {
+            DataTable Datos = Cont.funcCmbTipoPass();
+            CmbTipoPass.DataSource = Datos;
+            CmbTipoPass.DisplayMember = "TIPOPASAPORTE";
+            CmbTipoPass.ResetText();
         }
 
         String DpiCliente;
@@ -32,6 +44,14 @@ namespace CapaVista
         string NumLibreta, FechaC, FechaV, Firma, LugarNac,Autoridad;
         int NumPass, TipoPass, Estado=1;
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Autoridad = CmbAutoridad.SelectedItem.ToString();
+            if (CmbAutoridad.SelectedItem != null)
+            {
+                MessageBox.Show(Autoridad);
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -140,10 +160,10 @@ namespace CapaVista
                     //Firma
                     //LugarNac
                     //revisar lo de autoridad de string o int
-                    Autoridad = Convert.ToString(CmbAutoridad.SelectedIndex + 1); 
-                    
+                    Autoridad = CmbAutoridad.SelectedItem.ToString();
+
                     //falta lo de firma, lugar nac
-                   Cont.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, Autoridad, Estado);
+                    Cont.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, Autoridad, Estado);
                     MessageBox.Show("Se ha ingresado al Banco de Talento con Éxito", "FORMULARIO RECLUTAMIENTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     funcLimpieza();

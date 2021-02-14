@@ -27,6 +27,12 @@ namespace CapaControlador
             return Lector;
         }
 
+        public DataTable funcCmbTipoPass()
+        {
+            DataTable Items = sn.funcCmbTipoPass();
+            return Items;
+        }
+
         //consulta para insertar a la entidad Pasaporte
         //falta lo de firma, lugar nac
         public void funcInsertarPasaporte(int NumPass, string NumLibreta, string DpiCliente,string FechaC,
