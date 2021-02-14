@@ -57,8 +57,10 @@ namespace CapaVista
             }
             else
             {
+                int CodigoBoletaBanco = Int32.Parse(idBoleta);
+                int DocumentoDPI = Int32.Parse(DocumentoDeIdentificacion);
                 int idDatosPersonales = Int32.Parse(lblCodigo.Text);
-                frmAgendarCita Confirmar = new frmAgendarCita(FormularioPadre, idDatosPersonales);
+                frmAgendarCita Confirmar = new frmAgendarCita(FormularioPadre, idDatosPersonales,CodigoBoletaBanco,DocumentoDPI);
                 Confirmar.MdiParent = FormularioPadre;
                 Confirmar.Show();
             }

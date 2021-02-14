@@ -226,7 +226,7 @@ namespace CapaModelo
         public int  cantidadDeDatos(string Campo1,string tabla,string nombreCampo,string Campo2)
         {
             int Dato = 0;
-            string Sql = "Select COUNT("+Campo1+") FROM "+tabla+" WHERE "+nombreCampo+" = "+Campo2+";" ;
+            string Sql = "Select COUNT("+Campo1+") FROM "+tabla+" WHERE "+nombreCampo+" = '"+Campo2+"';" ;
             try
             {
                 OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
@@ -236,7 +236,7 @@ namespace CapaModelo
                     Dato = Reader.GetInt32(0);
                 }
             }
-            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE "+Sql+" -"); }
             return Dato;
         }
     }

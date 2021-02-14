@@ -16,12 +16,16 @@ namespace CapaVista
         static Form FormularioPadre;
         ClsControlador Cn = new ClsControlador();
         int Datos = 0;
+        int boletaBanco = 0;
+        int PersonalDPI = 0;
         string Horario = "";
-        public frmAgendarCita(Form formularioPadre,int idDatosPersonales)
+        public frmAgendarCita(Form formularioPadre,int idDatosPersonales,int CodigoBoleta,int DocumentoDPI)
         {
             InitializeComponent();
             FormularioPadre = formularioPadre;
             Datos = idDatosPersonales;
+            boletaBanco = CodigoBoleta;
+            PersonalDPI = DocumentoDPI;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -41,16 +45,27 @@ namespace CapaVista
             {
                 MessageBox.Show("Debe seleccionar un centro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }else if (rbHora8.Checked != true || rbHora9.Checked != true || rbHora10.Checked != true || rbHora11.Checked != true)
+            }else if (rbHora8.Checked == true || rbHora9.Checked == true || rbHora10.Checked == true || rbHora11.Checked == true)
             {
-                int Cantidad = Cn.CantidadDatos("idDatosPersonales", "programarcita", "fechacita", Horario);
-                if(Cantidad == 10)
+                int Cantidad = Cn.CantidadDatos("idDatosPersonales", "programarcita", "fechaparacita", Horario);
+                Horario = "";
+                if(Cantidad == 4)
                 {
                     MessageBox.Show("Este horario ya esta ocupado, pruebe con otro horario o con otro día.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    rbHora8.Checked = false;
+                    rbHora9.Checked = false;
+                    rbHora10.Checked = false;
+                    rbHora11.Checked = false;
+                    Horario = "";
                     return;
                 }
                 else
                 {
+                    rbHora8.Checked = false;
+                    rbHora9.Checked = false;
+                    rbHora10.Checked = false;
+                    rbHora11.Checked = false;
+                  
                     DialogResult dialogResult = MessageBox.Show("Asegurese de que todos sus datos esten ingresados correctamente, Si ya los reviso precione Aceptar de lo contrario precione cancelar y vuelva a revisar los datos ingresados.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
                     if (dialogResult == DialogResult.OK)
                     {
@@ -63,8 +78,8 @@ namespace CapaVista
                         datos.Add(idCodigoDatosPersonales);
                         datos.Add(Horario);
                         Cn.procDatosInsertar("programarcita", datos);
-                
-                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre,Codigo,Datos);
+                        int IDCITA = Int32.Parse(Codigo);
+                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre,IDCITA,Datos,boletaBanco,PersonalDPI);
                        Confirmar.MdiParent = FormularioPadre;
                        Confirmar.Show();
                        
@@ -75,6 +90,7 @@ namespace CapaVista
             else
             {
                 MessageBox.Show("Debe seleccionar una hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
                 return; 
             }
            
@@ -186,28 +202,29 @@ namespace CapaVista
         private void rbHora8_CheckedChanged(object sender, EventArgs e)
         {
             Horario = "";
-            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 08:00");
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 08:00:00");
+          
          
         }
 
         private void rbHora9_CheckedChanged(object sender, EventArgs e)
         {
             Horario = "";
-            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 09:00");
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 09:00:00");
          
         }
 
         private void rbHora10_CheckedChanged(object sender, EventArgs e)
         {
             Horario = "";
-            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 10:00");
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 10:00:00");
           
         }
 
         private void rbHora11_CheckedChanged(object sender, EventArgs e)
         {
             Horario = "";
-            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 11:00");
+            Horario = dtpFecha.Value.ToString("yyyy-MM-dd 11:00:00");
           
         }
     }
