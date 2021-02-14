@@ -38,3 +38,19 @@ D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMi
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.dll
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.pdb
 D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe.config
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.exe
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\MDIMigracion.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.dll
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.dll
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.dll
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaVista.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaControlador.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\bin\Debug\CapaModelo.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csprojAssemblyReference.cache
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.Properties.Resources.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.GenerateResource.cache
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CoreCompileInputs.cache
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.csproj.CopyComplete
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.exe
+C:\Users\yavhe\Documents\GitHub\Pasaporte\MDIMigracion\MDIMigracion\obj\Debug\MDIMigracion.pdb
