@@ -81,3 +81,4 @@ C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CoreCom
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmPasaporte.resources
