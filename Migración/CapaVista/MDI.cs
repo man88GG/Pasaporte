@@ -30,5 +30,12 @@ namespace CapaVista
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void bitácoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBitacora frm = new frmBitacora();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
