@@ -81,10 +81,8 @@ namespace CapaVista
             this.lblColorDeOjos = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblCorreoConfirmacion = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtCorreoDeConfirmacion = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbCodigoCaso = new System.Windows.Forms.ComboBox();
@@ -189,6 +187,7 @@ namespace CapaVista
             this.btnCancelar.TabIndex = 125;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtEstadoCivil
             // 
@@ -383,10 +382,8 @@ namespace CapaVista
             this.tabPage1.Controls.Add(this.lblColorDeOjos);
             this.tabPage1.Controls.Add(this.txtDireccion);
             this.tabPage1.Controls.Add(this.txtTelefono);
-            this.tabPage1.Controls.Add(this.lblCorreoConfirmacion);
             this.tabPage1.Controls.Add(this.txtCorreo);
             this.tabPage1.Controls.Add(this.lblCorreo);
-            this.tabPage1.Controls.Add(this.txtCorreoDeConfirmacion);
             this.tabPage1.Controls.Add(this.lblTelefono);
             this.tabPage1.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
@@ -467,11 +464,13 @@ namespace CapaVista
             // 
             // txtPais
             // 
+            this.txtPais.Enabled = false;
             this.txtPais.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPais.Location = new System.Drawing.Point(26, 63);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(270, 27);
             this.txtPais.TabIndex = 105;
+            this.txtPais.Text = "Guatemalteca";
             // 
             // cmbMunicipio
             // 
@@ -588,9 +587,9 @@ namespace CapaVista
             this.lblPais.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblPais.Location = new System.Drawing.Point(22, 18);
             this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(53, 22);
+            this.lblPais.Size = new System.Drawing.Size(139, 22);
             this.lblPais.TabIndex = 80;
-            this.lblPais.Text = "País:";
+            this.lblPais.Text = "Nacionalidad:";
             // 
             // txtColorDeOjos
             // 
@@ -676,17 +675,6 @@ namespace CapaVista
             this.txtTelefono.TabIndex = 91;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
-            // lblCorreoConfirmacion
-            // 
-            this.lblCorreoConfirmacion.AutoSize = true;
-            this.lblCorreoConfirmacion.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreoConfirmacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCorreoConfirmacion.Location = new System.Drawing.Point(607, 212);
-            this.lblCorreoConfirmacion.Name = "lblCorreoConfirmacion";
-            this.lblCorreoConfirmacion.Size = new System.Drawing.Size(343, 22);
-            this.lblCorreoConfirmacion.TabIndex = 86;
-            this.lblCorreoConfirmacion.Text = "Confirmacion de Correo electronico:";
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -706,15 +694,6 @@ namespace CapaVista
             this.lblCorreo.Size = new System.Drawing.Size(186, 22);
             this.lblCorreo.TabIndex = 87;
             this.lblCorreo.Text = "Correo electronico:";
-            // 
-            // txtCorreoDeConfirmacion
-            // 
-            this.txtCorreoDeConfirmacion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoDeConfirmacion.Location = new System.Drawing.Point(611, 249);
-            this.txtCorreoDeConfirmacion.Multiline = true;
-            this.txtCorreoDeConfirmacion.Name = "txtCorreoDeConfirmacion";
-            this.txtCorreoDeConfirmacion.Size = new System.Drawing.Size(383, 31);
-            this.txtCorreoDeConfirmacion.TabIndex = 89;
             // 
             // lblTelefono
             // 
@@ -833,6 +812,7 @@ namespace CapaVista
             this.Controls.Add(this.btnAyuda);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "frmInformacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInformacion";
             this.Load += new System.EventHandler(this.frmInformacion_Load);
             this.tabInformacionPersonal.ResumeLayout(false);
@@ -885,10 +865,8 @@ namespace CapaVista
         private System.Windows.Forms.Label lblColorDeOjos;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblCorreoConfirmacion;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox txtCorreoDeConfirmacion;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;

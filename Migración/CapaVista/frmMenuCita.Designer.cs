@@ -101,6 +101,7 @@ namespace CapaVista
             this.Controls.Add(this.gbOpcion);
             this.Controls.Add(this.btnAyuda);
             this.Name = "frmMenuCita";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenuCita";
             this.gbOpcion.ResumeLayout(false);
             this.ResumeLayout(false);

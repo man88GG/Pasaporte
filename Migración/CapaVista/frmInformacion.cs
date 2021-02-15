@@ -14,7 +14,7 @@ namespace CapaVista
     public partial class frmInformacion : Form
     {
         ClsControlador Cn = new ClsControlador();
-        private frmConfirmacion confirmacion;
+       
         static Form FormularioPadre;
         int CodigoBoleta = 0;
         public frmInformacion(Form formularioPadre,int Boleta)
@@ -61,12 +61,7 @@ namespace CapaVista
                 MessageBox.Show("Debe ingresar su número de Identificacion Personal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (txtCorreo.Text != txtCorreoDeConfirmacion.Text)
-            {
-                MessageBox.Show("Los Correos no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if(txtDireccion.Text.Length == 0 || txtCorreo.Text.Length == 0 || txtTelefono.Text.Length == 0 || txtTez.Text.Length == 0 || txtCorreoDeConfirmacion.Text.Length == 0 || txtTelefono.Text.Length == 0 || txtAltura.Text.Length == 0)
+            else if(txtDireccion.Text.Length == 0 || txtCorreo.Text.Length == 0 || txtTelefono.Text.Length == 0 || txtTez.Text.Length == 0 ||  txtTelefono.Text.Length == 0 || txtAltura.Text.Length == 0 || txtNombreCompleto.Text.Length == 0 || txtNacionalidad.Text.Length == 0 || txtSexo.Text.Length == 0 || txtFechaNacimiento.Text.Length == 0 || txtEstadoCivil.Text.Length == 0)
             {
                 MessageBox.Show("No debe dejar campos Vacios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -116,7 +111,8 @@ namespace CapaVista
                    
                     frmAgendar confirmacion = new frmAgendar(FormularioPadre,idBoletaBanco,Dpi);
                     confirmacion.MdiParent = FormularioPadre;    
-                    confirmacion.Show();               
+                    confirmacion.Show();
+                    this.Close();
                 }
             }           
          }
@@ -369,6 +365,31 @@ namespace CapaVista
         private void lblFecha_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea cancelar la accion?, los datos se eliminaran y debera volver a ingresarlos todos.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dialogResult == DialogResult.OK)
+            {
+                cmbDepartamento.SelectedIndex = 0;
+                txtDireccion.Text = "";
+                txtTelefono.Text = "";
+                txtCorreo.Text = "";
+                txtAltura.Text = "";
+                txtTez.Text = "";
+                txtColorDeOjos.Text = "";
+                cmbOcupacion.SelectedIndex = 0;
+                cmbTramite.SelectedIndex = 0;
+                cmbPasaporte.SelectedIndex = 0;
+                cmbCaso.SelectedIndex = 0;
+                txtDPI.Text = "";
+                txtNombreCompleto.Text = "";
+                txtSexo.Text = "";
+                txtFechaNacimiento.Text = "";
+                txtEstadoCivil.Text = "";
+                txtNacionalidad.Text = "";
+            }
         }
     }
 }

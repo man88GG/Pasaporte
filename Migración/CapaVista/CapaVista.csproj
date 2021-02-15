@@ -58,18 +58,6 @@
     <Compile Include="frmAgendarCita.Designer.cs">
       <DependentUpon>frmAgendarCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConfirmacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConfirmacion.Designer.cs">
-      <DependentUpon>frmConfirmacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmConfirmacionDeCita.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConfirmacionDeCita.Designer.cs">
-      <DependentUpon>frmConfirmacionDeCita.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmImpresion de constancia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +96,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgendarCita.resx">
       <DependentUpon>frmAgendarCita.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConfirmacion.resx">
-      <DependentUpon>frmConfirmacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConfirmacionDeCita.resx">
-      <DependentUpon>frmConfirmacionDeCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmImpresion de constancia.resx">
       <DependentUpon>frmImpresion de constancia.cs</DependentUpon>

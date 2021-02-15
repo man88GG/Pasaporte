@@ -49,7 +49,7 @@ namespace CapaVista
                 int numeroBoleta = Int32.Parse(txtBoleta.Text);
                 int numeroRecibo = Int32.Parse(txtRecibo.Text);
                 CodigoBoleta = Cn.funcObtenerCodigoBoleta(numeroRecibo,numeroBoleta);
-                string sql = "SELECT D.dpi from datospersonales D, boletabanco B where D.idBoletaBanco = B.idBoleta and D.idBoletaBanco = "+CodigoBoleta+" ;";     
+                string sql = "SELECT D.dpi from datospersonales D, boletabanco B where D.idBoletaBanco = B.idBoleta and D.idBoletaBanco = "+CodigoBoleta+" and estado = 1;";     
                 Dpi = Cn.CualquierDato(sql);
                 if(Dpi != "")
                 {
@@ -80,6 +80,7 @@ namespace CapaVista
                         frmInformacion Validar = new frmInformacion(FormularioPadre, CodigoBoleta);
                         Validar.MdiParent = FormularioPadre;
                         Validar.Show();
+                        this.Close();
                     } 
                 } else if(GestionarObuscar == 2)
                 //si gestionarObuscar es igual a 2, la boleta ya contiene datos del usuario, por lo que verificara si tiene cita o no
@@ -101,16 +102,19 @@ namespace CapaVista
                             frmAgendar Validar = new frmAgendar(FormularioPadre, idBoleta, Dpi);
                             Validar.MdiParent = FormularioPadre;
                             Validar.Show();
-                        }else if(idCita != "")
+                        this.Close();
+                    }
+                    else if(idCita != "")
                         {
                             int Cita = Int32.Parse(idCita);
                             int idDatos = Int32.Parse(idDatosPersona);
                             int idCodigoBoleta = CodigoBoleta;
                             int idDpi = Int32.Parse(Dpi);
-                            frmImpresion_de_constancia Nuevo = new frmImpresion_de_constancia(Cita,idDatos,idCodigoBoleta,idDpi);
+                            frmImpresion_de_constancia Nuevo = new frmImpresion_de_constancia(FormularioPadre,Cita,idDatos,idCodigoBoleta,idDpi);
                             Nuevo.MdiParent = FormularioPadre;
                             Nuevo.Show();
-                        }
+                        this.Close();
+                    }
 
                     
                 }
@@ -145,6 +149,12 @@ namespace CapaVista
                 //el resto de teclas pulsadas se desactivan
                 e.Handled = true;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtBoleta.Text = "";
+            txtRecibo.Text = "";
         }
     }
 }

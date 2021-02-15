@@ -20,7 +20,8 @@ namespace CapaVista
         int IDBOLETABANCO = 0;
         int DOCUMENTODPI = 0;
         string consulta = "";
-        public frmImpresion_de_constancia(int idCita,int idDatos,int CodigoBoleta, int DPI)
+        Form formularioMDI;
+        public frmImpresion_de_constancia(Form FormularioPadre,int idCita,int idDatos,int CodigoBoleta, int DPI)
         {
             InitializeComponent();
  
@@ -28,12 +29,13 @@ namespace CapaVista
              IDDATOSPERSONALES = idDatos;
              IDBOLETABANCO = CodigoBoleta;
              DOCUMENTODPI = DPI;
+            formularioMDI = FormularioPadre;
         }
 
       
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            lblCodigo.Text = dgvDatos.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void frmImpresion_de_constancia_Load(object sender, EventArgs e)
@@ -52,8 +54,30 @@ namespace CapaVista
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(""+IDCITA+""+IDDATOSPERSONALES+""+IDBOLETABANCO+""+DOCUMENTODPI);
+         
+        }
 
+        private void btnCancelarCita_Click(object sender, EventArgs e)
+        {
+            if (lblCodigo.Text == "Codigo")
+            {
+                MessageBox.Show("Para cancelar debe seleccinar un registro de la tabla.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea cancelar la cita?, si la cancela debera agendar una nueva y puede que la fecha anterior sea ocupada.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (dialogResult == DialogResult.OK)
+                {
+                    int codigo = Int32.Parse(lblCodigo.Text);
+                    string sql = "UPDATE PROGRAMARCITA SET ESTADO = 0 WHERE idProgramarCita = " + codigo + ";";
+                    Cn.Modificar(sql);
+                    this.Close();
+                    MessageBox.Show("Cita Cancelada Exitosamente.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    frmMenuCita Validar = new frmMenuCita(formularioMDI);
+                    Validar.MdiParent = formularioMDI;
+                    Validar.Show();
+                }
+            }
         }
     }
 }

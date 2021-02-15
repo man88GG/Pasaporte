@@ -75,7 +75,11 @@ namespace CapaControlador
             int Cantidad = Sn.cantidadDeDatos( campo1, tabla, nombreCampo, campo2,nombreCampo2,Campo3);
             return Cantidad;
         }
-    
 
+        public void Modificar(string sql)
+        {
+            Sn.procModificar(sql);
+            return;
+        }
     }
 }

@@ -138,6 +138,7 @@ namespace CapaVista
             this.btnCancelar.TabIndex = 88;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmValidarBoleta
             // 
@@ -148,6 +149,7 @@ namespace CapaVista
             this.Controls.Add(this.gbBoleta);
             this.Controls.Add(this.btnAyuda);
             this.Name = "frmValidarBoleta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmValidarBoleta";
             this.gbBoleta.ResumeLayout(false);
             this.gbBoleta.PerformLayout();

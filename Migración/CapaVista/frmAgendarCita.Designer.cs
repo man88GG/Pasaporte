@@ -46,7 +46,6 @@ namespace CapaVista
             this.lblMunicipio = new System.Windows.Forms.Label();
             this.cmbDepartamento = new System.Windows.Forms.ComboBox();
             this.lblDepartamento = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,6 +53,7 @@ namespace CapaVista
             this.rbHora9 = new System.Windows.Forms.RadioButton();
             this.rbHora10 = new System.Windows.Forms.RadioButton();
             this.rbHora8 = new System.Windows.Forms.RadioButton();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,7 @@ namespace CapaVista
             this.lblCodigo.Size = new System.Drawing.Size(79, 22);
             this.lblCodigo.TabIndex = 109;
             this.lblCodigo.Text = "Codigo";
+            this.lblCodigo.Visible = false;
             // 
             // txtCodigo
             // 
@@ -102,6 +103,7 @@ namespace CapaVista
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(127, 27);
             this.txtCodigo.TabIndex = 108;
+            this.txtCodigo.Visible = false;
             // 
             // cmbCodigoCentro
             // 
@@ -240,21 +242,6 @@ namespace CapaVista
             this.lblDepartamento.TabIndex = 84;
             this.lblDepartamento.Text = "Departamento:";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(358, 777);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 61);
-            this.button1.TabIndex = 80;
-            this.button1.Text = "Nueva busqueda";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
@@ -344,18 +331,35 @@ namespace CapaVista
             this.rbHora8.UseVisualStyleBackColor = true;
             this.rbHora8.CheckedChanged += new System.EventHandler(this.rbHora8_CheckedChanged);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(358, 777);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(190, 61);
+            this.btnCancelar.TabIndex = 83;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmAgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(642, 863);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnAyuda);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAgendarCita";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgendarCita";
             this.Load += new System.EventHandler(this.frmAgendarCita_Load);
             this.groupBox1.ResumeLayout(false);
@@ -369,7 +373,6 @@ namespace CapaVista
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
@@ -392,5 +395,6 @@ namespace CapaVista
         private System.Windows.Forms.RadioButton rbHora8;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

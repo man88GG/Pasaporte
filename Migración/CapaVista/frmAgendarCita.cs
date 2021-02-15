@@ -82,9 +82,10 @@ namespace CapaVista
                         datos.Add(estado);
                         Cn.procDatosInsertar("programarcita", datos);
                         int IDCITA = Int32.Parse(Codigo);
-                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(IDCITA,Datos,boletaBanco,PersonalDPI);
+                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre,IDCITA,Datos,boletaBanco,PersonalDPI);
                        Confirmar.MdiParent = FormularioPadre;
-                       Confirmar.Show();       
+                       Confirmar.Show();
+                        this.Close();
                     }
 
                 }
@@ -228,6 +229,15 @@ namespace CapaVista
             Horario = "";
             Horario = dtpFecha.Value.ToString("yyyy-MM-dd 11:00:00");
           
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            cmbDepartamento.SelectedIndex = 0;
+            rbHora8.Checked = false;
+            rbHora9.Checked = false;
+            rbHora10.Checked = false;
+            rbHora11.Checked = false;
         }
     }
 }

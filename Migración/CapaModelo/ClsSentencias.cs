@@ -239,5 +239,21 @@ namespace CapaModelo
             catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE "+Sql+" -"); }
             return Dato;
         }
+
+        public void procModificar(string sql)
+        {
+            string Consulta = sql;
+            try
+            {
+                OdbcCommand comm = new OdbcCommand(Consulta, Con.conexion());
+                OdbcDataReader mostrarC = comm.ExecuteReader();
+                Console.WriteLine("Los Datos se modificaron correctamente");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString() + " \nNo se puede modificar revise: \n -" + Consulta + "\n -");
+
+            }
+        }
     }
 }

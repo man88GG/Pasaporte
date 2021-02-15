@@ -23,8 +23,6 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaControlador.pd
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csprojAssemblyReference.cache
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmAgendar.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmAgendarCita.resources
-D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmConfirmacion.resources
-D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmConfirmacionDeCita.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmImpresion_de_constancia.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmInformacion.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmMenuCita.resources

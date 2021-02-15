@@ -29,6 +29,7 @@ namespace CapaVista
             frmValidarBoleta Validar = new frmValidarBoleta(FormularioPadre,gestionarObuscar);
             Validar.MdiParent = FormularioPadre;
             Validar.Show();
+            this.Close();
         }
 
         private void btnBuscarCita_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace CapaVista
             frmValidarBoleta Validar = new frmValidarBoleta(FormularioPadre, gestionarObuscar);
             Validar.MdiParent = FormularioPadre;
             Validar.Show();
+            this.Close();
         }
     }
 }
