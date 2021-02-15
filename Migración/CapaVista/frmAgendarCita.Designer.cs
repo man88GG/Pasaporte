@@ -94,7 +94,6 @@ namespace CapaVista
             this.lblCodigo.Size = new System.Drawing.Size(79, 22);
             this.lblCodigo.TabIndex = 109;
             this.lblCodigo.Text = "Codigo";
-            this.lblCodigo.Visible = false;
             // 
             // txtCodigo
             // 
@@ -103,7 +102,6 @@ namespace CapaVista
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(127, 27);
             this.txtCodigo.TabIndex = 108;
-            this.txtCodigo.Visible = false;
             // 
             // cmbCodigoCentro
             // 

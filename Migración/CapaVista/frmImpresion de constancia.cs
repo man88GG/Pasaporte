@@ -14,29 +14,23 @@ namespace CapaVista
     public partial class frmImpresion_de_constancia : Form
     {
         ClsControlador Cn = new ClsControlador();
-        static Form FormularioPadre;
+
         int IDCITA = 0;
         int IDDATOSPERSONALES = 0;
         int IDBOLETABANCO = 0;
         int DOCUMENTODPI = 0;
-        public frmImpresion_de_constancia(Form formularioPadre,int idCita,int idDatos,int CodigoBoleta, int DPI)
+        string consulta = "";
+        public frmImpresion_de_constancia(int idCita,int idDatos,int CodigoBoleta, int DPI)
         {
             InitializeComponent();
-            FormularioPadre = formularioPadre;
+ 
              IDCITA = idCita;
              IDDATOSPERSONALES = idDatos;
              IDBOLETABANCO = CodigoBoleta;
              DOCUMENTODPI = DPI;
         }
 
-        public void actualizarData()
-        {
-           
-            string consulta = "select P.idProgramarCita,B.numeroRecibo,B.numeroBoleta,R.nombres,R.apellidos from programarcita P,datospersonales D,boletabanco B,renap R where P.idDatosPersonales = D.idDatosPersonales and D.idBoletaBanco = B.idBoleta and D.dpi = R.dpi AND P.idProgramarCita = "+IDCITA+" and D.idDatosPersonales = "+IDDATOSPERSONALES+" and D.idBoletaBanco = "+IDBOLETABANCO+" ;";
-            DataTable dt = Cn.enviar(consulta);
-            dgvDatos.DataSource = dt;
-        }
-
+      
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -45,6 +39,21 @@ namespace CapaVista
         private void frmImpresion_de_constancia_Load(object sender, EventArgs e)
         {
             actualizarData();
+        }
+
+        public void actualizarData()
+        {
+
+            consulta = "select P.idProgramarCita as CODIGO_CITA,B.numeroRecibo AS NUMERO_RECIBO,B.numeroBoleta as NUMERO_BOLETA,R.nombres as NOMBRES,R.apellidos as APELLIDOS from programarcita P,datospersonales D,boletabanco B,renap R where P.idDatosPersonales = D.idDatosPersonales and D.idBoletaBanco = B.idBoleta and D.dpi = R.dpi AND P.idProgramarCita = " + IDCITA + " and D.idDatosPersonales = " + IDDATOSPERSONALES + " and D.idBoletaBanco = " + IDBOLETABANCO + " and D.dpi = " + DOCUMENTODPI + " and P.estado = 1;";
+            DataTable dt = Cn.enviar(consulta);
+            dgvDatos.DataSource = dt;
+        }
+
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(""+IDCITA+""+IDDATOSPERSONALES+""+IDBOLETABANCO+""+DOCUMENTODPI);
+
         }
     }
 }

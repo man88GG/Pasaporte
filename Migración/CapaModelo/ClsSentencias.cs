@@ -223,10 +223,10 @@ namespace CapaModelo
                 return Dato;
             }
 
-        public int  cantidadDeDatos(string Campo1,string tabla,string nombreCampo,string Campo2)
+        public int  cantidadDeDatos(string Campo1,string tabla,string nombreCampo,string Campo2,string nombreCampo2,int Campo3)
         {
             int Dato = 0;
-            string Sql = "Select COUNT("+Campo1+") FROM "+tabla+" WHERE "+nombreCampo+" = '"+Campo2+"';" ;
+            string Sql = "Select COUNT("+Campo1+") FROM "+tabla+" WHERE "+nombreCampo+" = '"+Campo2+"' and "+nombreCampo2+" = "+Campo3+" and estado = 1;" ;
             try
             {
                 OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());

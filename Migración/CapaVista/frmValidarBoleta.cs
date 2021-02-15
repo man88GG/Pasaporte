@@ -16,6 +16,11 @@ namespace CapaVista
         ClsControlador Cn = new ClsControlador();
         static Form FormularioPadre;
         int GestionarObuscar;
+        string idDatosPersona = "";
+        string Dpi = "";
+        string idCita = "";
+        string idBoleta = "";
+        int CodigoBoleta;
         public frmValidarBoleta(Form formularioPadre,int Proceso)
         {
             InitializeComponent();
@@ -43,11 +48,20 @@ namespace CapaVista
             {
                 int numeroBoleta = Int32.Parse(txtBoleta.Text);
                 int numeroRecibo = Int32.Parse(txtRecibo.Text);
-                int CodigoBoleta = Cn.funcObtenerCodigoBoleta(numeroRecibo,numeroBoleta);
+                CodigoBoleta = Cn.funcObtenerCodigoBoleta(numeroRecibo,numeroBoleta);
                 string sql = "SELECT D.dpi from datospersonales D, boletabanco B where D.idBoletaBanco = B.idBoleta and D.idBoletaBanco = "+CodigoBoleta+" ;";     
-                string Dpi = Cn.CualquierDato(sql);
-                string sqlIdPersona = "SELECT idDatosPersonales FROM datospersonales WHERE dpi = " + Dpi + " and idBoletaBanco = "+CodigoBoleta+" and estado = 1;";
-                string idDatosPersona = Cn.CualquierDato(sqlIdPersona);
+                Dpi = Cn.CualquierDato(sql);
+                if(Dpi != "")
+                {
+                    string sqlIdPersona = "SELECT idDatosPersonales FROM datospersonales WHERE dpi = " + Dpi + " and idBoletaBanco = " + CodigoBoleta + " and estado = 1 ;";
+                    idDatosPersona = Cn.CualquierDato(sqlIdPersona);
+                }
+                if(idDatosPersona != "")
+                {
+                    string sqlidCita = "SELECT idProgramarCita from programarcita P,datospersonales D,boletabanco B where P.idDatosPersonales = D.idDatosPersonales and D.idBoletaBanco = B.idBoleta and D.idDatosPersonales = " + idDatosPersona + " and D.idBoletaBanco = " + CodigoBoleta + " and P.estado = 1";
+                    idCita = Cn.CualquierDato(sqlidCita);
+                }
+                //si gestionarObuscar es igual a 1, la boleta no contiene datos del usuario, por lo que se tendran que ingresar sus datos
                 if (GestionarObuscar == 1)
                 {
                     if (CodigoBoleta == 0)
@@ -66,21 +80,39 @@ namespace CapaVista
                         frmInformacion Validar = new frmInformacion(FormularioPadre, CodigoBoleta);
                         Validar.MdiParent = FormularioPadre;
                         Validar.Show();
-                    }
+                    } 
                 } else if(GestionarObuscar == 2)
+                //si gestionarObuscar es igual a 2, la boleta ya contiene datos del usuario, por lo que verificara si tiene cita o no
+
                 {
+                    
                     if (CodigoBoleta == 0)
                     {
                         MessageBox.Show("Boleta no Valida, verifique que los datos este ingresados correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else
+                    else if (Dpi == "")
                     {
-                        string idBoleta = CodigoBoleta.ToString();
-                        MessageBox.Show("Boleta Valida.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmAgendar Validar = new frmAgendar(FormularioPadre, idBoleta, Dpi);
-                        Validar.MdiParent = FormularioPadre;
-                        Validar.Show();
+                        MessageBox.Show("Esta boleta no contiene un registro aun, verifique que los datos este ingresados correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    else if(idCita == "")
+                        {
+                            idBoleta = CodigoBoleta.ToString();
+                            MessageBox.Show("Boleta Valida.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            frmAgendar Validar = new frmAgendar(FormularioPadre, idBoleta, Dpi);
+                            Validar.MdiParent = FormularioPadre;
+                            Validar.Show();
+                        }else if(idCita != "")
+                        {
+                            int Cita = Int32.Parse(idCita);
+                            int idDatos = Int32.Parse(idDatosPersona);
+                            int idCodigoBoleta = CodigoBoleta;
+                            int idDpi = Int32.Parse(Dpi);
+                            frmImpresion_de_constancia Nuevo = new frmImpresion_de_constancia(Cita,idDatos,idCodigoBoleta,idDpi);
+                            Nuevo.MdiParent = FormularioPadre;
+                            Nuevo.Show();
+                        }
+
+                    
                 }
             }
 

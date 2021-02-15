@@ -47,7 +47,8 @@ namespace CapaVista
                 return;
             }else if (rbHora8.Checked == true || rbHora9.Checked == true || rbHora10.Checked == true || rbHora11.Checked == true)
             {
-                int Cantidad = Cn.CantidadDatos("idDatosPersonales", "programarcita", "fechaparacita", Horario);
+                int Cantidad = Cn.CantidadDatos("idDatosPersonales", "programarcita", "fechaparacita", Horario,"idCentro",Int32.Parse(cmbCodigoCentro.SelectedItem.ToString()));
+              
                 Horario = "";
                 if(Cantidad == 4)
                 {
@@ -72,17 +73,18 @@ namespace CapaVista
                         string Codigo = txtCodigo.Text;
                         string idCentro = cmbCodigoCentro.SelectedItem.ToString();
                         string idCodigoDatosPersonales = Datos.ToString();
-                        List<string> datos = new List<string>();
+                        string estado = "1";
+                       List<string> datos = new List<string>();
                         datos.Add(Codigo);
-                        datos.Add(idCentro);
                         datos.Add(idCodigoDatosPersonales);
+                        datos.Add(idCentro);             
                         datos.Add(Horario);
+                        datos.Add(estado);
                         Cn.procDatosInsertar("programarcita", datos);
                         int IDCITA = Int32.Parse(Codigo);
-                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre,IDCITA,Datos,boletaBanco,PersonalDPI);
+                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(IDCITA,Datos,boletaBanco,PersonalDPI);
                        Confirmar.MdiParent = FormularioPadre;
-                       Confirmar.Show();
-                       
+                       Confirmar.Show();       
                     }
 
                 }

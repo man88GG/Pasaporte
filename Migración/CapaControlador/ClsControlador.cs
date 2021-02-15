@@ -70,9 +70,9 @@ namespace CapaControlador
             return sql;
         }
 
-        public int CantidadDatos(string campo1, string tabla, string nombreCampo, string campo2)
+        public int CantidadDatos(string campo1, string tabla, string nombreCampo, string campo2,string nombreCampo2,int Campo3)
         {
-            int Cantidad = Sn.cantidadDeDatos( campo1, tabla, nombreCampo, campo2);
+            int Cantidad = Sn.cantidadDeDatos( campo1, tabla, nombreCampo, campo2,nombreCampo2,Campo3);
             return Cantidad;
         }
     
