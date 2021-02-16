@@ -81,6 +81,11 @@ C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CoreCom
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+<<<<<<< HEAD
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmNuevoPasaporte.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmRenovarPasaporte.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmListadoPasaportes.resources
+=======
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csprojAssemblyReference.cache
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmAgendar.resources
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmAgendarCita.resources
@@ -105,3 +110,4 @@ C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaCon
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaModelo.pdb
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmBitacora.resources
+>>>>>>> master
