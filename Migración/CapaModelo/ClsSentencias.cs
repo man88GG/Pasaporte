@@ -1,388 +1,261 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.Odbc;
-using System.Windows.Forms;
 
 namespace CapaModelo
 {
-    public class ClsSentencias
+   public class ClsSentencias
     {
-        //Necesitamos instanciar la clase conexión
-        clsConexion con = new clsConexion();
-
-        public int  VerificarLogin(string user, string password)
+        clsConexion Con = new clsConexion();
+        //funcion que retorna los elementos de una tabla para llenar los comboBox
+        public string[] funcLlenarCmb(string Tabla, string Campo1)
         {
-            int allow = 0;
-            MessageBox.Show("SN.User: " + user + ", SN.Password: " + password);
-            //Realiza la consulta para verificar las credenciale y si son correctas se procede con el sistema
+            string[] Campos = new string[100];
+            int I = 0;
+            string Sql = "SELECT " + Campo1 + " FROM " + Tabla + "  ;";
             try
             {
-                string cadena = "SELECT * FROM USUARIO";
-                OdbcCommand cma = new OdbcCommand(cadena, con.conexion());
-                OdbcDataReader reader = cma.ExecuteReader();
-                while (reader.Read())
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+                while (Reader.Read())
                 {
-                    MessageBox.Show("Reader 4: " + Convert.ToString(reader[4]) + ", Reader 3: "+ Convert.ToString(reader[3]));
-                    if (user == (Convert.ToString(reader[4])) && password == (Convert.ToString(reader[3])))
-                    {
-                        Console.WriteLine("It's done");
-                        clsBitacora bitacora = new clsBitacora();
-                        //Adicion de la bitacora
-                        bitacora.obtenerIdUsuario(reader[0].ToString());
-                        string proceso = "Inicio de Sesión";
-                        string tabla = cadena;
-                        bitacora.GuardarBitacora(proceso, tabla);
-                        allow = 1;
-                        MessageBox.Show("Exito en capa sentencia con allow");
-                    }
-                    
-                }                
+                    Campos[I] = Reader.GetValue(0).ToString();
+                    I++;
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("ERROR AL OBTENER DATOS PARA INGRESO" + ex);
-            }
-            return allow;
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en asignarCombo, revise los parametros \n -" + Tabla + "\n -" + Campo1); }
+            return Campos;
         }
-
-
-        public void enviarPassword(string user, int controlEncuento)
+        //funcion que retorian el numero de boleta de banco
+        public int  funcConsultarBoleta(int NumeroRecibo,int NumeroBoleta)
         {
-            //Realiza la consulta para verificar si el correo para restaurar credenciales es válido
+            int recibo = NumeroRecibo;
+            int boleta = NumeroBoleta;
+            int Campo = 0;    
+            string Sql = "SELECT idBoleta FROM BOLETABANCO WHERE numeroRecibo = " + recibo + " and numeroBoleta = "+boleta+"  and  estatus = 1;";
             try
             {
-                string cadena = "SELECT * FROM CORREOEMP";
-                OdbcCommand cma = new OdbcCommand(cadena, con.conexion());
-                OdbcDataReader reader = cma.ExecuteReader();
-                while (reader.Read())
-                {//Si el correo es válido
-                    if (user == (Convert.ToString(reader[1])))
-                    {
-                        controlEncuento = 1;
-                        MessageBox.Show("TU CONTRASEÑA HA SIDO ENVIADA");
-                        //Se envian las credenciales al correo válido
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+               while(Reader.Read())
+                {
+                    Campo = Reader.GetInt32(0);
+                }
 
+            }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
+            return Campo;
+        }
+        //funcion que obtiene un dato es especifico de cualquier tabla
+        public string funcDatos(int codigo,string campo,string tabla,string nombreId)
+        {
+            int numeroDeIdentificacion = codigo;
+            string CampoTabla = campo;
+            string  Dato = "";
+            string Sql = "SELECT "+campo+" FROM "+tabla+" WHERE "+nombreId+" = "+codigo+";";
+            try
+            {
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    Dato = Reader.GetValue(0).ToString();
+                }
+
+            }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
+            return Dato;
+        }
+        //funcion para llenar un comboBox con un codigo en especifico
+        public string[] funcLlenarComboEspecifico(string Tabla1,string Campo1,int Id,string nombreID)
+        {
+            string campoTabla = Campo1;
+            string nombreTabla = Tabla1;
+            int Codigo = Id;
+            string nombreCodigo = nombreID;
+            string[] Campos = new string[100];
+            int I = 0;
+            string Sql = "SELECT "+campoTabla+" FROM "+nombreTabla+"  WHERE  "+nombreCodigo+" = "+Codigo+"    ; ";
+            try
+            {
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    Campos[I] = Reader.GetValue(0).ToString();
+                    I++;
+                }
+            }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en asignarCombo, revise los parametros \n -" + Tabla1+ "\n -" + Campo1); }
+            return Campos;
+        }
+        //funcion para obtener el codigo de una tabla
+        public int funcObtenerCodigo(string NombreTabla, string Campo)
+        {
+            int Codigo = 0;
+            string Sql = "SELECT MAX(" + Campo + ") FROM " + NombreTabla + " ;";
+            try
+            {
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+                if (Reader.Read())
+                {
+                    Codigo = Reader.GetInt32(0);
+                }
+            }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en asignarCombo, revise los parametros \n -\n -"); }
+            return Codigo + 1;
+        }
+        //funcion que permite ingresar datos a la base de datos
+        public void procInsertarDatos(string tabla, List<string> lista)
+        {
+            string sql = " INSERT INTO " + tabla + " VALUES (";
+            string consulta = sql;
+            int contador = lista.Count();
+            int i = 1;
+            foreach (var items in lista)
+            {
+                if (i != contador)
+                {
+                    try
+                    {
+                        //int 
+                        int.Parse(items);
+                        sql += " " + items + ", ";
+                        consulta += " " + items + ", ";
+                    }
+                    catch (Exception e)
+                    {
                         try
                         {
-                            string correoCliente = user;
-                            MessageBox.Show("correoCliente: " + correoCliente);
-                            string cadenaCorreo = "SELECT U.nombreUsuario,U.contrasenia FROM USUARIO U, EMPLEADO E, CORREOEMP C WHERE U.idEmpleado = E.idEmpleado AND E.idEmpleado = C.idEmpleado  AND C.correo = '" + user + "'; ";
-                            OdbcCommand cmaCorreo = new OdbcCommand(cadenaCorreo, con.conexion());
-                            OdbcDataReader readerCorreo = cmaCorreo.ExecuteReader();
-                            while (readerCorreo.Read())
-                            {
-                                System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
-                                msg.To.Add(user);
-                                msg.Subject = "CREDENCIALES MIGRACIÓN";
-                                msg.SubjectEncoding = System.Text.Encoding.UTF8;
-                                msg.Bcc.Add("yavhe._.orozco@hotmail.es"); //copia del correo
-                                msg.Body = "Ha recibido este correo para restaurar credenciales  <br/> USUARIO: " + (readerCorreo.GetString(0)) + " <br/> CONTRASEÑA: "
-                                    + readerCorreo.GetString(1) + ". <br/> Sea cuidadoso con sus credenciales";
-                                msg.BodyEncoding = System.Text.Encoding.UTF8;
-                                msg.IsBodyHtml = true;
-                                msg.From = new System.Net.Mail.MailAddress("grupo3sistemaso1@gmail.com");
-
-                                //CREACION DEL CLIENTE DE CORREO
-                                System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
-                                cliente.Credentials = new System.Net.NetworkCredential("grupo3sistemaso1@gmail.com", "s1stema$2");
-                                cliente.Port = 587;
-                                cliente.EnableSsl = true;
-                                cliente.Host = "smtp.gmail.com"; //Servidor de salida de GMAIL
-                                try
-                                {
-                                    cliente.Send(msg);
-                                    MessageBox.Show("Se han enviado las credenciales,sea cuidadoso");
-                                }
-                                catch (Exception error)
-                                {
-
-                                    MessageBox.Show("ERROR AL ENVIAR" + error);
-                                }
-
-                            }
-
+                            //double
+                            double.Parse(items);
+                            sql += " " + items + ", ";
+                            consulta += " " + items + ", ";
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("ERROR AL OBTENER DATOS PARA EL CORREO DE RECUPERACION " + ex);
+                            try
+                            {
+                                //DateTimePicker
+                                DateTime.Parse(items);
+                                sql += " '" + items + "', ";
+                                consulta += " " + items + ", ";
+                            }
+                            catch (Exception exx)
+                            {
+                                //string
+                                sql += " '" + items + "', ";
+                                consulta += " " + items + ", ";
+                            }
                         }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Este correo no aparece asociado a ningún empleado.");
                     }
                 }
-                if (controlEncuento != 1)
+                else
                 {
-                    MessageBox.Show("CORREO INVÁLIDO");
+                    break;
                 }
 
+                i++;
+            }
+            var item = lista.Last();
+            try
+            {
+                //int 
+                int.Parse(item);
+                sql += " " + item + ") ";
+            }catch(Exception )
+            {
+                sql += " '" + item + "') ";
+            }
+          /*  string sqlMax = lista.Last();
+            sql += " " + sqlMax + ") ";
+            consulta += " " + sqlMax + ") ";*/
+            try
+            {
+
+                OdbcCommand comm = new OdbcCommand(sql, Con.conexion());
+                OdbcDataReader mostrarC = comm.ExecuteReader();
+                Console.WriteLine("Los Datos se guardaron correctamente");
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR DENTRO DEL FORGET" + ex);
+                Console.WriteLine(ex.Message.ToString() + " \nNo existe la tabla o los campos indicados \n -" + tabla + "\n -"+ex+" "+sql);
+
             }
+
         }
 
-
-<<<<<<< HEAD
-
-        //consulta para buscar al usuario
-        public OdbcDataReader FuncBuscarPersona(string dpi)
+        //funcion que devuelve los datos de una consulta para colocarlos en un DataGridView
+        public OdbcDataAdapter obtener(string consulta)
         {
             try
             {
-                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
-                string sentencia = "SELECT R.NOMBRES, R.APELLIDOS,R.FECHANACIMIENTO,D.DEPARTAMENTO,M.MUNICIPIO FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND R.DPI = '" + dpi + "'";
-
-                OdbcCommand Query_BusquedaReclu = new OdbcCommand(sentencia, con.conexion());
-                OdbcDataReader Lector = Query_BusquedaReclu.ExecuteReader();
-                return Lector;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
-
-
-        //Consulta para ingresar datos en la entidad Pasaporte
-        public void funcInsertarPasaporte(int NumPass, string NumLibreta, string DpiCliente, string FechaC, 
-            string FechaV, int TipoPass, string Foto, string LugarNac,string Autoridad, int Estado)
-        {
-            try
-            {
-                int IdPasaporte;
-                string CorrelativoReclu = "SELECT IFNULL(MAX(IDPASAPORTE),0) +1 FROM PASAPORTE";     
-                OdbcCommand QueryIdReclu = new OdbcCommand(CorrelativoReclu, con.conexion());
-                IdPasaporte = Convert.ToInt32(QueryIdReclu.ExecuteScalar());
-                OdbcDataReader Ejecucion1 = QueryIdReclu.ExecuteReader();
-                
-                //falta firma, fotografia y lugar nacimiento
-                //Sentencia para insertar datos a entidad Reclutamiento
-                string SentenciaRecluta = "INSERT INTO PASAPORTE (IDPASAPORTE, NUMEROPASAPORTE, NUMEROLIBRETA, " +
-                    "DPI, FECHACREACION, FECHAVENCIMIENTO, IDTIPOPASAPORTE,FOTOGRAFIA,LUGARNACIMIENTO, " +
-                    "AUTORIDAD, ESTADO) VALUES " + "('" + IdPasaporte + "','" + NumPass + "','" + NumLibreta + "','" + DpiCliente + "','"
-                    + FechaC + "','" + FechaV + "','" + TipoPass + "','" + Foto + "','" + LugarNac + "','" + Autoridad + "','" + Estado + "')";
-
-               
-                OdbcCommand Query_IngresoRec = new OdbcCommand(SentenciaRecluta, con.conexion());
-                
-                Query_IngresoRec.ExecuteNonQuery();
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //Muestra datos en combo TipoPasaporte
-        public DataTable funcCmbTipoPass()
-        {
-            DataTable Datos = new DataTable();
-            try
-            {
-                string CargaTipoPass = "SELECT * FROM TIPOPASAPORTE";
-                OdbcCommand Query_Busqueda1 = new OdbcCommand(CargaTipoPass, con.conexion());
-
-                OdbcDataAdapter Lector = new OdbcDataAdapter();
-                Lector.SelectCommand = Query_Busqueda1;
-                Lector.Fill(Datos);
-
-                con.desconexion(con.conexion());
-                return Datos;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return Datos;
-            }
-        }//fin
-
-
-
-        //consulta para buscar el pasaporte
-        public OdbcDataReader FuncBuscarPass(string NumPass)
-        {
-            try
-            {
-                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
-                string sentencia = "SELECT R.NOMBRES, R.APELLIDOS,R.FECHANACIMIENTO,D.DEPARTAMENTO,M.MUNICIPIO, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.DPI,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD,P.LUGARNACIMIENTO,P.FOTOGRAFIA FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.IDPASAPORTE = '" + NumPass + "'";
-
-                OdbcCommand Query_BusquedaReclu = new OdbcCommand(sentencia, con.conexion());
-                OdbcDataReader Lector = Query_BusquedaReclu.ExecuteReader();
-                return Lector;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
-
-        //consulta para modificar en la entidad Reclutamiento
-        public void funcActualizarPasaporte(string FechaC, string FechaV, int TipoPass, string Autoridad,
-                int Estado)
-        {
-            try
-            {
-               
-
-                string sentencia = "UPDATE PASAPORTE SET FECHACREACION='" + FechaC + "', FECHAVENCIMIENTO='" + FechaV +
-                    "', IDTIPOPASAPORTE='" + TipoPass + "', AUTORIDAD='" + Autoridad + "', ESTADO='" + Estado  + "'";
-
-                
-                OdbcCommand Query_Validacion1 = new OdbcCommand(sentencia, con.conexion());
-                
-                Query_Validacion1.ExecuteNonQuery();
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //consulta para mostrar datos de la entidad Pasaporte
-        public OdbcDataAdapter funcListadoPasaporte(int Estado)
-        {
-            try
-            {
-                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "'";
-
-                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
-
-
+                string sql = consulta;
+                OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, Con.conexion());
                 return dataTable;
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Puede que los parametros seas erroneos, verifique los parametro enviados" + ex);
                 return null;
             }
         }
-
-        //consulta para mostrar datos de la entidad Reclutamiento por Id
-        public OdbcDataAdapter funcListadoPasaporteId(int Estado, string Parametro)
+        //funcion que obtiene cualquier dato cuando se le envia una consulta
+        public string obtenerCualquierDato(string consulta)
         {
+                string Dato = "";
+                string Sql = consulta;
+                try
+                {
+                    OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                    OdbcDataReader Reader = Command.ExecuteReader();
+                    while (Reader.Read())
+                    {
+                        Dato = Reader.GetValue(0).ToString();
+                    }
+                }
+                catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
+                return Dato;
+            }
+
+        public int  cantidadDeDatos(string Campo1,string tabla,string nombreCampo,string Campo2,string nombreCampo2,int Campo3)
+        {
+            int Dato = 0;
+            string Sql = "Select COUNT("+Campo1+") FROM "+tabla+" WHERE "+nombreCampo+" = '"+Campo2+"' and "+nombreCampo2+" = "+Campo3+" and estado = 1;" ;
             try
             {
-                int SgOpcion=0;
-                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
-                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "' AND P.IDPASAPORTE LIKE('" + Parametro + "%')";
-
-                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
-
-
-                return dataTable;
-
+                OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
+                OdbcDataReader Reader = Command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    Dato = Reader.GetInt32(0);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
+            catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE "+Sql+" -"); }
+            return Dato;
         }
 
 
-        //consulta para mostrar datos de la entidad Reclutamiento por Numero Pasaporte
-        public OdbcDataAdapter funcListadoPasaporteNumPass(int Estado, string Parametro)
+        public void procModificar(string sql)
         {
+            string Consulta = sql;
             try
             {
-                int SgOpcion = 0;
-                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
-                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "' AND P.NUMEROPASAPORTE LIKE('" + Parametro + "%')";
-
-                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
-
-
-                return dataTable;
-
+                OdbcCommand comm = new OdbcCommand(Consulta, Con.conexion());
+                OdbcDataReader mostrarC = comm.ExecuteReader();
+                Console.WriteLine("Los Datos se modificaron correctamente");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
-
-        //consulta para mostrar datos de la entidad Reclutamiento por Numero Libreta
-        public OdbcDataAdapter funcListadoPasaporteNumLib(int Estado, string Parametro)
-        {
-            try
-            {
-                int SgOpcion = 0;
-                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
-                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "' AND P.NUMEROLIBRETA LIKE('" + Parametro + "%')";
-
-                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
-
-
-                return dataTable;
+                Console.WriteLine(ex.Message.ToString() + " \nNo se puede modificar revise: \n -" + Consulta + "\n -");
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ejecutar SQL: " +
-                    System.Environment.NewLine + System.Environment.NewLine +
-                    ex.GetType().ToString() + System.Environment.NewLine +
-                    ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-=======
-        ///
-        public OdbcDataAdapter llenarTbl(string tabla)
-        {
-            string sql = "SELECT * FROM " + tabla+ " ;";
-            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.conexion());
-            return dataTable;
->>>>>>> master
         }
 
     }
-
 }

@@ -58,24 +58,6 @@
     <Compile Include="frmAgendarCita.Designer.cs">
       <DependentUpon>frmAgendarCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBitacora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBitacora.Designer.cs">
-      <DependentUpon>frmBitacora.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmConfirmacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConfirmacion.Designer.cs">
-      <DependentUpon>frmConfirmacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmConfirmacionDeCita.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConfirmacionDeCita.Designer.cs">
-      <DependentUpon>frmConfirmacionDeCita.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmImpresion de constancia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,41 +70,11 @@
     <Compile Include="frmInformacion.Designer.cs">
       <DependentUpon>frmInformacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListadoPasaportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmListadoPasaportes.Designer.cs">
-      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMenuCita.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenuCita.Designer.cs">
       <DependentUpon>frmMenuCita.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmNuevoPasaporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNuevoPasaporte.Designer.cs">
-      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPruebaPasaporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPruebaPasaporte.Designer.cs">
-      <DependentUpon>frmPruebaPasaporte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRenovarPasaporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRenovarPasaporte.Designer.cs">
-      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
     </Compile>
     <Compile Include="frmValidarBoleta.cs">
       <SubType>Form</SubType>
@@ -136,6 +88,24 @@
     <Compile Include="MDI.Designer.cs">
       <DependentUpon>MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pasaporte\frmListadoPasaportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pasaporte\frmListadoPasaportes.Designer.cs">
+      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pasaporte\frmNuevoPasaporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pasaporte\frmNuevoPasaporte.Designer.cs">
+      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pasaporte\frmRenovarPasaporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pasaporte\frmRenovarPasaporte.Designer.cs">
+      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,44 +115,29 @@
     <EmbeddedResource Include="frmAgendarCita.resx">
       <DependentUpon>frmAgendarCita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBitacora.resx">
-      <DependentUpon>frmBitacora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConfirmacion.resx">
-      <DependentUpon>frmConfirmacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConfirmacionDeCita.resx">
-      <DependentUpon>frmConfirmacionDeCita.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmImpresion de constancia.resx">
       <DependentUpon>frmImpresion de constancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInformacion.resx">
       <DependentUpon>frmInformacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListadoPasaportes.resx">
-      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuCita.resx">
       <DependentUpon>frmMenuCita.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevoPasaporte.resx">
-      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPruebaPasaporte.resx">
-      <DependentUpon>frmPruebaPasaporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRenovarPasaporte.resx">
-      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmValidarBoleta.resx">
       <DependentUpon>frmValidarBoleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pasaporte\frmListadoPasaportes.resx">
+      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pasaporte\frmNuevoPasaporte.resx">
+      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pasaporte\frmRenovarPasaporte.resx">
+      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

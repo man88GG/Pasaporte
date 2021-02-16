@@ -1,114 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaModelo;
-using System.Data;
-using System.Data.Odbc;
-
 
 namespace CapaControlador
 {
     public class ClsControlador
     {
-        //Instanciar variable para acceder a la clase sentencias
-        ClsSentencias sn = new ClsSentencias();
 
-        public int traslado(string user, string password)
+        ClsSentencias Sn = new ClsSentencias();
+        //funcion que obtiene el codigo de la boleta que se esta solicitando
+        public int funcObtenerCodigoBoleta(int numeroRecibo, int numeroBoleta)
         {
-            int allow = 0;
-            allow = sn.VerificarLogin(user,password);
-            return allow;
+            int CodigoBoleta = Sn.funcConsultarBoleta(numeroRecibo, numeroBoleta);
+            return CodigoBoleta;
         }
-
-<<<<<<< HEAD
-        //consulta para la busqueda en la entidad RENAP
-        public OdbcDataReader funcBuscarPersona(string IdEmpleado)
+        //funcion que retorna los todos los datos de una tabla de un campo en especifico
+        public string[] funcItems(string Tabla, string Campo1)
         {
-            OdbcDataReader Lector = sn.FuncBuscarPersona(IdEmpleado);
-            return Lector;
-        }
-
-        public DataTable funcCmbTipoPass()
-        {
-            DataTable Items = sn.funcCmbTipoPass();
+            string[] Items = Sn.funcLlenarCmb(Tabla, Campo1);
             return Items;
         }
-
-        //consulta para insertar a la entidad Pasaporte
-        //falta lo de firma, lugar nac
-        public void funcInsertarPasaporte(int NumPass, string NumLibreta, string DpiCliente,string FechaC,
-            string FechaV,int TipoPass, string Foto, string LugarNac,string Autoridad, int Estado)
+        //funcion que permite obtener un campo en especificode una tabla por medio de su ID
+        public string funcObtenerDato(int Codigo, string Campo, string Tabla, string nombreId)
         {
-            sn.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, Foto, LugarNac,Autoridad, Estado);
+            string Dato = Sn.funcDatos(Codigo, Campo, Tabla, nombreId);
+            return Dato;
+        }
+        public string[] funcItemsComboBox(string Tabla1, string Campo1, int Id, string nombreID)
+        {
+            string[] Items = Sn.funcLlenarComboEspecifico(Tabla1, Campo1, Id, nombreID);
+            return Items;
+        }
+        //funcion para obtener el codigo de una tabla
+        public int funcCodigoMaximo(string Tabla, string Campo)
+        {
+            int CodigoNuevo = Sn.funcObtenerCodigo(Tabla, Campo);
+            return CodigoNuevo;
         }
 
-        //consulta para la busqueda en la entidad PASAPORTE
-        public OdbcDataReader funcBuscarPass(string NumPass)
+        public void procDatosInsertar(string tabla, List<string> lista)
         {
-            OdbcDataReader Lector = sn.FuncBuscarPass(NumPass);
-            return Lector;
+            Sn.procInsertarDatos(tabla, lista);
+        }
+        public DataTable enviar(string consulta)
+        {
+            try
+            {
+                OdbcDataAdapter dt = Sn.obtener(consulta);
+                DataTable table = new DataTable();
+                dt.Fill(table);
+                return table;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Puede que los parametros seas erroneos, verifique los parametro enviados" + ex);
+                return null;
+            }
+
         }
 
-        //Paso de datos para consulta modificar en la entidad Reclutamiento
-        public void FuncActualizarPasaporte(string FechaC, string FechaV, int TipoPass, string Autoridad,
-                int Estado)
+        public string CualquierDato(string Consulta)
         {
-
-            sn.funcActualizarPasaporte(FechaC, FechaV, TipoPass, Autoridad, Estado);
-
-
+            string sql = Sn.obtenerCualquierDato(Consulta);
+            return sql;
         }
 
-        //Paso de datos para consulta mostrar en la entidad reclutamiento
-        public DataTable FuncListadoPasaporte(int Estado)
+        public int CantidadDatos(string campo1, string tabla, string nombreCampo, string campo2,string nombreCampo2,int Campo3)
         {
-            OdbcDataAdapter dt = sn.funcListadoPasaporte(Estado);
-            DataTable table = new DataTable();
-            dt.Fill(table);
-            return table;
+            int Cantidad = Sn.cantidadDeDatos( campo1, tabla, nombreCampo, campo2,nombreCampo2,Campo3);
+            return Cantidad;
         }
 
-        //Paso de datos para consulta mostrar en la entidad reclutamiento por Id
-        public DataTable FuncListadoPasaporteId(int Estado, string Parametro)
+        public void Modificar(string sql)
         {
-            OdbcDataAdapter dt = sn.funcListadoPasaporteId(Estado, Parametro);
-            DataTable table = new DataTable();
-            dt.Fill(table);
-            return table;
-        }
-
-        //Paso de datos para consulta mostrar en la entidad reclutamiento por Numero Pasaporte
-        public DataTable FuncListadoPasaporteNumPass(int Estado, string Parametro)
-        {
-            OdbcDataAdapter dt = sn.funcListadoPasaporteNumPass(Estado, Parametro);
-            DataTable table = new DataTable();
-            dt.Fill(table);
-            return table;
-        }
-
-        //Paso de datos para consulta mostrar en la entidad reclutamiento por Numero Libreta
-        public DataTable FuncListadoPasaporteNumLib(int Estado, string Parametro)
-        {
-            OdbcDataAdapter dt = sn.funcListadoPasaporteNumLib(Estado, Parametro);
-            DataTable table = new DataTable();
-            dt.Fill(table);
-            return table;
-=======
-        public void trasladorecuperar(string user, int controlEncuento)
-        {
-            sn.enviarPassword(user, controlEncuento);
-        }
-
-        public DataTable llenarTbl(string tabla)
-        {
-            OdbcDataAdapter dt = sn.llenarTbl(tabla);
-            DataTable table = new DataTable();
-            dt.Fill(table);
-            return table;
-
->>>>>>> master
+            Sn.procModificar(sql);
+            return;
         }
     }
 }
