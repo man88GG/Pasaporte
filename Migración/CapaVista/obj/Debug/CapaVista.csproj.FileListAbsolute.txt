@@ -81,6 +81,33 @@ C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CoreCom
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+<<<<<<< HEAD
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmNuevoPasaporte.resources
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmRenovarPasaporte.resources
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmListadoPasaportes.resources
+=======
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csprojAssemblyReference.cache
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmAgendar.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmAgendarCita.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmConfirmacion.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmConfirmacionDeCita.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmImpresion_de_constancia.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmInformacion.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmLogin.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmMenuCita.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmPruebaPasaporte.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmValidarBoleta.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.MDI.resources
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.GenerateResource.cache
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CoreCompileInputs.cache
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.dll
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaVista.dll
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaVista.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaControlador.dll
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaModelo.dll
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaControlador.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaModelo.pdb
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
+C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmBitacora.resources
+>>>>>>> master

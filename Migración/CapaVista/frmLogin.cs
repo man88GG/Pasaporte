@@ -47,14 +47,29 @@ namespace CapaVista
                 {
                     lblPassword.Visible = false;
                 }
+
+
+
                 //Si los datos no son vacios en los textBox
                 if (error != 0)
                 {
-                    cn.traslado(txtUser.Text.ToString(),txtPassword.Text.ToString());
-                    frmPruebaPasaporte frm = new frmPruebaPasaporte();
-                    frm.Show();
-                    this.Hide();
-                    ver = 3;
+                    int allowway=0;
+
+                    allowway = cn.traslado(txtUser.Text.ToString(),txtPassword.Text.ToString());
+                   
+                    if (allowway==1)
+                    {
+                        frmPruebaPasaporte frm = new frmPruebaPasaporte();
+                        frm.Show();
+                        this.Hide();
+                        ver = 3;
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("error en allowway");
+                    }
+                   
                 }
                 if (ver == 3)
                 {
@@ -71,88 +86,18 @@ namespace CapaVista
             }
             else if (olvidarPassword == 1)
             {
-                /*int controlEncuento = 0;
+                int controlEncuento = 0;
 
-                //Realiza la consulta para verificar si el correo para restaurar credenciales es válido
-                try
-                {
-                    string cadena = "SELECT * FROM CORREO";
-                    OdbcCommand cma = new OdbcCommand(cadena, cn.nuevaConexion());
-                    OdbcDataReader reader = cma.ExecuteReader();
-                    while (reader.Read())
-                    {//Si el correo es válido
-                        if (txtUser.Text == (Convert.ToString(reader[1])))
-                        {
-                            controlEncuento = 1;
-                            MessageBox.Show("TU CONTRASEÑA HA SIDO ENVIADA");
-                            //Se envian las credenciales al correo válido
+                cn.trasladorecuperar(txtUser.Text.ToString(), controlEncuento);
 
-                            try
-                            {
-                                string correoCliente = txtUser.Text;
-                                MessageBox.Show("correoCliente: " + correoCliente);
-                                string cadenaCorreo = "SELECT U.nombreUsuario,U.contrasenia FROM USUARIO U, EMPLEADO E, CORREO C WHERE U.idEmpleado = E.idEmpleado AND E.idEmpleado = C.idEmpleado  AND C.correo = '" + txtUser.Text + "'; ";
-                                OdbcCommand cmaCorreo = new OdbcCommand(cadenaCorreo, cn.nuevaConexion());
-                                OdbcDataReader readerCorreo = cmaCorreo.ExecuteReader();
-                                while (readerCorreo.Read())
-                                {
-                                    System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
-                                    msg.To.Add(txtUser.Text);
-                                    msg.Subject = "CREDENCIALES ZINEPPOLIS";
-                                    msg.SubjectEncoding = System.Text.Encoding.UTF8;
-                                    msg.Bcc.Add("yavhe._.orozco@hotmail.es"); //copia del correo
-                                    msg.Body = "Ha recibido este correo para restaurar credenciales  <br/> USUARIO: " + (readerCorreo.GetString(0)) + " <br/> CONTRASEÑA: "
-                                        + readerCorreo.GetString(1) + ". <br/> Sea cuidadoso con sus credenciales";
-                                    msg.BodyEncoding = System.Text.Encoding.UTF8;
-                                    msg.IsBodyHtml = true;
-                                    msg.From = new System.Net.Mail.MailAddress("grupo3sistemaso1@gmail.com");
+                olvidarPassword = 0;
+                lblPassword.Visible = true;
+                txtUser.Text = "USUARIO";
+                txtPassword.Text = "CONTRASEÑA";
+                lblUser.Text = "Ingrese su usuario";
+                lblPassword.Text = "Ingrese su contraseña ";
+                btnIngreso.Text = "ACCEDER";
 
-                                    //CREACION DEL CLIENTE DE CORREO
-                                    System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
-                                    cliente.Credentials = new System.Net.NetworkCredential("grupo3sistemaso1@gmail.com", "s1stema$2");
-                                    cliente.Port = 587;
-                                    cliente.EnableSsl = true;
-                                    cliente.Host = "smtp.gmail.com"; //Servidor de salida de GMAIL
-                                    try
-                                    {
-                                        cliente.Send(msg);
-                                        MessageBox.Show("Se han enviado las credenciales,sea cuidadoso");
-                                    }
-                                    catch (Exception error)
-                                    {
-
-                                        MessageBox.Show("ERROR AL ENVIAR" + error);
-                                    }
-
-                                }
-
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("ERROR AL OBTENER DATOS PARA EL CORREO DE RECUPERACION " + ex);
-                            }
-                            olvidarPassword = 0;
-                            lblPassword.Visible = true;
-                            txtUser.Text = "USUARIO";
-                            txtPassword.Text = "CONTRASEÑA";
-                            lblUser.Text = "Ingrese su usuario";
-                            lblPassword.Text = "Ingrese su contraseña ";
-                            btnIngreso.Text = "ACCEDER";
-                        }
-                    }
-                    if (controlEncuento != 1)
-                    {
-                        MessageBox.Show("CORREO INVÁLIDO");
-                    }
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR DENTRO DEL FORGET" + ex);
-                }
-
-                */
             }
         }
 
