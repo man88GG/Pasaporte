@@ -47,6 +47,8 @@ namespace CapaVista
             this.LblDepto = new System.Windows.Forms.Label();
             this.LblMuni = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TxtNacimiento = new System.Windows.Forms.TextBox();
+            this.LblNacimiento = new System.Windows.Forms.Label();
             this.CmbAutoridad = new System.Windows.Forms.ComboBox();
             this.PbxFoto = new System.Windows.Forms.PictureBox();
             this.DtpCreacion = new System.Windows.Forms.DateTimePicker();
@@ -63,8 +65,7 @@ namespace CapaVista
             this.CmbTipoPass = new System.Windows.Forms.ComboBox();
             this.LblPasaporte = new System.Windows.Forms.Label();
             this.TxtIdPass = new System.Windows.Forms.TextBox();
-            this.TxtNacimiento = new System.Windows.Forms.TextBox();
-            this.LblNacimiento = new System.Windows.Forms.Label();
+            this.BtnLista = new System.Windows.Forms.Button();
             this.TbcDatos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.GbxLugarNac.SuspendLayout();
@@ -131,7 +132,7 @@ namespace CapaVista
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(829, 393);
+            this.tabPage1.Size = new System.Drawing.Size(829, 441);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Personales";
             // 
@@ -181,7 +182,7 @@ namespace CapaVista
             this.TxtApellidos.Enabled = false;
             this.TxtApellidos.Location = new System.Drawing.Point(154, 155);
             this.TxtApellidos.Name = "TxtApellidos";
-            this.TxtApellidos.Size = new System.Drawing.Size(362, 31);
+            this.TxtApellidos.Size = new System.Drawing.Size(341, 31);
             this.TxtApellidos.TabIndex = 106;
             // 
             // DtpFechaNac
@@ -210,7 +211,7 @@ namespace CapaVista
             this.TxtNombres.Enabled = false;
             this.TxtNombres.Location = new System.Drawing.Point(154, 101);
             this.TxtNombres.Name = "TxtNombres";
-            this.TxtNombres.Size = new System.Drawing.Size(362, 31);
+            this.TxtNombres.Size = new System.Drawing.Size(341, 31);
             this.TxtNombres.TabIndex = 105;
             // 
             // GbxLugarNac
@@ -222,7 +223,7 @@ namespace CapaVista
             this.GbxLugarNac.Enabled = false;
             this.GbxLugarNac.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxLugarNac.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.GbxLugarNac.Location = new System.Drawing.Point(547, 32);
+            this.GbxLugarNac.Location = new System.Drawing.Point(538, 32);
             this.GbxLugarNac.Name = "GbxLugarNac";
             this.GbxLugarNac.Size = new System.Drawing.Size(276, 238);
             this.GbxLugarNac.TabIndex = 94;
@@ -292,6 +293,25 @@ namespace CapaVista
             this.tabPage2.Size = new System.Drawing.Size(829, 441);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos Pasaporte";
+            // 
+            // TxtNacimiento
+            // 
+            this.TxtNacimiento.Enabled = false;
+            this.TxtNacimiento.Location = new System.Drawing.Point(289, 224);
+            this.TxtNacimiento.Name = "TxtNacimiento";
+            this.TxtNacimiento.Size = new System.Drawing.Size(193, 31);
+            this.TxtNacimiento.TabIndex = 107;
+            // 
+            // LblNacimiento
+            // 
+            this.LblNacimiento.AutoSize = true;
+            this.LblNacimiento.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNacimiento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LblNacimiento.Location = new System.Drawing.Point(33, 233);
+            this.LblNacimiento.Name = "LblNacimiento";
+            this.LblNacimiento.Size = new System.Drawing.Size(206, 22);
+            this.LblNacimiento.TabIndex = 106;
+            this.LblNacimiento.Text = "Lugar de Nacimiento:";
             // 
             // CmbAutoridad
             // 
@@ -453,24 +473,21 @@ namespace CapaVista
             this.TxtIdPass.Size = new System.Drawing.Size(193, 22);
             this.TxtIdPass.TabIndex = 133;
             // 
-            // TxtNacimiento
+            // BtnLista
             // 
-            this.TxtNacimiento.Enabled = false;
-            this.TxtNacimiento.Location = new System.Drawing.Point(289, 224);
-            this.TxtNacimiento.Name = "TxtNacimiento";
-            this.TxtNacimiento.Size = new System.Drawing.Size(193, 31);
-            this.TxtNacimiento.TabIndex = 107;
-            // 
-            // LblNacimiento
-            // 
-            this.LblNacimiento.AutoSize = true;
-            this.LblNacimiento.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNacimiento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblNacimiento.Location = new System.Drawing.Point(33, 233);
-            this.LblNacimiento.Name = "LblNacimiento";
-            this.LblNacimiento.Size = new System.Drawing.Size(206, 22);
-            this.LblNacimiento.TabIndex = 106;
-            this.LblNacimiento.Text = "Lugar de Nacimiento:";
+            this.BtnLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
+            this.BtnLista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnLista.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLista.ForeColor = System.Drawing.Color.White;
+            this.BtnLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLista.Location = new System.Drawing.Point(19, 574);
+            this.BtnLista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnLista.Name = "BtnLista";
+            this.BtnLista.Size = new System.Drawing.Size(190, 61);
+            this.BtnLista.TabIndex = 134;
+            this.BtnLista.Text = "Lista Pasaportes";
+            this.BtnLista.UseVisualStyleBackColor = false;
+            this.BtnLista.Click += new System.EventHandler(this.BtnLista_Click);
             // 
             // frmRenovarPasaporte
             // 
@@ -478,6 +495,7 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(865, 646);
+            this.Controls.Add(this.BtnLista);
             this.Controls.Add(this.TxtIdPass);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.BtnIngresar);
@@ -535,5 +553,6 @@ namespace CapaVista
         private System.Windows.Forms.TextBox TxtIdPass;
         private System.Windows.Forms.TextBox TxtNacimiento;
         private System.Windows.Forms.Label LblNacimiento;
+        private System.Windows.Forms.Button BtnLista;
     }
 }

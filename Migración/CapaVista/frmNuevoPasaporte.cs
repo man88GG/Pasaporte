@@ -40,11 +40,19 @@ namespace CapaVista
        
         
         //Variables para sentencias SQL
-        //Falta consultar lo de firma y foto
-        string NumLibreta, FechaC, FechaV, Firma, LugarNac,Autoridad;
+        
+        string NumLibreta, FechaC, FechaV, Firma, LugarNac,Autoridad, LinkFotografía;
         int NumPass, TipoPass, Estado=1;
 
-        
+        private void BtnFoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GbxLugarNac_Enter(object sender, EventArgs e)
+        {
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -95,7 +103,7 @@ namespace CapaVista
             CmbDepto.Text = "";
             CmbMuni.Text = "";
             DtpFechaNac.Value = DateTime.Now;
-
+            TxtLinkFotografía.Text = "";
             TxtNumPasaporte.Text = "";
             TxtNumLibreta.Text = "";
             CmbTipoPass.Text = "";
@@ -103,8 +111,7 @@ namespace CapaVista
             DtpCreacion.Value = DateTime.Now;
             DtpVencimiento.Value = DateTime.Now;
 
-            //PbxFoto.Image.Dispose();
-            //PbxFoto.Image = nothing;
+            
 
         }
 
@@ -118,7 +125,8 @@ namespace CapaVista
             CmbAutoridad.Enabled = false;
             DtpCreacion.Enabled = false;
             DtpVencimiento.Enabled = false;
-            PbxFoto.Enabled = false;
+            
+            TxtLinkFotografía.Enabled = false;
 
         }
 
@@ -127,7 +135,7 @@ namespace CapaVista
 
             
                 //segunda verificación de datos de cajas de texto vacias
-                if (TxtNumPasaporte.Text == "" || TxtNumLibreta.Text == "" ) { MessageBox.Show("ADVERTENCIA: Uno o más campos están vacíos.", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+                if (TxtNumPasaporte.Text == "" || TxtNumLibreta.Text == "" || TxtNacimiento.Text == "" ||TxtLinkFotografía.Text =="" ) { MessageBox.Show("ADVERTENCIA: Uno o más campos están vacíos.", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
                 else
                 {
                    
@@ -149,21 +157,19 @@ namespace CapaVista
                     FechaV = DtpVencimiento.Value.Date.ToShortDateString();
                     TipoPass = CmbTipoPass.SelectedIndex + 1;
                     //Firma
+                    LinkFotografía = TxtLinkFotografía.Text;
                     LugarNac = TxtNacimiento.Text;
-                    //revisar lo de autoridad de string o int
+                    
                     Autoridad = CmbAutoridad.SelectedItem.ToString();
 
-                    //falta lo de firma, lugar nac
-                    Cont.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, LugarNac, Autoridad, Estado);
+                    
+                    Cont.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, LinkFotografía,LugarNac, Autoridad, Estado);
                     MessageBox.Show("Se ha ingresado el Pasaporte con Éxito", "INGRESO PASAPORTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     funcLimpieza();
                     funcBloqueo();
 
                     //envío de datos hacia capa Controlador
-
-
-
 
 
 
@@ -175,6 +181,7 @@ namespace CapaVista
 
         private void funcDesBloqueo()
         {
+            TxtLinkFotografía.Enabled = true;
             TxtNacimiento.Enabled = true;
             TxtNumPasaporte.Enabled = true;
             TxtNumLibreta.Enabled = true;
@@ -182,7 +189,7 @@ namespace CapaVista
             CmbAutoridad.Enabled = true;
             DtpCreacion.Enabled = true;
             DtpVencimiento.Enabled = true;
-            PbxFoto.Enabled = true;
+            
 
         }
 

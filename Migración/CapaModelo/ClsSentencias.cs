@@ -71,7 +71,7 @@ namespace CapaModelo
 
         //Consulta para ingresar datos en la entidad Pasaporte
         public void funcInsertarPasaporte(int NumPass, string NumLibreta, string DpiCliente, string FechaC, 
-            string FechaV, int TipoPass, string LugarNac,string Autoridad, int Estado)
+            string FechaV, int TipoPass, string Foto, string LugarNac,string Autoridad, int Estado)
         {
             try
             {
@@ -84,9 +84,9 @@ namespace CapaModelo
                 //falta firma, fotografia y lugar nacimiento
                 //Sentencia para insertar datos a entidad Reclutamiento
                 string SentenciaRecluta = "INSERT INTO PASAPORTE (IDPASAPORTE, NUMEROPASAPORTE, NUMEROLIBRETA, " +
-                    "DPI, FECHACREACION, FECHAVENCIMIENTO, IDTIPOPASAPORTE,LUGARNACIMIENTO, " +
+                    "DPI, FECHACREACION, FECHAVENCIMIENTO, IDTIPOPASAPORTE,FOTOGRAFIA,LUGARNACIMIENTO, " +
                     "AUTORIDAD, ESTADO) VALUES " + "('" + IdPasaporte + "','" + NumPass + "','" + NumLibreta + "','" + DpiCliente + "','"
-                    + FechaC + "','" + FechaV + "','" + TipoPass + "','" + LugarNac + "','" + Autoridad + "','" + Estado + "')";
+                    + FechaC + "','" + FechaV + "','" + TipoPass + "','" + Foto + "','" + LugarNac + "','" + Autoridad + "','" + Estado + "')";
 
                
                 OdbcCommand Query_IngresoRec = new OdbcCommand(SentenciaRecluta, con.conexion());
@@ -140,7 +140,7 @@ namespace CapaModelo
             try
             {
                 //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
-                string sentencia = "SELECT R.NOMBRES, R.APELLIDOS,R.FECHANACIMIENTO,D.DEPARTAMENTO,M.MUNICIPIO, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.DPI,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD,P.LUGARNACIMIENTO FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.IDPASAPORTE = '" + NumPass + "'";
+                string sentencia = "SELECT R.NOMBRES, R.APELLIDOS,R.FECHANACIMIENTO,D.DEPARTAMENTO,M.MUNICIPIO, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.DPI,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD,P.LUGARNACIMIENTO,P.FOTOGRAFIA FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.IDPASAPORTE = '" + NumPass + "'";
 
                 OdbcCommand Query_BusquedaReclu = new OdbcCommand(sentencia, con.conexion());
                 OdbcDataReader Lector = Query_BusquedaReclu.ExecuteReader();
@@ -184,6 +184,108 @@ namespace CapaModelo
             }
         }
 
+        //consulta para mostrar datos de la entidad Pasaporte
+        public OdbcDataAdapter funcListadoPasaporte(int Estado)
+        {
+            try
+            {
+                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "'";
+
+                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
+
+
+                return dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        //consulta para mostrar datos de la entidad Reclutamiento por Id
+        public OdbcDataAdapter funcListadoPasaporteId(int Estado, string Parametro)
+        {
+            try
+            {
+                int SgOpcion=0;
+                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
+                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "' AND P.IDPASAPORTE LIKE('" + Parametro + "%')";
+
+                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
+
+
+                return dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+
+        //consulta para mostrar datos de la entidad Reclutamiento por Numero Pasaporte
+        public OdbcDataAdapter funcListadoPasaporteNumPass(int Estado, string Parametro)
+        {
+            try
+            {
+                int SgOpcion = 0;
+                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
+                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "' AND P.NUMEROPASAPORTE LIKE('" + Parametro + "%')";
+
+                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
+
+
+                return dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        //consulta para mostrar datos de la entidad Reclutamiento por Numero Libreta
+        public OdbcDataAdapter funcListadoPasaporteNumLib(int Estado, string Parametro)
+        {
+            try
+            {
+                int SgOpcion = 0;
+                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
+                string sentencia = "SELECT P.IDPASAPORTE, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.ESTADO = '" + Estado + "' AND P.NUMEROLIBRETA LIKE('" + Parametro + "%')";
+
+                OdbcDataAdapter dataTable = new OdbcDataAdapter(sentencia, con.conexion());
+
+
+                return dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
 
     }
 }

@@ -82,6 +82,12 @@
     <Compile Include="frmInformacion.Designer.cs">
       <DependentUpon>frmInformacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoPasaportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoPasaportes.Designer.cs">
+      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInformacion.resx">
       <DependentUpon>frmInformacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoPasaportes.resx">
+      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

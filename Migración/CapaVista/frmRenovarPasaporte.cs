@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using CapaControlador;
+using System.Net;
 
 namespace CapaVista
 {
@@ -41,7 +42,7 @@ namespace CapaVista
 
         //Variables para sentencias SQL
         //Falta consultar lo de firma y foto
-        string NumLibreta, FechaC, FechaV, Firma, LugarNac, Autoridad;
+        string FechaC, FechaV, Autoridad,Foto;
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -76,13 +77,28 @@ namespace CapaVista
                         CmbTipoPass.Text = Lector.GetString(10);
                         CmbAutoridad.Text = Lector.GetString(11);
                         TxtNacimiento.Text = Lector.GetString(12);
+                        Foto = Lector.GetString(13);
+
+                        //en este boton funciona a manera de mostrar la imagen en un pictureBox, posteriormente esta el link es
+                        //guardado en una variable para ser enviado a la base de datos
+
+                        WebRequest request = WebRequest.Create(Foto);
+                        using (var response = request.GetResponse()){
+                                 using (var str = response.GetResponseStream()){
+
+                        PbxFoto.BackgroundImage = Bitmap.FromStream(str);
+                        PbxFoto.BackgroundImageLayout = ImageLayout.Stretch;
+                                  }
+                        }
+ 
+
                     }
                 }
                 else
                 {
                     //Mensaje de error
                     MessageBox.Show("ERROR: El Id del Pasaporte no se encuentra Registrado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    
                     funcBloqueo();
                     funcLimpieza();
                 }
@@ -92,8 +108,14 @@ namespace CapaVista
 
        
 
-        int NumPass, TipoPass, Estado = 1;
+        int  TipoPass, Estado = 1;
 
+        private void BtnLista_Click(object sender, EventArgs e)
+        {
+            //Se llama al formulario que contiene todos una tabla de todos los empleados
+            frmListadoPasaportes Listado = new frmListadoPasaportes();
+            Listado.ShowDialog();
+        }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
@@ -123,6 +145,7 @@ namespace CapaVista
                     Cont.FuncActualizarPasaporte(FechaC, FechaV, TipoPass, Autoridad, Estado);
                     MessageBox.Show("Se ha renovado el Pasaporte con Éxito", "RENOVACION PASAPORTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TxtIdPass.Text = "";
+                    
                     funcLimpieza();
                     funcBloqueo();
 
@@ -151,9 +174,9 @@ namespace CapaVista
             CmbAutoridad.Text = "";
             DtpCreacion.Value = DateTime.Now;
             DtpVencimiento.Value = DateTime.Now;
-
-            //PbxFoto.Image.Dispose();
-            //PbxFoto.Image = nothing;
+            Foto = "";
+            PbxFoto.Image = null;
+            
 
         }
 
@@ -166,7 +189,7 @@ namespace CapaVista
             CmbAutoridad.Enabled = false;
             DtpCreacion.Enabled = false;
             DtpVencimiento.Enabled = false;
-            PbxFoto.Enabled = false;
+            PbxFoto.Visible = false;
 
         }
         private void funcDesBloqueo()
@@ -177,7 +200,7 @@ namespace CapaVista
             CmbAutoridad.Enabled = true;
             DtpCreacion.Enabled = true;
             DtpVencimiento.Enabled = true;
-            PbxFoto.Enabled = true;
+            PbxFoto.Visible = true;
 
         }
 

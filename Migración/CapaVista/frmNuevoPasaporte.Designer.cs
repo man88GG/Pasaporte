@@ -46,7 +46,6 @@ namespace CapaVista
             this.DtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.TxtNumPasaporte = new System.Windows.Forms.TextBox();
             this.TxtNumLibreta = new System.Windows.Forms.TextBox();
-            this.PbxFoto = new System.Windows.Forms.PictureBox();
             this.DtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.LblFechaNac = new System.Windows.Forms.Label();
             this.LblAutoridad = new System.Windows.Forms.Label();
@@ -59,15 +58,14 @@ namespace CapaVista
             this.TbcDatos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TxtNacimiento = new System.Windows.Forms.TextBox();
+            this.LblNacimiento = new System.Windows.Forms.Label();
             this.CmbAutoridad = new System.Windows.Forms.ComboBox();
             this.BtnIngresar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.LblNacimiento = new System.Windows.Forms.Label();
-            this.TxtNacimiento = new System.Windows.Forms.TextBox();
-            this.BtnFoto = new System.Windows.Forms.Button();
+            this.TxtLinkFotografía = new System.Windows.Forms.TextBox();
             this.GbxLugarNac.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxFoto)).BeginInit();
             this.TbcDatos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -89,11 +87,11 @@ namespace CapaVista
             this.LblFoto.AutoSize = true;
             this.LblFoto.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFoto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblFoto.Location = new System.Drawing.Point(642, 26);
+            this.LblFoto.Location = new System.Drawing.Point(33, 285);
             this.LblFoto.Name = "LblFoto";
-            this.LblFoto.Size = new System.Drawing.Size(104, 22);
+            this.LblFoto.Size = new System.Drawing.Size(204, 22);
             this.LblFoto.TabIndex = 85;
-            this.LblFoto.Text = "Fotografía";
+            this.LblFoto.Text = "Link de la Fotografía:";
             // 
             // CmbTipoPass
             // 
@@ -142,18 +140,18 @@ namespace CapaVista
             this.LblFechaCre.AutoSize = true;
             this.LblFechaCre.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaCre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblFechaCre.Location = new System.Drawing.Point(33, 285);
+            this.LblFechaCre.Location = new System.Drawing.Point(33, 342);
             this.LblFechaCre.Name = "LblFechaCre";
-            this.LblFechaCre.Size = new System.Drawing.Size(181, 22);
+            this.LblFechaCre.Size = new System.Drawing.Size(187, 22);
             this.LblFechaCre.TabIndex = 91;
-            this.LblFechaCre.Text = "Fecha de Creación";
+            this.LblFechaCre.Text = "Fecha de Creación:";
             // 
             // LblFechaVen
             // 
             this.LblFechaVen.AutoSize = true;
             this.LblFechaVen.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaVen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblFechaVen.Location = new System.Drawing.Point(33, 371);
+            this.LblFechaVen.Location = new System.Drawing.Point(33, 428);
             this.LblFechaVen.Name = "LblFechaVen";
             this.LblFechaVen.Size = new System.Drawing.Size(218, 22);
             this.LblFechaVen.TabIndex = 92;
@@ -179,12 +177,13 @@ namespace CapaVista
             this.GbxLugarNac.Enabled = false;
             this.GbxLugarNac.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxLugarNac.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.GbxLugarNac.Location = new System.Drawing.Point(547, 29);
+            this.GbxLugarNac.Location = new System.Drawing.Point(498, 38);
             this.GbxLugarNac.Name = "GbxLugarNac";
             this.GbxLugarNac.Size = new System.Drawing.Size(276, 238);
             this.GbxLugarNac.TabIndex = 94;
             this.GbxLugarNac.TabStop = false;
             this.GbxLugarNac.Text = "Lugar de Residencia Actual";
+            this.GbxLugarNac.Enter += new System.EventHandler(this.GbxLugarNac_Enter);
             // 
             // CmbMuni
             // 
@@ -207,7 +206,7 @@ namespace CapaVista
             this.DtpCreacion.CalendarFont = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpCreacion.CalendarForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DtpCreacion.Enabled = false;
-            this.DtpCreacion.Location = new System.Drawing.Point(37, 328);
+            this.DtpCreacion.Location = new System.Drawing.Point(37, 385);
             this.DtpCreacion.Name = "DtpCreacion";
             this.DtpCreacion.Size = new System.Drawing.Size(368, 31);
             this.DtpCreacion.TabIndex = 94;
@@ -217,7 +216,7 @@ namespace CapaVista
             this.DtpVencimiento.CalendarFont = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpVencimiento.CalendarForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DtpVencimiento.Enabled = false;
-            this.DtpVencimiento.Location = new System.Drawing.Point(37, 405);
+            this.DtpVencimiento.Location = new System.Drawing.Point(37, 462);
             this.DtpVencimiento.Name = "DtpVencimiento";
             this.DtpVencimiento.Size = new System.Drawing.Size(368, 31);
             this.DtpVencimiento.TabIndex = 95;
@@ -237,14 +236,6 @@ namespace CapaVista
             this.TxtNumLibreta.Name = "TxtNumLibreta";
             this.TxtNumLibreta.Size = new System.Drawing.Size(193, 31);
             this.TxtNumLibreta.TabIndex = 97;
-            // 
-            // PbxFoto
-            // 
-            this.PbxFoto.Location = new System.Drawing.Point(588, 55);
-            this.PbxFoto.Name = "PbxFoto";
-            this.PbxFoto.Size = new System.Drawing.Size(210, 200);
-            this.PbxFoto.TabIndex = 98;
-            this.PbxFoto.TabStop = false;
             // 
             // DtpFechaNac
             // 
@@ -283,7 +274,7 @@ namespace CapaVista
             this.TxtApellidos.Enabled = false;
             this.TxtApellidos.Location = new System.Drawing.Point(145, 92);
             this.TxtApellidos.Name = "TxtApellidos";
-            this.TxtApellidos.Size = new System.Drawing.Size(377, 31);
+            this.TxtApellidos.Size = new System.Drawing.Size(301, 31);
             this.TxtApellidos.TabIndex = 106;
             // 
             // TxtNombres
@@ -291,7 +282,7 @@ namespace CapaVista
             this.TxtNombres.Enabled = false;
             this.TxtNombres.Location = new System.Drawing.Point(145, 38);
             this.TxtNombres.Name = "TxtNombres";
-            this.TxtNombres.Size = new System.Drawing.Size(377, 31);
+            this.TxtNombres.Size = new System.Drawing.Size(301, 31);
             this.TxtNombres.TabIndex = 105;
             // 
             // LblApellidos
@@ -321,7 +312,7 @@ namespace CapaVista
             this.LblIngresoDpi.AutoSize = true;
             this.LblIngresoDpi.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIngresoDpi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblIngresoDpi.Location = new System.Drawing.Point(83, 35);
+            this.LblIngresoDpi.Location = new System.Drawing.Point(34, 33);
             this.LblIngresoDpi.Name = "LblIngresoDpi";
             this.LblIngresoDpi.Size = new System.Drawing.Size(217, 22);
             this.LblIngresoDpi.TabIndex = 107;
@@ -329,7 +320,7 @@ namespace CapaVista
             // 
             // TxtNumDpi
             // 
-            this.TxtNumDpi.Location = new System.Drawing.Point(319, 35);
+            this.TxtNumDpi.Location = new System.Drawing.Point(270, 33);
             this.TxtNumDpi.Name = "TxtNumDpi";
             this.TxtNumDpi.Size = new System.Drawing.Size(210, 22);
             this.TxtNumDpi.TabIndex = 108;
@@ -342,7 +333,7 @@ namespace CapaVista
             this.TbcDatos.Location = new System.Drawing.Point(3, 98);
             this.TbcDatos.Name = "TbcDatos";
             this.TbcDatos.SelectedIndex = 0;
-            this.TbcDatos.Size = new System.Drawing.Size(837, 516);
+            this.TbcDatos.Size = new System.Drawing.Size(809, 544);
             this.TbcDatos.TabIndex = 109;
             // 
             // tabPage1
@@ -358,18 +349,17 @@ namespace CapaVista
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(829, 393);
+            this.tabPage1.Size = new System.Drawing.Size(801, 509);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Personales";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.tabPage2.Controls.Add(this.BtnFoto);
+            this.tabPage2.Controls.Add(this.TxtLinkFotografía);
             this.tabPage2.Controls.Add(this.TxtNacimiento);
             this.tabPage2.Controls.Add(this.LblNacimiento);
             this.tabPage2.Controls.Add(this.CmbAutoridad);
-            this.tabPage2.Controls.Add(this.PbxFoto);
             this.tabPage2.Controls.Add(this.DtpCreacion);
             this.tabPage2.Controls.Add(this.DtpVencimiento);
             this.tabPage2.Controls.Add(this.LblFechaVen);
@@ -385,9 +375,28 @@ namespace CapaVista
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(829, 481);
+            this.tabPage2.Size = new System.Drawing.Size(801, 509);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos Pasaporte";
+            // 
+            // TxtNacimiento
+            // 
+            this.TxtNacimiento.Enabled = false;
+            this.TxtNacimiento.Location = new System.Drawing.Point(289, 224);
+            this.TxtNacimiento.Name = "TxtNacimiento";
+            this.TxtNacimiento.Size = new System.Drawing.Size(193, 31);
+            this.TxtNacimiento.TabIndex = 105;
+            // 
+            // LblNacimiento
+            // 
+            this.LblNacimiento.AutoSize = true;
+            this.LblNacimiento.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNacimiento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LblNacimiento.Location = new System.Drawing.Point(33, 233);
+            this.LblNacimiento.Name = "LblNacimiento";
+            this.LblNacimiento.Size = new System.Drawing.Size(206, 22);
+            this.LblNacimiento.TabIndex = 104;
+            this.LblNacimiento.Text = "Lugar de Nacimiento:";
             // 
             // CmbAutoridad
             // 
@@ -409,7 +418,7 @@ namespace CapaVista
             this.BtnIngresar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnIngresar.ForeColor = System.Drawing.Color.White;
             this.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnIngresar.Location = new System.Drawing.Point(650, 619);
+            this.BtnIngresar.Location = new System.Drawing.Point(618, 653);
             this.BtnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(190, 61);
@@ -421,7 +430,7 @@ namespace CapaVista
             // btnAyuda
             // 
             this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
-            this.btnAyuda.Location = new System.Drawing.Point(764, 11);
+            this.btnAyuda.Location = new System.Drawing.Point(740, 11);
             this.btnAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(72, 71);
@@ -435,7 +444,7 @@ namespace CapaVista
             this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.White;
             this.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBuscar.Location = new System.Drawing.Point(566, 21);
+            this.BtnBuscar.Location = new System.Drawing.Point(517, 19);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(130, 48);
@@ -444,46 +453,20 @@ namespace CapaVista
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // LblNacimiento
+            // TxtLinkFotografía
             // 
-            this.LblNacimiento.AutoSize = true;
-            this.LblNacimiento.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNacimiento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblNacimiento.Location = new System.Drawing.Point(33, 233);
-            this.LblNacimiento.Name = "LblNacimiento";
-            this.LblNacimiento.Size = new System.Drawing.Size(206, 22);
-            this.LblNacimiento.TabIndex = 104;
-            this.LblNacimiento.Text = "Lugar de Nacimiento:";
-            // 
-            // TxtNacimiento
-            // 
-            this.TxtNacimiento.Enabled = false;
-            this.TxtNacimiento.Location = new System.Drawing.Point(289, 224);
-            this.TxtNacimiento.Name = "TxtNacimiento";
-            this.TxtNacimiento.Size = new System.Drawing.Size(193, 31);
-            this.TxtNacimiento.TabIndex = 105;
-            // 
-            // BtnFoto
-            // 
-            this.BtnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
-            this.BtnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnFoto.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFoto.ForeColor = System.Drawing.Color.White;
-            this.BtnFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFoto.Location = new System.Drawing.Point(630, 273);
-            this.BtnFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnFoto.Name = "BtnFoto";
-            this.BtnFoto.Size = new System.Drawing.Size(130, 48);
-            this.BtnFoto.TabIndex = 127;
-            this.BtnFoto.Text = "Agregar Fotografía";
-            this.BtnFoto.UseVisualStyleBackColor = false;
+            this.TxtLinkFotografía.Enabled = false;
+            this.TxtLinkFotografía.Location = new System.Drawing.Point(289, 282);
+            this.TxtLinkFotografía.Name = "TxtLinkFotografía";
+            this.TxtLinkFotografía.Size = new System.Drawing.Size(488, 31);
+            this.TxtLinkFotografía.TabIndex = 128;
             // 
             // frmNuevoPasaporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(852, 691);
+            this.ClientSize = new System.Drawing.Size(824, 725);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.BtnIngresar);
@@ -494,7 +477,6 @@ namespace CapaVista
             this.Text = "frmPasaporte";
             this.GbxLugarNac.ResumeLayout(false);
             this.GbxLugarNac.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxFoto)).EndInit();
             this.TbcDatos.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -523,7 +505,6 @@ namespace CapaVista
         private System.Windows.Forms.ComboBox CmbDepto;
         private System.Windows.Forms.TextBox TxtNumPasaporte;
         private System.Windows.Forms.TextBox TxtNumLibreta;
-        private System.Windows.Forms.PictureBox PbxFoto;
         private System.Windows.Forms.DateTimePicker DtpFechaNac;
         private System.Windows.Forms.Label LblFechaNac;
         private System.Windows.Forms.Label LblAutoridad;
@@ -542,6 +523,6 @@ namespace CapaVista
         private System.Windows.Forms.ComboBox CmbAutoridad;
         private System.Windows.Forms.TextBox TxtNacimiento;
         private System.Windows.Forms.Label LblNacimiento;
-        private System.Windows.Forms.Button BtnFoto;
+        private System.Windows.Forms.TextBox TxtLinkFotografía;
     }
 }
