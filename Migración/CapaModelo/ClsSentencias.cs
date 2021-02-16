@@ -71,25 +71,22 @@ namespace CapaModelo
 
         //Consulta para ingresar datos en la entidad Pasaporte
         public void funcInsertarPasaporte(int NumPass, string NumLibreta, string DpiCliente, string FechaC, 
-            string FechaV, int TipoPass, string Autoridad, int Estado)
+            string FechaV, int TipoPass, string LugarNac,string Autoridad, int Estado)
         {
             try
             {
                 int IdPasaporte;
-                string CorrelativoReclu = "SELECT IFNULL(MAX(IDPASAPORTE),0) +1 FROM PASAPORTE";
-                
+                string CorrelativoReclu = "SELECT IFNULL(MAX(IDPASAPORTE),0) +1 FROM PASAPORTE";     
                 OdbcCommand QueryIdReclu = new OdbcCommand(CorrelativoReclu, con.conexion());
-
                 IdPasaporte = Convert.ToInt32(QueryIdReclu.ExecuteScalar());
-               
                 OdbcDataReader Ejecucion1 = QueryIdReclu.ExecuteReader();
                 
                 //falta firma, fotografia y lugar nacimiento
                 //Sentencia para insertar datos a entidad Reclutamiento
                 string SentenciaRecluta = "INSERT INTO PASAPORTE (IDPASAPORTE, NUMEROPASAPORTE, NUMEROLIBRETA, " +
-                    "DPI, FECHACREACION, FECHAVENCIMIENTO, IDTIPOPASAPORTE," +
+                    "DPI, FECHACREACION, FECHAVENCIMIENTO, IDTIPOPASAPORTE,LUGARNACIMIENTO, " +
                     "AUTORIDAD, ESTADO) VALUES " + "('" + IdPasaporte + "','" + NumPass + "','" + NumLibreta + "','" + DpiCliente + "','"
-                    + FechaC + "','" + FechaV + "','" + TipoPass + "','" + Autoridad + "','" + Estado + "')";
+                    + FechaC + "','" + FechaV + "','" + TipoPass + "','" + LugarNac + "','" + Autoridad + "','" + Estado + "')";
 
                
                 OdbcCommand Query_IngresoRec = new OdbcCommand(SentenciaRecluta, con.conexion());
@@ -136,6 +133,56 @@ namespace CapaModelo
         }//fin
 
 
+
+        //consulta para buscar el pasaporte
+        public OdbcDataReader FuncBuscarPass(string NumPass)
+        {
+            try
+            {
+                //sentencia para realizar la busqueda obteniendo los nombres de las diferentes entidades e igualando los ID de las diferentes tablas
+                string sentencia = "SELECT R.NOMBRES, R.APELLIDOS,R.FECHANACIMIENTO,D.DEPARTAMENTO,M.MUNICIPIO, P.NUMEROPASAPORTE, P.NUMEROLIBRETA,P.DPI,P.FECHACREACION,P.FECHAVENCIMIENTO,TP.TIPOPASAPORTE,P.AUTORIDAD,P.LUGARNACIMIENTO FROM RENAP AS R, DEPARTAMENTO AS D, MUNICIPIO AS M, TIPOPASAPORTE AS TP, PASAPORTE AS P WHERE R.IDMUNICIPIO = M.IDMUNICIPIO AND M.IDDEPARTAMENTO = D.IDDEPARTAMENTO AND P.DPI = R.DPI AND P.IDTIPOPASAPORTE =TP.IDTIPOPASAPORTE AND P.IDPASAPORTE = '" + NumPass + "'";
+
+                OdbcCommand Query_BusquedaReclu = new OdbcCommand(sentencia, con.conexion());
+                OdbcDataReader Lector = Query_BusquedaReclu.ExecuteReader();
+                return Lector;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        //consulta para modificar en la entidad Reclutamiento
+        public void funcActualizarPasaporte(string FechaC, string FechaV, int TipoPass, string Autoridad,
+                int Estado)
+        {
+            try
+            {
+               
+
+                string sentencia = "UPDATE PASAPORTE SET FECHACREACION='" + FechaC + "', FECHAVENCIMIENTO='" + FechaV +
+                    "', IDTIPOPASAPORTE='" + TipoPass + "', AUTORIDAD='" + Autoridad + "', ESTADO='" + Estado  + "'";
+
+                
+                OdbcCommand Query_Validacion1 = new OdbcCommand(sentencia, con.conexion());
+                
+                Query_Validacion1.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
     }

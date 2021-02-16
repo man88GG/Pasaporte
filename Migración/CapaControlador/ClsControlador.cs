@@ -36,11 +36,27 @@ namespace CapaControlador
         //consulta para insertar a la entidad Pasaporte
         //falta lo de firma, lugar nac
         public void funcInsertarPasaporte(int NumPass, string NumLibreta, string DpiCliente,string FechaC,
-            string FechaV,int TipoPass, string Autoridad, int Estado)
+            string FechaV,int TipoPass, string LugarNac,string Autoridad, int Estado)
         {
-            sn.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, Autoridad, Estado);
+            sn.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, LugarNac,Autoridad, Estado);
         }
 
+        //consulta para la busqueda en la entidad PASAPORTE
+        public OdbcDataReader funcBuscarPass(string NumPass)
+        {
+            OdbcDataReader Lector = sn.FuncBuscarPass(NumPass);
+            return Lector;
+        }
+
+        //Paso de datos para consulta modificar en la entidad Reclutamiento
+        public void FuncActualizarPasaporte(string FechaC, string FechaV, int TipoPass, string Autoridad,
+                int Estado)
+        {
+
+            sn.funcActualizarPasaporte(FechaC, FechaV, TipoPass, Autoridad, Estado);
+
+
+        }
 
     }
 }

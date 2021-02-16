@@ -13,12 +13,12 @@ using CapaControlador;
 
 namespace CapaVista
 {
-    public partial class frmPasaporte : Form
+    public partial class frmNuevoPasaporte : Form
     {
 
         ClsControlador Cont = new ClsControlador();
 
-        public frmPasaporte()
+        public frmNuevoPasaporte()
         {
             InitializeComponent();
             funcLlenarTipoPass();
@@ -44,14 +44,7 @@ namespace CapaVista
         string NumLibreta, FechaC, FechaV, Firma, LugarNac,Autoridad;
         int NumPass, TipoPass, Estado=1;
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Autoridad = CmbAutoridad.SelectedItem.ToString();
-            if (CmbAutoridad.SelectedItem != null)
-            {
-                MessageBox.Show(Autoridad);
-            }
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -95,7 +88,7 @@ namespace CapaVista
 
         private void funcLimpieza()
         {
-
+            TxtNacimiento.Text = "";
             TxtNumDpi.Text = "";
             TxtNombres.Text = "";
             TxtApellidos.Text = "";
@@ -118,7 +111,7 @@ namespace CapaVista
         //Función de Bloqueo
         private void funcBloqueo()
         {
-            
+            TxtNacimiento.Enabled = false;
             TxtNumPasaporte.Enabled = false;
             TxtNumLibreta.Enabled = false;
             CmbTipoPass.Enabled = false;
@@ -148,9 +141,7 @@ namespace CapaVista
                     //Se da a las variables los valores correspondientes para enviarse a la capa Controlador
                     //datos Pasaporte
 
-                    
-                    
-
+           
                     NumPass = Convert.ToInt32(TxtNumPasaporte.Text);
                     NumLibreta = TxtNumLibreta.Text;
                     
@@ -158,13 +149,13 @@ namespace CapaVista
                     FechaV = DtpVencimiento.Value.Date.ToShortDateString();
                     TipoPass = CmbTipoPass.SelectedIndex + 1;
                     //Firma
-                    //LugarNac
+                    LugarNac = TxtNacimiento.Text;
                     //revisar lo de autoridad de string o int
                     Autoridad = CmbAutoridad.SelectedItem.ToString();
 
                     //falta lo de firma, lugar nac
-                    Cont.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, Autoridad, Estado);
-                    MessageBox.Show("Se ha ingresado al Banco de Talento con Éxito", "FORMULARIO RECLUTAMIENTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Cont.funcInsertarPasaporte(NumPass, NumLibreta, DpiCliente, FechaC, FechaV, TipoPass, LugarNac, Autoridad, Estado);
+                    MessageBox.Show("Se ha ingresado el Pasaporte con Éxito", "INGRESO PASAPORTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     funcLimpieza();
                     funcBloqueo();
@@ -179,16 +170,12 @@ namespace CapaVista
                 }//fin elseif Pregunta
 
                 }//fin elseif txt
-
-            
-
-
-
+                 
         }
 
         private void funcDesBloqueo()
         {
-
+            TxtNacimiento.Enabled = true;
             TxtNumPasaporte.Enabled = true;
             TxtNumLibreta.Enabled = true;
             CmbTipoPass.Enabled = true;

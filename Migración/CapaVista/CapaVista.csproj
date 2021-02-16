@@ -94,17 +94,23 @@
     <Compile Include="frmMenuCita.Designer.cs">
       <DependentUpon>frmMenuCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPasaporte.cs">
+    <Compile Include="frmNuevoPasaporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPasaporte.Designer.cs">
-      <DependentUpon>frmPasaporte.cs</DependentUpon>
+    <Compile Include="frmNuevoPasaporte.Designer.cs">
+      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPruebaPasaporte.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPruebaPasaporte.Designer.cs">
       <DependentUpon>frmPruebaPasaporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRenovarPasaporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRenovarPasaporte.Designer.cs">
+      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
     </Compile>
     <Compile Include="frmValidarBoleta.cs">
       <SubType>Form</SubType>
@@ -145,11 +151,14 @@
     <EmbeddedResource Include="frmMenuCita.resx">
       <DependentUpon>frmMenuCita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPasaporte.resx">
-      <DependentUpon>frmPasaporte.cs</DependentUpon>
+    <EmbeddedResource Include="frmNuevoPasaporte.resx">
+      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPruebaPasaporte.resx">
       <DependentUpon>frmPruebaPasaporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenovarPasaporte.resx">
+      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmValidarBoleta.resx">
       <DependentUpon>frmValidarBoleta.cs</DependentUpon>
