@@ -16,15 +16,6 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControla
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.dll
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.pdb
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.dll
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.pdb
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csprojAssemblyReference.cache
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CoreCompileInputs.cache
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
-D:\Desktop\Noveno Semestre\Ingenieria de software\PrimerProyecto\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb
 C:\Users\opfug\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.dll
 C:\Users\opfug\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.pdb
 C:\Users\opfug\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.dll
@@ -34,12 +25,3 @@ C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.cs
 C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
 C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
 C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csprojAssemblyReference.cache
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CoreCompileInputs.cache
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.dll
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.pdb
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.dll
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.pdb
-C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete

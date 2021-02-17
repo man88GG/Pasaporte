@@ -39,7 +39,6 @@ namespace CapaVista
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +56,7 @@ namespace CapaVista
             this.ayudasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(949, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(927, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,20 +66,20 @@ namespace CapaVista
             this.cerrarSesionToolStripMenuItem});
             this.inicioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 25);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(73, 32);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             // 
             // mantenimientosToolStripMenuItem
             // 
             this.mantenimientosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(135, 25);
+            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(168, 32);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
             // 
             // procesosToolStripMenuItem
@@ -91,64 +89,54 @@ namespace CapaVista
             this.generarPasaporteToolStripMenuItem});
             this.procesosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
-            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(103, 32);
             this.procesosToolStripMenuItem.Text = "Procesos";
             // 
             // gestionarCitaToolStripMenuItem
             // 
             this.gestionarCitaToolStripMenuItem.Name = "gestionarCitaToolStripMenuItem";
-            this.gestionarCitaToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.gestionarCitaToolStripMenuItem.Size = new System.Drawing.Size(258, 32);
             this.gestionarCitaToolStripMenuItem.Text = "Gestionar Cita";
             this.gestionarCitaToolStripMenuItem.Click += new System.EventHandler(this.gestionarCitaToolStripMenuItem_Click);
             // 
             // generarPasaporteToolStripMenuItem
             // 
             this.generarPasaporteToolStripMenuItem.Name = "generarPasaporteToolStripMenuItem";
-            this.generarPasaporteToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.generarPasaporteToolStripMenuItem.Size = new System.Drawing.Size(258, 32);
             this.generarPasaporteToolStripMenuItem.Text = "Generar Pasaporte";
-            this.generarPasaporteToolStripMenuItem.Click += new System.EventHandler(this.generarPasaporteToolStripMenuItem_Click);
             // 
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(116, 25);
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(142, 32);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // reportesToolStripMenuItem
             // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bitácoraToolStripMenuItem});
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(103, 32);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // ayudasToolStripMenuItem
             // 
             this.ayudasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ayudasToolStripMenuItem.Name = "ayudasToolStripMenuItem";
-            this.ayudasToolStripMenuItem.Size = new System.Drawing.Size(73, 25);
+            this.ayudasToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
             this.ayudasToolStripMenuItem.Text = "Ayudas";
-            // 
-            // bitácoraToolStripMenuItem
-            // 
-            this.bitácoraToolStripMenuItem.Name = "bitácoraToolStripMenuItem";
-            this.bitácoraToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.bitácoraToolStripMenuItem.Text = "Bitácora";
-            this.bitácoraToolStripMenuItem.Click += new System.EventHandler(this.bitácoraToolStripMenuItem_Click);
             // 
             // MDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 552);
+            this.ClientSize = new System.Drawing.Size(927, 450);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MDI";
             this.Text = "MDI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -162,12 +150,11 @@ namespace CapaVista
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarCitaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarPasaporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bitácoraToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
     }
 }
