@@ -17,6 +17,7 @@ namespace CapaVista
         {
             InitializeComponent();
             funcMostrarTabla();
+
         }
         
         int Estado = 0;
