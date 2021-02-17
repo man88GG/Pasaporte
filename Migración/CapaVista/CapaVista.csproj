@@ -88,6 +88,24 @@
     <Compile Include="MDI.Designer.cs">
       <DependentUpon>MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pasaporte\frmListadoPasaportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pasaporte\frmListadoPasaportes.Designer.cs">
+      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pasaporte\frmNuevoPasaporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pasaporte\frmNuevoPasaporte.Designer.cs">
+      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pasaporte\frmRenovarPasaporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pasaporte\frmRenovarPasaporte.Designer.cs">
+      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +129,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pasaporte\frmListadoPasaportes.resx">
+      <DependentUpon>frmListadoPasaportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pasaporte\frmNuevoPasaporte.resx">
+      <DependentUpon>frmNuevoPasaporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pasaporte\frmRenovarPasaporte.resx">
+      <DependentUpon>frmRenovarPasaporte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

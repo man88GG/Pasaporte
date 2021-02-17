@@ -16,3 +16,12 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControla
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
 D:\Documentos\GitHub\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.dll
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\bin\Debug\CapaControlador.pdb
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.dll
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\bin\Debug\CapaModelo.pdb
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csprojAssemblyReference.cache
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CoreCompileInputs.cache
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.dll
+C:\Users\opfug\Pasaporte\Migración\CapaControlador\obj\Debug\CapaControlador.pdb

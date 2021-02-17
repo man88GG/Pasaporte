@@ -240,6 +240,7 @@ namespace CapaModelo
             return Dato;
         }
 
+
         public void procModificar(string sql)
         {
             string Consulta = sql;
@@ -255,5 +256,6 @@ namespace CapaModelo
 
             }
         }
+
     }
 }
