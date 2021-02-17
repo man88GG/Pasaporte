@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaVistaSeguridad.Formularios;
 using CapaVistaSeguridad;
 using CapaVistaSeguridad.Formularios.Mantenimientos;
+using CapaVista;
 
 namespace MDI
 {
@@ -155,20 +156,33 @@ namespace MDI
 
         private void tipocasoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (seguridad.PermisosAcceso("1305", txtUsuario.Text) == 1)
-            {
-                bit.user(txtUsuario.Text);
-                bit.insert("Ingreso a la apliacion de mantenimiento de perfil", 4);
-                Form1 asignacion = new Form1(txtUsuario.Text);
-                asignacion.MdiParent = this;
-                asignacion.Show();
-            }
-            else
-            {
-                bit.user(txtUsuario.Text);
-                bit.insert("Trato de ingresar a la aplicacion de mantenimiento de perfil", 4);
-                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
-            }
+           
+        }
+
+        private void gestionDeCitasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMenuCita asignacion = new frmMenuCita(this);
+            asignacion.MdiParent = this;
+            asignacion.Show();
+        }
+
+        private void gestionDePasaportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void nuevoPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNuevoPasaporte asignacion = new frmNuevoPasaporte();
+            asignacion.MdiParent = this;
+            asignacion.Show();
+        }
+
+        private void renovarPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRenovarPasaporte asignacion = new frmRenovarPasaporte();
+            asignacion.MdiParent = this;
+            asignacion.Show();
         }
     }
 }

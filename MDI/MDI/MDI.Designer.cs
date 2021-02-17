@@ -33,6 +33,7 @@ namespace MDI
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipocasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePasaportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,8 @@ namespace MDI
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.tipocasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renovarPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +95,13 @@ namespace MDI
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
             // 
+            // tipocasoToolStripMenuItem
+            // 
+            this.tipocasoToolStripMenuItem.Name = "tipocasoToolStripMenuItem";
+            this.tipocasoToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.tipocasoToolStripMenuItem.Text = "tipocaso";
+            this.tipocasoToolStripMenuItem.Click += new System.EventHandler(this.tipocasoToolStripMenuItem_Click);
+            // 
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,12 +116,17 @@ namespace MDI
             this.gestionDeCitasToolStripMenuItem.Name = "gestionDeCitasToolStripMenuItem";
             this.gestionDeCitasToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
             this.gestionDeCitasToolStripMenuItem.Text = "Gestion de Citas";
+            this.gestionDeCitasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeCitasToolStripMenuItem_Click);
             // 
             // gestionDePasaportesToolStripMenuItem
             // 
+            this.gestionDePasaportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoPasaporteToolStripMenuItem,
+            this.renovarPasaporteToolStripMenuItem});
             this.gestionDePasaportesToolStripMenuItem.Name = "gestionDePasaportesToolStripMenuItem";
             this.gestionDePasaportesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
             this.gestionDePasaportesToolStripMenuItem.Text = "Gestion de Pasaportes";
+            this.gestionDePasaportesToolStripMenuItem.Click += new System.EventHandler(this.gestionDePasaportesToolStripMenuItem_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -132,7 +146,7 @@ namespace MDI
             this.mantenimientoModuloToolStripMenuItem,
             this.perfilToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             // 
             // cambioDeContraseñaToolStripMenuItem
@@ -215,12 +229,19 @@ namespace MDI
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Visible = false;
             // 
-            // tipocasoToolStripMenuItem
+            // nuevoPasaporteToolStripMenuItem
             // 
-            this.tipocasoToolStripMenuItem.Name = "tipocasoToolStripMenuItem";
-            this.tipocasoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.tipocasoToolStripMenuItem.Text = "tipocaso";
-            this.tipocasoToolStripMenuItem.Click += new System.EventHandler(this.tipocasoToolStripMenuItem_Click);
+            this.nuevoPasaporteToolStripMenuItem.Name = "nuevoPasaporteToolStripMenuItem";
+            this.nuevoPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.nuevoPasaporteToolStripMenuItem.Text = "Nuevo Pasaporte";
+            this.nuevoPasaporteToolStripMenuItem.Click += new System.EventHandler(this.nuevoPasaporteToolStripMenuItem_Click);
+            // 
+            // renovarPasaporteToolStripMenuItem
+            // 
+            this.renovarPasaporteToolStripMenuItem.Name = "renovarPasaporteToolStripMenuItem";
+            this.renovarPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.renovarPasaporteToolStripMenuItem.Text = "Renovar Pasaporte";
+            this.renovarPasaporteToolStripMenuItem.Click += new System.EventHandler(this.renovarPasaporteToolStripMenuItem_Click);
             // 
             // MDI
             // 
@@ -264,6 +285,8 @@ namespace MDI
         private System.Windows.Forms.ToolStripMenuItem ayudasToolStripMenuItem;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.ToolStripMenuItem tipocasoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoPasaporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renovarPasaporteToolStripMenuItem;
     }
 }
 
