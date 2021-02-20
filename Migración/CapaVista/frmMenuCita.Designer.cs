@@ -46,6 +46,7 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 79;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // btnBuscarCita
             // 
@@ -59,7 +60,7 @@ namespace CapaVista
             this.btnBuscarCita.Name = "btnBuscarCita";
             this.btnBuscarCita.Size = new System.Drawing.Size(190, 61);
             this.btnBuscarCita.TabIndex = 78;
-            this.btnBuscarCita.Text = "Buscar Cita";
+            this.btnBuscarCita.Text = "Buscar";
             this.btnBuscarCita.UseVisualStyleBackColor = false;
             this.btnBuscarCita.Click += new System.EventHandler(this.btnBuscarCita_Click);
             // 
@@ -75,7 +76,7 @@ namespace CapaVista
             this.btnGenerarCita.Name = "btnGenerarCita";
             this.btnGenerarCita.Size = new System.Drawing.Size(190, 61);
             this.btnGenerarCita.TabIndex = 77;
-            this.btnGenerarCita.Text = "Generar cita";
+            this.btnGenerarCita.Text = "Gestionar";
             this.btnGenerarCita.UseVisualStyleBackColor = false;
             this.btnGenerarCita.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
@@ -100,9 +101,11 @@ namespace CapaVista
             this.ClientSize = new System.Drawing.Size(534, 276);
             this.Controls.Add(this.gbOpcion);
             this.Controls.Add(this.btnAyuda);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMenuCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMenuCita";
+            this.Text = "Menú";
             this.gbOpcion.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    /*CODIGO QUE AL PARECER ES PÚBLICO Y QUE USAN TODOS LOS GRUPOS PERO QUE NO COMPARTí CON NADIE*/
+    
     public class clsValidacion
     {
-        //Validar ingreso de letras RISKO
+        
         public static void funcLetras(KeyPressEventArgs v)
         {
             if (Char.IsLetter(v.KeyChar))

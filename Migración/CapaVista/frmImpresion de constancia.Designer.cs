@@ -66,6 +66,7 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 87;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // groupBox1
             // 
@@ -84,7 +85,7 @@ namespace CapaVista
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -138,9 +139,11 @@ namespace CapaVista
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnAyuda);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmImpresion_de_constancia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmImpresion_de_constancia";
+            this.Text = "Impresion de Cita";
             this.Load += new System.EventHandler(this.frmImpresion_de_constancia_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();

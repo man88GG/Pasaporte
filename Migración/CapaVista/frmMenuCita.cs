@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaVistaSeguridad;
 
 namespace CapaVista
 {
@@ -14,7 +15,7 @@ namespace CapaVista
     {
 
         int gestionarObuscar = 0;
-        
+        clsVistaBitacora bit = new clsVistaBitacora();
         static Form FormularioPadre;
         public frmMenuCita(Form formularioPadre)
         {
@@ -30,6 +31,7 @@ namespace CapaVista
             Validar.MdiParent = FormularioPadre;
             Validar.Show();
             this.Close();
+          
         }
 
         private void btnBuscarCita_Click(object sender, EventArgs e)
@@ -40,6 +42,12 @@ namespace CapaVista
             Validar.MdiParent = FormularioPadre;
             Validar.Show();
             this.Close();
+           
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this,"AyudaMigracionCitas/AyudaCitas.chm","menu.html");
         }
     }
 }

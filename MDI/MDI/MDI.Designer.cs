@@ -37,6 +37,8 @@ namespace MDI
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePasaportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renovarPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +52,7 @@ namespace MDI
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.nuevoPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renovarPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entregaPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +87,7 @@ namespace MDI
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // mantenimientosToolStripMenuItem
             // 
@@ -122,11 +124,26 @@ namespace MDI
             // 
             this.gestionDePasaportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPasaporteToolStripMenuItem,
-            this.renovarPasaporteToolStripMenuItem});
+            this.renovarPasaporteToolStripMenuItem,
+            this.entregaPasaporteToolStripMenuItem});
             this.gestionDePasaportesToolStripMenuItem.Name = "gestionDePasaportesToolStripMenuItem";
             this.gestionDePasaportesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
             this.gestionDePasaportesToolStripMenuItem.Text = "Gestion de Pasaportes";
             this.gestionDePasaportesToolStripMenuItem.Click += new System.EventHandler(this.gestionDePasaportesToolStripMenuItem_Click);
+            // 
+            // nuevoPasaporteToolStripMenuItem
+            // 
+            this.nuevoPasaporteToolStripMenuItem.Name = "nuevoPasaporteToolStripMenuItem";
+            this.nuevoPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.nuevoPasaporteToolStripMenuItem.Text = "Nuevo Pasaporte";
+            this.nuevoPasaporteToolStripMenuItem.Click += new System.EventHandler(this.nuevoPasaporteToolStripMenuItem_Click);
+            // 
+            // renovarPasaporteToolStripMenuItem
+            // 
+            this.renovarPasaporteToolStripMenuItem.Name = "renovarPasaporteToolStripMenuItem";
+            this.renovarPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.renovarPasaporteToolStripMenuItem.Text = "Renovar Pasaporte";
+            this.renovarPasaporteToolStripMenuItem.Click += new System.EventHandler(this.renovarPasaporteToolStripMenuItem_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -229,19 +246,12 @@ namespace MDI
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Visible = false;
             // 
-            // nuevoPasaporteToolStripMenuItem
+            // entregaPasaporteToolStripMenuItem
             // 
-            this.nuevoPasaporteToolStripMenuItem.Name = "nuevoPasaporteToolStripMenuItem";
-            this.nuevoPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
-            this.nuevoPasaporteToolStripMenuItem.Text = "Nuevo Pasaporte";
-            this.nuevoPasaporteToolStripMenuItem.Click += new System.EventHandler(this.nuevoPasaporteToolStripMenuItem_Click);
-            // 
-            // renovarPasaporteToolStripMenuItem
-            // 
-            this.renovarPasaporteToolStripMenuItem.Name = "renovarPasaporteToolStripMenuItem";
-            this.renovarPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
-            this.renovarPasaporteToolStripMenuItem.Text = "Renovar Pasaporte";
-            this.renovarPasaporteToolStripMenuItem.Click += new System.EventHandler(this.renovarPasaporteToolStripMenuItem_Click);
+            this.entregaPasaporteToolStripMenuItem.Name = "entregaPasaporteToolStripMenuItem";
+            this.entregaPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.entregaPasaporteToolStripMenuItem.Text = "Entrega Pasaporte";
+            this.entregaPasaporteToolStripMenuItem.Click += new System.EventHandler(this.entregaPasaporteToolStripMenuItem_Click);
             // 
             // MDI
             // 
@@ -287,6 +297,7 @@ namespace MDI
         private System.Windows.Forms.ToolStripMenuItem tipocasoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoPasaporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renovarPasaporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entregaPasaporteToolStripMenuItem;
     }
 }
 

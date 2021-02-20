@@ -15,7 +15,6 @@ namespace CapaModelo.Pasaporte
         //Necesitamos instanciar la clase conexión
         clsConexion con = new clsConexion();
 
-
         //consulta para buscar al usuario
         public OdbcDataReader FuncBuscarPersona(string dpi)
         {

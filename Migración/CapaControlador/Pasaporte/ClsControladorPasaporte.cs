@@ -16,8 +16,6 @@ namespace CapaControlador.Pasaporte
         //Instanciar variable para acceder a la clase sentencias
         ClsSentenciasPasaporte sn = new ClsSentenciasPasaporte();
 
-       
-
         //consulta para la busqueda en la entidad RENAP
         public OdbcDataReader funcBuscarPersona(string IdEmpleado)
         {

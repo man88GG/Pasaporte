@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControlador;
+using CapaVistaSeguridad;
 
 namespace CapaVista
 {
@@ -21,6 +22,7 @@ namespace CapaVista
         string idCita = "";
         string idBoleta = "";
         int CodigoBoleta;
+        clsVistaBitacora bit = new clsVistaBitacora();
         public frmValidarBoleta(Form formularioPadre,int Proceso)
         {
             InitializeComponent();
@@ -49,29 +51,35 @@ namespace CapaVista
                 int numeroBoleta = Int32.Parse(txtBoleta.Text);
                 int numeroRecibo = Int32.Parse(txtRecibo.Text);
                 CodigoBoleta = Cn.funcObtenerCodigoBoleta(numeroRecibo,numeroBoleta);
-                string sql = "SELECT D.dpi from datospersonales D, boletabanco B where D.idBoletaBanco = B.idBoleta and D.idBoletaBanco = "+CodigoBoleta+" and estado = 1;";     
+                string sql = "SELECT D.dpi from datospersonales D, boletabanco B where D.idBoletaBanco = B.idBoleta and D.idBoletaBanco = "+CodigoBoleta+" and estado = 1;";
+            
                 Dpi = Cn.CualquierDato(sql);
                 if(Dpi != "")
                 {
                     string sqlIdPersona = "SELECT idDatosPersonales FROM datospersonales WHERE dpi = " + Dpi + " and idBoletaBanco = " + CodigoBoleta + " and estado = 1 ;";
                     idDatosPersona = Cn.CualquierDato(sqlIdPersona);
+                  
                 }
                 if(idDatosPersona != "")
                 {
                     string sqlidCita = "SELECT idProgramarCita from programarcita P,datospersonales D,boletabanco B where P.idDatosPersonales = D.idDatosPersonales and D.idBoletaBanco = B.idBoleta and D.idDatosPersonales = " + idDatosPersona + " and D.idBoletaBanco = " + CodigoBoleta + " and P.estado = 1";
                     idCita = Cn.CualquierDato(sqlidCita);
+              
                 }
                 //si gestionarObuscar es igual a 1, la boleta no contiene datos del usuario, por lo que se tendran que ingresar sus datos
                 if (GestionarObuscar == 1)
                 {
+                    bit.insert("Validacion de boleta - Gestionar cita", 12);
                     if (CodigoBoleta == 0)
                     {
                         MessageBox.Show("Boleta no Valida, verifique que los datos este ingresados correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                         return;
                     }
                     if(idDatosPersona != "")
                     {
-                        MessageBox.Show("Esta Boleta ya ha sido utilizada, pruebe con la opcion de Buscar Boleta.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Esta Boleta ya ha sido utilizada, pruebe con la opcion de Buscar.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        idDatosPersona = "";
                         return;
                     }
                     else
@@ -81,15 +89,17 @@ namespace CapaVista
                         Validar.MdiParent = FormularioPadre;
                         Validar.Show();
                         this.Close();
+                       
                     } 
                 } else if(GestionarObuscar == 2)
                 //si gestionarObuscar es igual a 2, la boleta ya contiene datos del usuario, por lo que verificara si tiene cita o no
 
                 {
-                    
+                    bit.insert("Validacion de boleta - Buscar Cita o usuario", 12);
                     if (CodigoBoleta == 0)
                     {
                         MessageBox.Show("Boleta no Valida, verifique que los datos este ingresados correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
                     else if (Dpi == "")
                     {
@@ -103,6 +113,7 @@ namespace CapaVista
                             Validar.MdiParent = FormularioPadre;
                             Validar.Show();
                         this.Close();
+                        
                     }
                     else if(idCita != "")
                         {
@@ -114,6 +125,7 @@ namespace CapaVista
                             Nuevo.MdiParent = FormularioPadre;
                             Nuevo.Show();
                         this.Close();
+                       
                     }
 
                     
@@ -155,6 +167,11 @@ namespace CapaVista
         {
             txtBoleta.Text = "";
             txtRecibo.Text = "";
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaMigracionCitas/AyudaCitas.chm", "validacion.html");
         }
     }
 }

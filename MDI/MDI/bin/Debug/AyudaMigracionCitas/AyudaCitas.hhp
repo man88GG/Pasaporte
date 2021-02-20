@@ -1,0 +1,22 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=AyudaCitas.chm
+Contents file=AyudaModuloCitas.hhc
+Default Window=Inicio
+Display compile progress=No
+Language=0x100a Español (Guatemala)
+
+[WINDOWS]
+Inicio="Inicio","AyudaModuloCitas.hhc",,"menu.html","menu.html","menu.html","Menu","menu.html","Menu",0x23520,,0xc387e,,,,,,,,0
+
+
+[FILES]
+agendar.html
+dato-personales.html
+gestion-de-cita.html
+INFORMACIÓN.html
+menu.html
+validacion.html
+
+[INFOTYPES]
+
