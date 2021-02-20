@@ -210,6 +210,7 @@ namespace MDI
                 txtUsuario.Text = frm.usuario();
             }
         }
+<<<<<<< HEAD
 
         private void entregaPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -217,5 +218,7 @@ namespace MDI
             asignacion.MdiParent = this;
             asignacion.Show();
         }
+=======
+>>>>>>> 7ffc70d2f8a7a8de8dc7c0322593b9b44ab56816
     }
 }

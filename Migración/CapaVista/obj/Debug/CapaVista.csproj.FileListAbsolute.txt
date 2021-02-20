@@ -97,6 +97,7 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaControladorNav
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaModeloReporteador.pdb
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaControladorReporteador.pdb
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\CapaModeloNavegador.pdb
+<<<<<<< HEAD
 C:\Users\opfug\Pasaporte\Migración\CapaVista\bin\Debug\CapaVistaSeguridad.dll
 C:\Users\opfug\Pasaporte\Migración\CapaVista\bin\Debug\CapaControladorSeguridad.dll
 C:\Users\opfug\Pasaporte\Migración\CapaVista\bin\Debug\CapaModeloSeguridad.dll
@@ -135,3 +136,5 @@ C:\Users\opfug\Pasaporte\Migración\CapaVista\bin\Debug\CapaModeloReporteador.pd
 C:\Users\opfug\Pasaporte\Migración\CapaVista\bin\Debug\CapaControladorReporteador.pdb
 C:\Users\opfug\Pasaporte\Migración\CapaVista\bin\Debug\CapaModeloNavegador.pdb
 C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.Pasaporte.frmEntregaPasaporte.resources
+=======
+>>>>>>> 7ffc70d2f8a7a8de8dc7c0322593b9b44ab56816

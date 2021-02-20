@@ -58,6 +58,7 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\bin\Debug\CapaControladorRe
 D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\bin\Debug\CapaControlador.pdb
 D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\bin\Debug\CapaModeloNavegador.pdb
 D:\Documentos\GitHub\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\bin\Debug\CapaVistaSeguridad.dll
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\bin\Debug\CapaControladorSeguridad.dll
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\bin\Debug\CapaModeloSeguridad.dll
@@ -100,3 +101,5 @@ C:\Users\opfug\Pasaporte\Migración\CapaModelo\bin\Debug\CapaControladorReportea
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\bin\Debug\CapaControlador.pdb
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\bin\Debug\CapaModeloNavegador.pdb
 C:\Users\opfug\Pasaporte\Migración\CapaModelo\obj\Debug\CapaModelo.csproj.CopyComplete
+=======
+>>>>>>> 7ffc70d2f8a7a8de8dc7c0322593b9b44ab56816

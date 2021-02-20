@@ -52,7 +52,10 @@ namespace MDI
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.entregaPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+>>>>>>> 7ffc70d2f8a7a8de8dc7c0322593b9b44ab56816
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +88,7 @@ namespace MDI
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
@@ -246,6 +249,7 @@ namespace MDI
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Visible = false;
             // 
+<<<<<<< HEAD
             // entregaPasaporteToolStripMenuItem
             // 
             this.entregaPasaporteToolStripMenuItem.Name = "entregaPasaporteToolStripMenuItem";
@@ -253,6 +257,8 @@ namespace MDI
             this.entregaPasaporteToolStripMenuItem.Text = "Entrega Pasaporte";
             this.entregaPasaporteToolStripMenuItem.Click += new System.EventHandler(this.entregaPasaporteToolStripMenuItem_Click);
             // 
+=======
+>>>>>>> 7ffc70d2f8a7a8de8dc7c0322593b9b44ab56816
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
