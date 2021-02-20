@@ -11,6 +11,7 @@ using CapaVistaSeguridad.Formularios;
 using CapaVistaSeguridad;
 using CapaVistaSeguridad.Formularios.Mantenimientos;
 using CapaVista;
+using CapaVista.Pasaporte;
 
 namespace MDI
 {
@@ -209,5 +210,14 @@ namespace MDI
                 txtUsuario.Text = frm.usuario();
             }
         }
+
+
+        private void entregaPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEntregaPasaporte asignacion = new frmEntregaPasaporte();
+            asignacion.MdiParent = this;
+            asignacion.Show();
+        }
+
     }
 }

@@ -15,7 +15,6 @@ namespace CapaModelo.Pasaporte
         //Necesitamos instanciar la clase conexión
         clsConexion con = new clsConexion();
 
-
         //consulta para buscar al usuario
         public OdbcDataReader FuncBuscarPersona(string dpi)
         {
@@ -130,16 +129,16 @@ namespace CapaModelo.Pasaporte
 
         //consulta para modificar en la entidad Reclutamiento
         public void funcActualizarPasaporte(string FechaC, string FechaV, int TipoPass, string Autoridad,
-                int Estado)
+                int Estado,string IdPass)
         {
             try
             {
                
 
                 string sentencia = "UPDATE PASAPORTE SET FECHACREACION='" + FechaC + "', FECHAVENCIMIENTO='" + FechaV +
-                    "', IDTIPOPASAPORTE='" + TipoPass + "', AUTORIDAD='" + Autoridad + "', ESTADO='" + Estado  + "'";
+                    "', IDTIPOPASAPORTE='" + TipoPass + "', AUTORIDAD='" + Autoridad + "', ESTADO='" + Estado  + "' WHERE IDPASAPORTE= '" + IdPass + "'";
 
-                
+
                 OdbcCommand Query_Validacion1 = new OdbcCommand(sentencia, con.conexion());
                 
                 Query_Validacion1.ExecuteNonQuery();
@@ -257,6 +256,96 @@ namespace CapaModelo.Pasaporte
                 return null;
             }
         }
+
+
+        //Consulta para ingresar datos en la entidad ENTREGA PASAPORTE
+        public void FuncEntregaPass(string IdPass, string FechaEnt, int StatusE)
+        {
+            try
+            {
+                int IdEntregaPass;
+                string CorrelativoEntrega = "SELECT IFNULL(MAX(IDENTREGAPASAPORTE),0) +1 FROM ENTREGAPASAPORTE";
+                OdbcCommand QueryIdReclu = new OdbcCommand(CorrelativoEntrega, con.conexion());
+                IdEntregaPass = Convert.ToInt32(QueryIdReclu.ExecuteScalar());
+                OdbcDataReader Ejecucion1 = QueryIdReclu.ExecuteReader();
+
+                //falta firma, fotografia y lugar nacimiento
+                //Sentencia para insertar datos a entidad Reclutamiento
+                string SentenciaRecluta = "INSERT INTO ENTREGAPASAPORTE (IDENTREGAPASAPORTE, IDPASAPORTE, FECHAENTREGA," +
+                "ESTATUSENTREGA) VALUES " + "('" + IdEntregaPass + "','" + IdPass + "','" + FechaEnt + "','" + StatusE + "')";
+
+                OdbcCommand Query_IngresoRec = new OdbcCommand(SentenciaRecluta, con.conexion());
+                Query_IngresoRec.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        //Consulta para ingresar datos en la entidad HISTORICO PASAPORTE
+        public void FuncHistoricoPass(string IdPass, string FechaEnt)
+        {
+            try
+            {
+                int IdHistorico;
+                string CorrelativoEntrega = "SELECT IFNULL(MAX(IDHISTORICOPASAPORTE),0) +1 FROM HISTORICOPASAPORTE";
+                OdbcCommand QueryIdReclu = new OdbcCommand(CorrelativoEntrega, con.conexion());
+                IdHistorico = Convert.ToInt32(QueryIdReclu.ExecuteScalar());
+                OdbcDataReader Ejecucion1 = QueryIdReclu.ExecuteReader();
+
+                //falta firma, fotografia y lugar nacimiento
+                //Sentencia para insertar datos a entidad Reclutamiento
+                string SentenciaRecluta = "INSERT INTO HISTORICOPASAPORTE (IDHISTORICOPASAPORTE, IDPASAPORTE, FECHA) " +
+                    "VALUES " + "('" + IdHistorico + "','" + IdPass + "','" + FechaEnt + "')";
+
+                OdbcCommand Query_IngresoRec = new OdbcCommand(SentenciaRecluta, con.conexion());
+                Query_IngresoRec.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        //consulta para modificar el estado en la entidad PASAPORTE
+        public void funcVencerPass(string IdPass,int Estado)
+        {
+            try
+            {
+
+
+                string sentencia = "UPDATE PASAPORTE SET ESTADO='" + Estado + "' WHERE IDPASAPORTE= '" + IdPass + "'";
+
+
+                OdbcCommand Query_Validacion1 = new OdbcCommand(sentencia, con.conexion());
+
+                Query_Validacion1.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar SQL: " +
+                    System.Environment.NewLine + System.Environment.NewLine +
+                    ex.GetType().ToString() + System.Environment.NewLine +
+                    ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
     }
 }

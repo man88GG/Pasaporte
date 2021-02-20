@@ -157,5 +157,10 @@ namespace CapaVista
         {
 
         }
+
+        private void FuncNumero(object sender, KeyPressEventArgs e)
+        {
+            clsValidacion.funcNumeros(e);
+        }
     }
 }

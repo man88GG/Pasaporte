@@ -51,7 +51,7 @@ namespace CapaVista
             else
             {
                 //se desbloquean los componentes en los que se puede agregar/cambiar información
-                BtnIngresar.Enabled = true;
+                
                 funcDesBloqueo();
 
                 IdPass = TxtIdPass.Text;
@@ -108,13 +108,34 @@ namespace CapaVista
 
        
 
-        int  TipoPass, Estado = 1;
+        int  TipoPass, Estado;
 
         private void BtnLista_Click(object sender, EventArgs e)
         {
             //Se llama al formulario que contiene todos una tabla de todos los empleados
             frmListadoPasaportes Listado = new frmListadoPasaportes();
             Listado.ShowDialog();
+        }
+
+        private void Expirar_Click(object sender, EventArgs e)
+        {
+            //Mensaje de Pregunta
+            if (MessageBox.Show("¿Está Seguro en realizar la Expiración de este Pasaporte ?", "Pasaporte", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.Yes) { }
+            else
+            {
+                Estado = 0;
+                Cont.FuncVencerPass(IdPass,Estado);
+                MessageBox.Show("El Pasaporte ha sido Colocado como Expirado con Éxito", "EXPIRACION PASAPORTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtIdPass.Text = "";
+
+                funcLimpieza();
+                funcBloqueo();
+            }
+        }
+
+        private void FuncNumero(object sender, KeyPressEventArgs e)
+        {
+            clsValidacion.funcNumeros(e);
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
@@ -136,13 +157,11 @@ namespace CapaVista
                     FechaC = DtpCreacion.Value.Date.ToShortDateString();
                     FechaV = DtpVencimiento.Value.Date.ToShortDateString();
                     TipoPass = CmbTipoPass.SelectedIndex + 1;
-                    //Firma
-                    //LugarNac
-                    //revisar lo de autoridad de string o int
-                    Autoridad = CmbAutoridad.SelectedItem.ToString();
                     
-                    //falta lo de firma, lugar nac
-                    Cont.FuncActualizarPasaporte(FechaC, FechaV, TipoPass, Autoridad, Estado);
+                    Autoridad = CmbAutoridad.SelectedItem.ToString();
+                    Estado = 1;
+
+                    Cont.FuncActualizarPasaporte(FechaC, FechaV, TipoPass, Autoridad, Estado, IdPass);
                     MessageBox.Show("Se ha renovado el Pasaporte con Éxito", "RENOVACION PASAPORTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TxtIdPass.Text = "";
                     
@@ -190,12 +209,13 @@ namespace CapaVista
             DtpCreacion.Enabled = false;
             DtpVencimiento.Enabled = false;
             PbxFoto.Visible = false;
-
+            BtnIngresar.Enabled = false;
+            BtnExpirar.Enabled = false;
         }
         private void funcDesBloqueo()
         {
-
-           
+            BtnExpirar.Enabled = true;
+            BtnIngresar.Enabled = true;
             CmbTipoPass.Enabled = true;
             CmbAutoridad.Enabled = true;
             DtpCreacion.Enabled = true;

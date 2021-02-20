@@ -52,7 +52,7 @@ namespace CapaVista
             this.BtnActualizar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.White;
             this.BtnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnActualizar.Location = new System.Drawing.Point(611, 31);
+            this.BtnActualizar.Location = new System.Drawing.Point(628, 22);
             this.BtnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(190, 61);
@@ -101,7 +101,7 @@ namespace CapaVista
             // 
             this.RbtnNumLib.AutoSize = true;
             this.RbtnNumLib.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbtnNumLib.Location = new System.Drawing.Point(641, 49);
+            this.RbtnNumLib.Location = new System.Drawing.Point(628, 49);
             this.RbtnNumLib.Margin = new System.Windows.Forms.Padding(4);
             this.RbtnNumLib.Name = "RbtnNumLib";
             this.RbtnNumLib.Size = new System.Drawing.Size(184, 24);
@@ -115,7 +115,7 @@ namespace CapaVista
             // 
             this.RbtnNumPass.AutoSize = true;
             this.RbtnNumPass.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbtnNumPass.Location = new System.Drawing.Point(349, 49);
+            this.RbtnNumPass.Location = new System.Drawing.Point(329, 49);
             this.RbtnNumPass.Margin = new System.Windows.Forms.Padding(4);
             this.RbtnNumPass.Name = "RbtnNumPass";
             this.RbtnNumPass.Size = new System.Drawing.Size(207, 24);
@@ -129,7 +129,7 @@ namespace CapaVista
             // 
             this.RbtnId.AutoSize = true;
             this.RbtnId.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbtnId.Location = new System.Drawing.Point(175, 49);
+            this.RbtnId.Location = new System.Drawing.Point(137, 49);
             this.RbtnId.Margin = new System.Windows.Forms.Padding(4);
             this.RbtnId.Name = "RbtnId";
             this.RbtnId.Size = new System.Drawing.Size(76, 24);
@@ -143,32 +143,34 @@ namespace CapaVista
             // 
             this.TxtIdPass.Enabled = false;
             this.TxtIdPass.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdPass.Location = new System.Drawing.Point(151, 90);
+            this.TxtIdPass.Location = new System.Drawing.Point(86, 90);
             this.TxtIdPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtIdPass.Name = "TxtIdPass";
-            this.TxtIdPass.Size = new System.Drawing.Size(127, 27);
+            this.TxtIdPass.Size = new System.Drawing.Size(165, 27);
             this.TxtIdPass.TabIndex = 9;
+            this.TxtIdPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FuncNumero);
             this.TxtIdPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtIdPass_KeyUp);
             // 
             // TxtNumPass
             // 
             this.TxtNumPass.Enabled = false;
             this.TxtNumPass.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNumPass.Location = new System.Drawing.Point(379, 90);
+            this.TxtNumPass.Location = new System.Drawing.Point(352, 90);
             this.TxtNumPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtNumPass.Name = "TxtNumPass";
-            this.TxtNumPass.Size = new System.Drawing.Size(127, 27);
+            this.TxtNumPass.Size = new System.Drawing.Size(167, 27);
             this.TxtNumPass.TabIndex = 5;
+            this.TxtNumPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FuncNumero);
             this.TxtNumPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtNumPass_KeyUp);
             // 
             // TxtNumLib
             // 
             this.TxtNumLib.Enabled = false;
             this.TxtNumLib.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNumLib.Location = new System.Drawing.Point(674, 90);
+            this.TxtNumLib.Location = new System.Drawing.Point(647, 90);
             this.TxtNumLib.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtNumLib.Name = "TxtNumLib";
-            this.TxtNumLib.Size = new System.Drawing.Size(127, 27);
+            this.TxtNumLib.Size = new System.Drawing.Size(165, 27);
             this.TxtNumLib.TabIndex = 6;
             this.TxtNumLib.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtNumLib_KeyUp);
             // 
@@ -177,7 +179,7 @@ namespace CapaVista
             this.LblPasaporte.AutoSize = true;
             this.LblPasaporte.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPasaporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblPasaporte.Location = new System.Drawing.Point(211, 42);
+            this.LblPasaporte.Location = new System.Drawing.Point(286, 42);
             this.LblPasaporte.Name = "LblPasaporte";
             this.LblPasaporte.Size = new System.Drawing.Size(316, 31);
             this.LblPasaporte.TabIndex = 138;

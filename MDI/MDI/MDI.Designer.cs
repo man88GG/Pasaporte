@@ -52,6 +52,9 @@ namespace MDI
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+
+            this.entregaPasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +126,8 @@ namespace MDI
             // 
             this.gestionDePasaportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPasaporteToolStripMenuItem,
-            this.renovarPasaporteToolStripMenuItem});
+            this.renovarPasaporteToolStripMenuItem,
+            this.entregaPasaporteToolStripMenuItem});
             this.gestionDePasaportesToolStripMenuItem.Name = "gestionDePasaportesToolStripMenuItem";
             this.gestionDePasaportesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
             this.gestionDePasaportesToolStripMenuItem.Text = "Gestion de Pasaportes";
@@ -244,6 +248,15 @@ namespace MDI
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Visible = false;
             // 
+
+            // entregaPasaporteToolStripMenuItem
+            // 
+            this.entregaPasaporteToolStripMenuItem.Name = "entregaPasaporteToolStripMenuItem";
+            this.entregaPasaporteToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.entregaPasaporteToolStripMenuItem.Text = "Entrega Pasaporte";
+            this.entregaPasaporteToolStripMenuItem.Click += new System.EventHandler(this.entregaPasaporteToolStripMenuItem_Click);
+            // 
+
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -288,6 +301,7 @@ namespace MDI
         private System.Windows.Forms.ToolStripMenuItem tipocasoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoPasaporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renovarPasaporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entregaPasaporteToolStripMenuItem;
     }
 }
 

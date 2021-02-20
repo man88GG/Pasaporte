@@ -16,8 +16,6 @@ namespace CapaControlador.Pasaporte
         //Instanciar variable para acceder a la clase sentencias
         ClsSentenciasPasaporte sn = new ClsSentenciasPasaporte();
 
-       
-
         //consulta para la busqueda en la entidad RENAP
         public OdbcDataReader funcBuscarPersona(string IdEmpleado)
         {
@@ -33,7 +31,7 @@ namespace CapaControlador.Pasaporte
         }
 
         //consulta para insertar a la entidad Pasaporte
-        //falta lo de firma, lugar nac
+        
         public void funcInsertarPasaporte(int NumPass, string NumLibreta, string DpiCliente,string FechaC,
             string FechaV,int TipoPass, string Foto, string LugarNac,string Autoridad, int Estado)
         {
@@ -47,17 +45,26 @@ namespace CapaControlador.Pasaporte
             return Lector;
         }
 
-        //Paso de datos para consulta modificar en la entidad Reclutamiento
+        //Paso de datos para consulta modificar en la entidad PASAPORTE
         public void FuncActualizarPasaporte(string FechaC, string FechaV, int TipoPass, string Autoridad,
-                int Estado)
+                int Estado,string IdPass)
         {
 
-            sn.funcActualizarPasaporte(FechaC, FechaV, TipoPass, Autoridad, Estado);
+            sn.funcActualizarPasaporte(FechaC, FechaV, TipoPass, Autoridad, Estado, IdPass);
 
 
         }
 
-        //Paso de datos para consulta mostrar en la entidad reclutamiento
+        //Paso de datos para consulta modificar en la entidad PASAPORTE
+        public void FuncVencerPass(string IdPass,int Estado )
+        {
+
+            sn.funcVencerPass(IdPass,Estado) ;
+
+
+        }
+
+        //Paso de datos para consulta mostrar en la entidad PASAPORTE
         public DataTable FuncListadoPasaporte(int Estado)
         {
             OdbcDataAdapter dt = sn.funcListadoPasaporte(Estado);
@@ -66,7 +73,7 @@ namespace CapaControlador.Pasaporte
             return table;
         }
 
-        //Paso de datos para consulta mostrar en la entidad reclutamiento por Id
+        //Paso de datos para consulta mostrar en la entidad PASAPORTE por Id
         public DataTable FuncListadoPasaporteId(int Estado, string Parametro)
         {
             OdbcDataAdapter dt = sn.funcListadoPasaporteId(Estado, Parametro);
@@ -75,7 +82,7 @@ namespace CapaControlador.Pasaporte
             return table;
         }
 
-        //Paso de datos para consulta mostrar en la entidad reclutamiento por Numero Pasaporte
+        //Paso de datos para consulta mostrar en la entidad PASAPORTE por Numero Pasaporte
         public DataTable FuncListadoPasaporteNumPass(int Estado, string Parametro)
         {
             OdbcDataAdapter dt = sn.funcListadoPasaporteNumPass(Estado, Parametro);
@@ -84,13 +91,25 @@ namespace CapaControlador.Pasaporte
             return table;
         }
 
-        //Paso de datos para consulta mostrar en la entidad reclutamiento por Numero Libreta
+        //Paso de datos para consulta mostrar en la entidad PASAPORTE por Numero Libreta
         public DataTable FuncListadoPasaporteNumLib(int Estado, string Parametro)
         {
             OdbcDataAdapter dt = sn.funcListadoPasaporteNumLib(Estado, Parametro);
             DataTable table = new DataTable();
             dt.Fill(table);
             return table;
+        }
+
+        //consulta para insertar a la entidad Pasaporte
+
+        public void funcInsertarEntregaPass(string IdPass, string FechaEnt, int StatusE)
+        {
+            sn.FuncEntregaPass(IdPass, FechaEnt, StatusE);
+        }
+
+        public void funcHistoricoPass(string IdPass, string FechaEnt)
+        {
+            sn.FuncHistoricoPass(IdPass, FechaEnt);
         }
     }
 }

@@ -41,10 +41,23 @@ namespace CapaVista
         
         //Variables para sentencias SQL
         
-        string NumLibreta, FechaC, FechaV, Firma, LugarNac,Autoridad, LinkFotografía;
+        string NumLibreta, FechaC, FechaV, LugarNac,Autoridad, LinkFotografía;
         int NumPass, TipoPass, Estado=1;
 
-        
+        private void FuncLetra(object sender, KeyPressEventArgs e)
+        {
+            clsValidacion.funcLetras(e);
+        }
+
+        private void frmNuevoPasaporte_Load(object sender, EventArgs e)
+        {
+            TxtNumDpi.MaxLength = 10;
+        }
+
+        private void FuncNumero(object sender, KeyPressEventArgs e)
+        {
+            clsValidacion.funcNumeros(e);
+        }
 
         private void GbxLugarNac_Enter(object sender, EventArgs e)
         {
@@ -170,7 +183,7 @@ namespace CapaVista
 
 
 
-                }//fin elseif Pregunta
+                    }//fin elseif Pregunta
 
                 }//fin elseif txt
                  
