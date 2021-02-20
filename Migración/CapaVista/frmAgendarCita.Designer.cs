@@ -267,6 +267,7 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 81;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // groupBox2
             // 
@@ -358,9 +359,11 @@ namespace CapaVista
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAgendarCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAgendarCita";
+            this.Text = "Agendar Cita";
             this.Load += new System.EventHandler(this.frmAgendarCita_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

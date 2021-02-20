@@ -106,6 +106,7 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 116;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // cmbCaso
             // 
@@ -811,9 +812,11 @@ namespace CapaVista
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnAyuda);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmInformacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmInformacion";
+            this.Text = "Ingreso de Información";
             this.Load += new System.EventHandler(this.frmInformacion_Load);
             this.tabInformacionPersonal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

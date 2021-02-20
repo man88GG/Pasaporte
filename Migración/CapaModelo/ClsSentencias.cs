@@ -4,18 +4,22 @@ using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaVistaSeguridad;
 
 namespace CapaModelo
 {
-   public class ClsSentencias
+    
+    public class ClsSentencias
     {
+        clsVistaBitacora bit = new clsVistaBitacora();
+
         clsConexion Con = new clsConexion();
         //funcion que retorna los elementos de una tabla para llenar los comboBox
         public string[] funcLlenarCmb(string Tabla, string Campo1)
         {
             string[] Campos = new string[100];
             int I = 0;
-            string Sql = "SELECT " + Campo1 + " FROM " + Tabla + "  ;";
+            string Sql = "SELECT " + Campo1 + " FROM " + Tabla + " WHERE estado = 1 ;";
             try
             {
                 OdbcCommand Command = new OdbcCommand(Sql, Con.conexion());
@@ -45,6 +49,8 @@ namespace CapaModelo
                     Campo = Reader.GetInt32(0);
                 }
 
+      
+
             }
             catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
             return Campo;
@@ -64,7 +70,6 @@ namespace CapaModelo
                 {
                     Dato = Reader.GetValue(0).ToString();
                 }
-
             }
             catch (Exception Ex) { Console.WriteLine(Ex.Message.ToString() + " \nError en BUSCAR LOS DATOS, revise los parametros DE BOLETABANCO -"); }
             return Dato;
@@ -167,25 +172,26 @@ namespace CapaModelo
                 //int 
                 int.Parse(item);
                 sql += " " + item + ") ";
-            }catch(Exception )
+                consulta += " " + item + ") ";
+            }
+            catch(Exception )
             {
                 sql += " '" + item + "') ";
+                consulta += " " + item + ") ";
             }
-          /*  string sqlMax = lista.Last();
-            sql += " " + sqlMax + ") ";
-            consulta += " " + sqlMax + ") ";*/
+            bit.insert(consulta, 12);
             try
             {
 
                 OdbcCommand comm = new OdbcCommand(sql, Con.conexion());
                 OdbcDataReader mostrarC = comm.ExecuteReader();
                 Console.WriteLine("Los Datos se guardaron correctamente");
-
+                bit.insert(sql, 12);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message.ToString() + " \nNo existe la tabla o los campos indicados \n -" + tabla + "\n -"+ex+" "+sql);
-
+                bit.insert("Fallo la consulta  ---- "+sql, 12);
             }
 
         }
@@ -198,6 +204,7 @@ namespace CapaModelo
                 string sql = consulta;
                 OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, Con.conexion());
                 return dataTable;
+              
             }
             catch (Exception ex)
             {
@@ -240,19 +247,21 @@ namespace CapaModelo
             return Dato;
         }
 
-
         public void procModificar(string sql)
         {
             string Consulta = sql;
+           
             try
             {
                 OdbcCommand comm = new OdbcCommand(Consulta, Con.conexion());
                 OdbcDataReader mostrarC = comm.ExecuteReader();
                 Console.WriteLine("Los Datos se modificaron correctamente");
+                bit.insert("Modificar datos: ---- " + Consulta, 12);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message.ToString() + " \nNo se puede modificar revise: \n -" + Consulta + "\n -");
+                bit.insert("Modificar datos Fallo: ---- " + Consulta, 12);
 
             }
         }

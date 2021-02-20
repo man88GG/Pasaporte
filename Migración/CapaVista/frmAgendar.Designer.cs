@@ -96,6 +96,7 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 82;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // lblCodigo
             // 
@@ -152,9 +153,11 @@ namespace CapaVista
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAgendar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAgendar";
+            this.Text = "Datos Personales";
             this.Load += new System.EventHandler(this.frmAgendar_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtvDatosUsuario)).EndInit();

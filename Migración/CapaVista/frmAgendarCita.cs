@@ -66,7 +66,14 @@ namespace CapaVista
                     rbHora9.Checked = false;
                     rbHora10.Checked = false;
                     rbHora11.Checked = false;
-                  
+                    DateTime FechaActual = DateTime.Parse(Horario);
+                    if (FechaActual < DateTime.Now || FechaActual == DateTime.Now)
+                    {
+                        MessageBox.Show("La fecha de su cita no puede ser menor a la de hoy.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                        return;
+                    }
+                    else
+                    { 
                     DialogResult dialogResult = MessageBox.Show("Asegurese de que todos sus datos esten ingresados correctamente, Si ya los reviso precione Aceptar de lo contrario precione cancelar y vuelva a revisar los datos ingresados.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
                     if (dialogResult == DialogResult.OK)
                     {
@@ -86,6 +93,7 @@ namespace CapaVista
                        Confirmar.MdiParent = FormularioPadre;
                        Confirmar.Show();
                         this.Close();
+                    }
                     }
 
                 }
@@ -238,6 +246,11 @@ namespace CapaVista
             rbHora9.Checked = false;
             rbHora10.Checked = false;
             rbHora11.Checked = false;
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaMigracionCitas/AyudaCitas.chm", "agendar.html");
         }
     }
 }

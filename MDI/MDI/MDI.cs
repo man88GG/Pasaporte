@@ -161,9 +161,25 @@ namespace MDI
 
         private void gestionDeCitasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMenuCita asignacion = new frmMenuCita(this);
-            asignacion.MdiParent = this;
-            asignacion.Show();
+
+            if (seguridad.PermisosAcceso("12", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a la apliacion de Gestion de citas", 4);
+                frmMenuCita asignacion = new frmMenuCita(this);
+                asignacion.MdiParent = this;
+                asignacion.Show();
+
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Intento Ingreso a la apliacion de Gestion de citas", 12);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+           
+
+
         }
 
         private void gestionDePasaportesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,6 +199,15 @@ namespace MDI
             frmRenovarPasaporte asignacion = new frmRenovarPasaporte();
             asignacion.MdiParent = this;
             asignacion.Show();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtUsuario.Text = frm.usuario();
+            }
         }
     }
 }

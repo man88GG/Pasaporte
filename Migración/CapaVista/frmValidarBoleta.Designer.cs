@@ -81,6 +81,7 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 82;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // btnValidarBoleta
             // 
@@ -148,9 +149,11 @@ namespace CapaVista
             this.ClientSize = new System.Drawing.Size(622, 408);
             this.Controls.Add(this.gbBoleta);
             this.Controls.Add(this.btnAyuda);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmValidarBoleta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmValidarBoleta";
+            this.Text = "Validación De Boleta Bancaria";
             this.gbBoleta.ResumeLayout(false);
             this.gbBoleta.PerformLayout();
             this.ResumeLayout(false);
