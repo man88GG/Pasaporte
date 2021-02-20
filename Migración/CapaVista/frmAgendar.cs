@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControlador;
+using CapaVistaSeguridad;
 
 namespace CapaVista
 {
     public partial class frmAgendar : Form
     {
         ClsControlador Cn = new ClsControlador();
+        clsVistaBitacora bit = new clsVistaBitacora();
         static Form FormularioPadre;
         string idBoleta, DocumentoDeIdentificacion;
         public frmAgendar(Form formularioPadre,string IDboletaBanco,string DPI)
@@ -38,7 +40,7 @@ namespace CapaVista
         {
             int idCodigoBoleta = Int32.Parse(idBoleta);
             int Dpi = Int32.Parse(DocumentoDeIdentificacion);
-            string consulta = "Select D.idDatosPersonales as Codigo,B.numeroBoleta as Numero_De_Boleta,B.numeroRecibo as Numero_De_Recibo,R.nombres as Nombres,R.apellidos as Apellidos,R.dpi as No_Documento from renap R, datospersonales D,boletabanco B WHERE B.idBoleta = D.idBoletaBanco and R.dpi = D.dpi and D.idBoletaBanco = "+idCodigoBoleta+" and D.dpi = "+Dpi+" and estado = 1;";
+            string consulta = "Select D.idDatosPersonales as Codigo,B.numeroBoleta as Numero_De_Boleta,B.numeroRecibo as Numero_De_Recibo,R.nombres as Nombres,R.apellidos as Apellidos,R.dpi as No_Documento from renap R, datospersonales D,boletabanco B WHERE B.idBoleta = D.idBoletaBanco and R.dpi = D.dpi and D.idBoletaBanco = "+idCodigoBoleta+" and D.dpi = "+Dpi+" and D.estado = 1;";
             DataTable dt = Cn.enviar(consulta);
             dtvDatosUsuario.DataSource = dt;
         }
@@ -70,8 +72,14 @@ namespace CapaVista
                     frmMenuCita Validar = new frmMenuCita(FormularioPadre);
                     Validar.MdiParent = FormularioPadre;
                     Validar.Show();
+                   
                 }
             }
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaMigracionCitas/AyudaCitas.chm", "dato-personales.html");
         }
 
         private void btnAgendarCita_Click(object sender, EventArgs e)

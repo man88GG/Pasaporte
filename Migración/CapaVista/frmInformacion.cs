@@ -103,12 +103,11 @@ namespace CapaVista
                     DatosFormulario.Add(tipoTramite);
                     DatosFormulario.Add(tipoPasaporte);
                     DatosFormulario.Add(tipoCaso);
-                    DatosFormulario.Add(idBoletaBanco);
-                    DatosFormulario.Add(estado);
+                    DatosFormulario.Add(idBoletaBanco);               
                     DatosFormulario.Add(fechaActual);
                     DatosFormulario.Add(nacionalidad);
-                    Cn.procDatosInsertar(Tabla,DatosFormulario);
-                   
+                    DatosFormulario.Add(estado);
+                    Cn.procDatosInsertar(Tabla,DatosFormulario);      
                     frmAgendar confirmacion = new frmAgendar(FormularioPadre,idBoletaBanco,Dpi);
                     confirmacion.MdiParent = FormularioPadre;    
                     confirmacion.Show();
@@ -390,6 +389,11 @@ namespace CapaVista
                 txtEstadoCivil.Text = "";
                 txtNacionalidad.Text = "";
             }
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaMigracionCitas/AyudaCitas.chm", "INFORMACIÓN.html");
         }
     }
 }

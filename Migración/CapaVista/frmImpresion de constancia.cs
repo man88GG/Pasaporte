@@ -79,5 +79,10 @@ namespace CapaVista
                 }
             }
         }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaMigracionCitas/AyudaCitas.chm", "gestion-de-cita.html");
+        }
     }
 }
