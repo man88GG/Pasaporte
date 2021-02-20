@@ -60,3 +60,4 @@ C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmRenovarPasa
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmListadoPasaportes.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmNuevoPasaporte.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmRenovarPasaporte.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.Pasaporte.frmEntregaPasaporte.resources

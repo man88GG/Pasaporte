@@ -68,6 +68,7 @@ namespace CapaVista
             this.TxtIdPass = new System.Windows.Forms.TextBox();
             this.BtnLista = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
+            this.BtnExpirar = new System.Windows.Forms.Button();
             this.TbcDatos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.GbxLugarNac.SuspendLayout();
@@ -194,7 +195,7 @@ namespace CapaVista
             this.DtpFechaNac.Enabled = false;
             this.DtpFechaNac.Location = new System.Drawing.Point(15, 261);
             this.DtpFechaNac.Name = "DtpFechaNac";
-            this.DtpFechaNac.Size = new System.Drawing.Size(368, 31);
+            this.DtpFechaNac.Size = new System.Drawing.Size(427, 31);
             this.DtpFechaNac.TabIndex = 99;
             // 
             // LblApellidos
@@ -342,7 +343,7 @@ namespace CapaVista
             this.DtpCreacion.Enabled = false;
             this.DtpCreacion.Location = new System.Drawing.Point(37, 318);
             this.DtpCreacion.Name = "DtpCreacion";
-            this.DtpCreacion.Size = new System.Drawing.Size(368, 31);
+            this.DtpCreacion.Size = new System.Drawing.Size(417, 31);
             this.DtpCreacion.TabIndex = 94;
             // 
             // DtpVencimiento
@@ -352,7 +353,7 @@ namespace CapaVista
             this.DtpVencimiento.Enabled = false;
             this.DtpVencimiento.Location = new System.Drawing.Point(37, 395);
             this.DtpVencimiento.Name = "DtpVencimiento";
-            this.DtpVencimiento.Size = new System.Drawing.Size(368, 31);
+            this.DtpVencimiento.Size = new System.Drawing.Size(417, 31);
             this.DtpVencimiento.TabIndex = 95;
             // 
             // LblFechaVen
@@ -474,6 +475,7 @@ namespace CapaVista
             this.TxtIdPass.Name = "TxtIdPass";
             this.TxtIdPass.Size = new System.Drawing.Size(193, 22);
             this.TxtIdPass.TabIndex = 133;
+            this.TxtIdPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FuncNumero);
             // 
             // BtnLista
             // 
@@ -501,12 +503,30 @@ namespace CapaVista
             this.btnAyuda.TabIndex = 135;
             this.btnAyuda.UseVisualStyleBackColor = true;
             // 
+            // BtnExpirar
+            // 
+            this.BtnExpirar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
+            this.BtnExpirar.Enabled = false;
+            this.BtnExpirar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnExpirar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExpirar.ForeColor = System.Drawing.Color.White;
+            this.BtnExpirar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnExpirar.Location = new System.Drawing.Point(451, 574);
+            this.BtnExpirar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnExpirar.Name = "BtnExpirar";
+            this.BtnExpirar.Size = new System.Drawing.Size(190, 61);
+            this.BtnExpirar.TabIndex = 136;
+            this.BtnExpirar.Text = "Expirar Pasaporte";
+            this.BtnExpirar.UseVisualStyleBackColor = false;
+            this.BtnExpirar.Click += new System.EventHandler(this.Expirar_Click);
+            // 
             // frmRenovarPasaporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(865, 646);
+            this.Controls.Add(this.BtnExpirar);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.BtnLista);
             this.Controls.Add(this.TxtIdPass);
@@ -568,5 +588,6 @@ namespace CapaVista
         private System.Windows.Forms.Label LblNacimiento;
         private System.Windows.Forms.Button BtnLista;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.Button BtnExpirar;
     }
 }

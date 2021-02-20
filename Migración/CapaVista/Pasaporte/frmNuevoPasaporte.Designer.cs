@@ -208,7 +208,7 @@ namespace CapaVista
             this.DtpCreacion.Enabled = false;
             this.DtpCreacion.Location = new System.Drawing.Point(37, 385);
             this.DtpCreacion.Name = "DtpCreacion";
-            this.DtpCreacion.Size = new System.Drawing.Size(368, 31);
+            this.DtpCreacion.Size = new System.Drawing.Size(425, 31);
             this.DtpCreacion.TabIndex = 94;
             // 
             // DtpVencimiento
@@ -218,7 +218,7 @@ namespace CapaVista
             this.DtpVencimiento.Enabled = false;
             this.DtpVencimiento.Location = new System.Drawing.Point(37, 462);
             this.DtpVencimiento.Name = "DtpVencimiento";
-            this.DtpVencimiento.Size = new System.Drawing.Size(368, 31);
+            this.DtpVencimiento.Size = new System.Drawing.Size(425, 31);
             this.DtpVencimiento.TabIndex = 95;
             // 
             // TxtNumPasaporte
@@ -228,6 +228,7 @@ namespace CapaVista
             this.TxtNumPasaporte.Name = "TxtNumPasaporte";
             this.TxtNumPasaporte.Size = new System.Drawing.Size(193, 31);
             this.TxtNumPasaporte.TabIndex = 96;
+            this.TxtNumPasaporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FuncNumero);
             // 
             // TxtNumLibreta
             // 
@@ -244,7 +245,7 @@ namespace CapaVista
             this.DtpFechaNac.Enabled = false;
             this.DtpFechaNac.Location = new System.Drawing.Point(6, 198);
             this.DtpFechaNac.Name = "DtpFechaNac";
-            this.DtpFechaNac.Size = new System.Drawing.Size(368, 31);
+            this.DtpFechaNac.Size = new System.Drawing.Size(440, 31);
             this.DtpFechaNac.TabIndex = 99;
             // 
             // LblFechaNac
@@ -324,6 +325,7 @@ namespace CapaVista
             this.TxtNumDpi.Name = "TxtNumDpi";
             this.TxtNumDpi.Size = new System.Drawing.Size(210, 22);
             this.TxtNumDpi.TabIndex = 108;
+            this.TxtNumDpi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FuncNumero);
             // 
             // TbcDatos
             // 
@@ -394,6 +396,7 @@ namespace CapaVista
             this.TxtNacimiento.Name = "TxtNacimiento";
             this.TxtNacimiento.Size = new System.Drawing.Size(193, 31);
             this.TxtNacimiento.TabIndex = 105;
+            this.TxtNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FuncLetra);
             // 
             // LblNacimiento
             // 
@@ -475,6 +478,7 @@ namespace CapaVista
             this.Controls.Add(this.LblIngresoDpi);
             this.Name = "frmNuevoPasaporte";
             this.Text = "frmPasaporte";
+            this.Load += new System.EventHandler(this.frmNuevoPasaporte_Load);
             this.GbxLugarNac.ResumeLayout(false);
             this.GbxLugarNac.PerformLayout();
             this.TbcDatos.ResumeLayout(false);
