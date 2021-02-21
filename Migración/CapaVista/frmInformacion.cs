@@ -368,7 +368,7 @@ namespace CapaVista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea cancelar la accion?, los datos se eliminaran y debera volver a ingresarlos todos.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea cancelar la accion y regresar al menu principal?, los datos se eliminaran y debera volver a ingresarlos todos.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (dialogResult == DialogResult.OK)
             {
                 cmbDepartamento.SelectedIndex = 0;
@@ -388,6 +388,11 @@ namespace CapaVista
                 txtFechaNacimiento.Text = "";
                 txtEstadoCivil.Text = "";
                 txtNacionalidad.Text = "";
+
+                frmMenuCita Validar = new frmMenuCita(FormularioPadre);
+                Validar.MdiParent = FormularioPadre;
+                Validar.Show();
+                this.Close();
             }
         }
 
