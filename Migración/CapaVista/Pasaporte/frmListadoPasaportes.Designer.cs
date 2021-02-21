@@ -41,6 +41,8 @@ namespace CapaVista
             this.TxtNumLib = new System.Windows.Forms.TextBox();
             this.LblPasaporte = new System.Windows.Forms.Label();
             this.btnAyuda = new System.Windows.Forms.Button();
+            this.RbtnValidados = new System.Windows.Forms.RadioButton();
+            this.RbtnExpirado = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrarPasaportes)).BeginInit();
             this.GbxFiltrado.SuspendLayout();
             this.SuspendLayout();
@@ -68,13 +70,13 @@ namespace CapaVista
             this.DgvMostrarPasaportes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvMostrarPasaportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvMostrarPasaportes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DgvMostrarPasaportes.Location = new System.Drawing.Point(0, 246);
+            this.DgvMostrarPasaportes.Location = new System.Drawing.Point(0, 283);
             this.DgvMostrarPasaportes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvMostrarPasaportes.Name = "DgvMostrarPasaportes";
             this.DgvMostrarPasaportes.RowHeadersVisible = false;
             this.DgvMostrarPasaportes.RowHeadersWidth = 51;
             this.DgvMostrarPasaportes.RowTemplate.Height = 24;
-            this.DgvMostrarPasaportes.Size = new System.Drawing.Size(930, 354);
+            this.DgvMostrarPasaportes.Size = new System.Drawing.Size(930, 317);
             this.DgvMostrarPasaportes.TabIndex = 136;
             // 
             // GbxFiltrado
@@ -88,7 +90,7 @@ namespace CapaVista
             this.GbxFiltrado.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GbxFiltrado.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxFiltrado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.GbxFiltrado.Location = new System.Drawing.Point(0, 109);
+            this.GbxFiltrado.Location = new System.Drawing.Point(0, 146);
             this.GbxFiltrado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GbxFiltrado.Name = "GbxFiltrado";
             this.GbxFiltrado.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -179,11 +181,11 @@ namespace CapaVista
             this.LblPasaporte.AutoSize = true;
             this.LblPasaporte.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPasaporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblPasaporte.Location = new System.Drawing.Point(286, 42);
+            this.LblPasaporte.Location = new System.Drawing.Point(373, 33);
             this.LblPasaporte.Name = "LblPasaporte";
-            this.LblPasaporte.Size = new System.Drawing.Size(316, 31);
+            this.LblPasaporte.Size = new System.Drawing.Size(163, 31);
             this.LblPasaporte.TabIndex = 138;
-            this.LblPasaporte.Text = "Pasaportes Sin Renovar";
+            this.LblPasaporte.Text = "Pasaportes ";
             this.LblPasaporte.Click += new System.EventHandler(this.LblPasaporte_Click);
             // 
             // btnAyuda
@@ -195,6 +197,35 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 139;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
+            // RbtnValidados
+            // 
+            this.RbtnValidados.AutoSize = true;
+            this.RbtnValidados.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbtnValidados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RbtnValidados.Location = new System.Drawing.Point(99, 115);
+            this.RbtnValidados.Name = "RbtnValidados";
+            this.RbtnValidados.Size = new System.Drawing.Size(311, 26);
+            this.RbtnValidados.TabIndex = 140;
+            this.RbtnValidados.TabStop = true;
+            this.RbtnValidados.Text = "Mostrar Pasaportes Validados ";
+            this.RbtnValidados.UseVisualStyleBackColor = true;
+            this.RbtnValidados.CheckedChanged += new System.EventHandler(this.RbtnValidados_CheckedChanged);
+            // 
+            // RbtnExpirado
+            // 
+            this.RbtnExpirado.AutoSize = true;
+            this.RbtnExpirado.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbtnExpirado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RbtnExpirado.Location = new System.Drawing.Point(505, 115);
+            this.RbtnExpirado.Name = "RbtnExpirado";
+            this.RbtnExpirado.Size = new System.Drawing.Size(307, 26);
+            this.RbtnExpirado.TabIndex = 141;
+            this.RbtnExpirado.TabStop = true;
+            this.RbtnExpirado.Text = "Mostrar Pasaportes Expirados";
+            this.RbtnExpirado.UseVisualStyleBackColor = true;
+            this.RbtnExpirado.CheckedChanged += new System.EventHandler(this.RbtnExpirado_CheckedChanged);
             // 
             // frmListadoPasaportes
             // 
@@ -202,6 +233,8 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(930, 600);
+            this.Controls.Add(this.RbtnExpirado);
+            this.Controls.Add(this.RbtnValidados);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.LblPasaporte);
             this.Controls.Add(this.GbxFiltrado);
@@ -230,5 +263,7 @@ namespace CapaVista
         private System.Windows.Forms.TextBox TxtNumLib;
         private System.Windows.Forms.Label LblPasaporte;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.RadioButton RbtnValidados;
+        private System.Windows.Forms.RadioButton RbtnExpirado;
     }
 }

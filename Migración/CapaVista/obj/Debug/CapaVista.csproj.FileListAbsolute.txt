@@ -141,3 +141,8 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmTipoP
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmTipoTramite.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmOcupacion.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmCentro.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmCaso.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmCentro.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmOcupacion.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmTipoPasaporte.resources
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmTipoTramite.resources

@@ -201,6 +201,7 @@ namespace CapaVista.Pasaporte
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 145;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // frmEntregaPasaporte
             // 

@@ -85,7 +85,6 @@ namespace CapaVista
             DgvMostrarPasaportes.DataSource = dt;
             funcNombresEncabezados();
 
-
         }
 
         //se agrega una condicion if para limpiar todos los textbox con contenido, se bloquean todos excepto el correspondiente al radiobutton
@@ -161,6 +160,29 @@ namespace CapaVista
         private void FuncNumero(object sender, KeyPressEventArgs e)
         {
             clsValidacion.funcNumeros(e);
+        }
+
+        private void RbtnValidados_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (RbtnValidados.Checked == true)
+            {
+                Estado = 1;
+            }
+
+        }
+
+        private void RbtnExpirado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RbtnExpirado.Checked == true)
+            {
+                Estado = 0;
+            }
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaPasaporte/AyudasPasaporte.chm", "dato-pg_0007.html");
         }
     }
 }
