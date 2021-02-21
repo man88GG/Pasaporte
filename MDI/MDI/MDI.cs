@@ -203,16 +203,45 @@ namespace MDI
 
         private void nuevoPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNuevoPasaporte asignacion = new frmNuevoPasaporte();
-            asignacion.MdiParent = this;
-            asignacion.Show();
+
+
+            if (seguridad.PermisosAcceso("2", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a creacion de Pasaporte", 2);
+                frmNuevoPasaporte asignacion = new frmNuevoPasaporte();
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trato de ingresar a crear un nuevo Pasaporte", 2);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+
+            
         }
 
         private void renovarPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRenovarPasaporte asignacion = new frmRenovarPasaporte();
-            asignacion.MdiParent = this;
-            asignacion.Show();
+
+            if (seguridad.PermisosAcceso("2", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a Renovación/Vencimiento de Pasaporte", 2);
+                frmRenovarPasaporte asignacion = new frmRenovarPasaporte();
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trató de ingresar a Renovación/Vencimiento de Pasaporte", 2);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+
+  
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,9 +256,24 @@ namespace MDI
 
         private void entregaPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEntregaPasaporte asignacion = new frmEntregaPasaporte();
-            asignacion.MdiParent = this;
-            asignacion.Show();
+           
+
+            if (seguridad.PermisosAcceso("2", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a Entrega de Pasaporte", 2);
+                frmEntregaPasaporte asignacion = new frmEntregaPasaporte();
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trató de ingresar a Entrega de Pasaporte", 2);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+
+
         }
 
         private void tipoDePasaporteToolStripMenuItem_Click(object sender, EventArgs e)
