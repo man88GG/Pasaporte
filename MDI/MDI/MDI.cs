@@ -157,7 +157,20 @@ namespace MDI
 
         private void tipocasoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            if (seguridad.PermisosAcceso("1302", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a la aplicacion Tipo de caso", 1302);
+                frmCaso asignacion = new frmCaso(txtUsuario.Text, this);
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trato de ingresar a la aplicacion tipo de caso", 1302);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
         }
 
         private void gestionDeCitasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -219,5 +232,76 @@ namespace MDI
             asignacion.Show();
         }
 
+        private void tipoDePasaporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (seguridad.PermisosAcceso("1303", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a la aplicacion Tipo de pasaporte", 1303);
+                frmTipoPasaporte asignacion = new frmTipoPasaporte(txtUsuario.Text, this);
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trato de ingresar a la aplicacion tipo de pasaporte", 1303);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void tipoDeTramiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (seguridad.PermisosAcceso("1304", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a la aplicacion Tipo de tramite", 1304);
+                frmTipoTramite asignacion = new frmTipoTramite(txtUsuario.Text, this);
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trato de ingresar a la aplicacion tipo de tramite", 1304);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void ocupacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (seguridad.PermisosAcceso("1305", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a la aplicacion Tipo de ocupacion", 1305);
+                frmOcupacion asignacion = new frmOcupacion(txtUsuario.Text, this);
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trato de ingresar a la aplicacion tipo de ocupacion", 1305);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void centroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (seguridad.PermisosAcceso("1306", txtUsuario.Text) == 1)
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Ingreso a la aplicacion centro", 1306);
+                frmCentro asignacion = new frmCentro(txtUsuario.Text, this);
+                asignacion.MdiParent = this;
+                asignacion.Show();
+            }
+            else
+            {
+                bit.user(txtUsuario.Text);
+                bit.insert("Trato de ingresar a la aplicacion centro", 1306);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
     }
 }
