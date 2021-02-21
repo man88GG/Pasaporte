@@ -88,8 +88,8 @@ namespace CapaVista
             navegador1.DatosActualizar = dgvDatos;
             navegador1.procActualizarData();
             navegador1.procCargar();
-            navegador1.ayudaRuta = "";
-            navegador1.ruta = "";
+            navegador1.ayudaRuta = "AyudaMigracionCitas/AyudaMantenimiento.chm";
+            navegador1.ruta = "TipoPasaporte.html";
         }
     }
 }

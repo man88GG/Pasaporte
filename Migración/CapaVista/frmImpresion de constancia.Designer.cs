@@ -48,10 +48,10 @@ namespace CapaVista
             this.btnImprimir.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.White;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(533, 382);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnImprimir.Location = new System.Drawing.Point(400, 310);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(190, 61);
+            this.btnImprimir.Size = new System.Drawing.Size(142, 50);
             this.btnImprimir.TabIndex = 85;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -60,10 +60,10 @@ namespace CapaVista
             // btnAyuda
             // 
             this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
-            this.btnAyuda.Location = new System.Drawing.Point(961, 26);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAyuda.Location = new System.Drawing.Point(721, 21);
+            this.btnAyuda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(72, 72);
+            this.btnAyuda.Size = new System.Drawing.Size(54, 58);
             this.btnAyuda.TabIndex = 87;
             this.btnAyuda.UseVisualStyleBackColor = true;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
@@ -73,9 +73,11 @@ namespace CapaVista
             this.groupBox1.Controls.Add(this.dgvDatos);
             this.groupBox1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(13, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(932, 356);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(699, 289);
             this.groupBox1.TabIndex = 89;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestion de citas";
@@ -91,12 +93,14 @@ namespace CapaVista
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatos.Location = new System.Drawing.Point(17, 40);
+            this.dgvDatos.Location = new System.Drawing.Point(13, 32);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(874, 298);
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDatos.Size = new System.Drawing.Size(656, 242);
             this.dgvDatos.TabIndex = 0;
             this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentClick);
             // 
@@ -107,10 +111,10 @@ namespace CapaVista
             this.btnCancelarCita.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarCita.ForeColor = System.Drawing.Color.White;
             this.btnCancelarCita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarCita.Location = new System.Drawing.Point(755, 382);
-            this.btnCancelarCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarCita.Location = new System.Drawing.Point(566, 310);
+            this.btnCancelarCita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarCita.Name = "btnCancelarCita";
-            this.btnCancelarCita.Size = new System.Drawing.Size(190, 61);
+            this.btnCancelarCita.Size = new System.Drawing.Size(142, 50);
             this.btnCancelarCita.TabIndex = 90;
             this.btnCancelarCita.Text = "Cancelar";
             this.btnCancelarCita.UseVisualStyleBackColor = false;
@@ -121,24 +125,26 @@ namespace CapaVista
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCodigo.Location = new System.Drawing.Point(27, 391);
+            this.lblCodigo.Location = new System.Drawing.Point(20, 318);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(67, 20);
+            this.lblCodigo.Size = new System.Drawing.Size(57, 17);
             this.lblCodigo.TabIndex = 91;
             this.lblCodigo.Text = "Codigo";
             this.lblCodigo.Visible = false;
             // 
             // frmImpresion_de_constancia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1058, 471);
+            this.ClientSize = new System.Drawing.Size(794, 383);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnCancelarCita);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnAyuda);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmImpresion_de_constancia";
