@@ -138,6 +138,11 @@ namespace CapaVista
             clsValidacion.funcNumeros(e);
         }
 
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaPasaporte/AyudasPasaporte.chm", "dato-pg_0005.html");
+        }
+
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
             //segunda verificación de datos de cajas de texto vacias

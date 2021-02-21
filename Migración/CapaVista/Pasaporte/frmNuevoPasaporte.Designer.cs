@@ -463,6 +463,7 @@ namespace CapaVista
             this.btnAyuda.Size = new System.Drawing.Size(72, 72);
             this.btnAyuda.TabIndex = 127;
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // frmNuevoPasaporte
             // 

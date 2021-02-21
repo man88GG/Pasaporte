@@ -54,6 +54,11 @@ namespace CapaVista
             TxtNumDpi.MaxLength = 10;
         }
 
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaPasaporte/AyudasPasaporte.chm", "dato-pg_0002.html");
+        }
+
         private void FuncNumero(object sender, KeyPressEventArgs e)
         {
             clsValidacion.funcNumeros(e);
