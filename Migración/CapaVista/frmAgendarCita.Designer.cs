@@ -54,12 +54,16 @@ namespace CapaVista
             this.rbHora10 = new System.Windows.Forms.RadioButton();
             this.rbHora8 = new System.Windows.Forms.RadioButton();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblCodigoHistorico = new System.Windows.Forms.Label();
+            this.txtHistorico = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCodigoHistorico);
+            this.groupBox1.Controls.Add(this.txtHistorico);
             this.groupBox1.Controls.Add(this.lblCodigo);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.cmbCodigoCentro);
@@ -348,6 +352,27 @@ namespace CapaVista
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblCodigoHistorico
+            // 
+            this.lblCodigoHistorico.AutoSize = true;
+            this.lblCodigoHistorico.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoHistorico.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCodigoHistorico.Location = new System.Drawing.Point(388, 187);
+            this.lblCodigoHistorico.Name = "lblCodigoHistorico";
+            this.lblCodigoHistorico.Size = new System.Drawing.Size(79, 22);
+            this.lblCodigoHistorico.TabIndex = 111;
+            this.lblCodigoHistorico.Text = "Codigo";
+            this.lblCodigoHistorico.Visible = false;
+            // 
+            // txtHistorico
+            // 
+            this.txtHistorico.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHistorico.Location = new System.Drawing.Point(392, 222);
+            this.txtHistorico.Name = "txtHistorico";
+            this.txtHistorico.Size = new System.Drawing.Size(131, 27);
+            this.txtHistorico.TabIndex = 110;
+            this.txtHistorico.Visible = false;
+            // 
             // frmAgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -399,5 +424,7 @@ namespace CapaVista
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblCodigoHistorico;
+        private System.Windows.Forms.TextBox txtHistorico;
     }
 }

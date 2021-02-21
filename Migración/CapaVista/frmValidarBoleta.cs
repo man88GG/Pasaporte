@@ -165,8 +165,17 @@ namespace CapaVista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtBoleta.Text = "";
-            txtRecibo.Text = "";
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea cancelar la accion y regresar al menu principal?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dialogResult == DialogResult.OK)
+            {
+
+                txtBoleta.Text = "";
+                txtRecibo.Text = "";
+                frmMenuCita Validar = new frmMenuCita(FormularioPadre);
+                Validar.MdiParent = FormularioPadre;
+                Validar.Show();
+                this.Close();
+            }
         }
 
         private void btnAyuda_Click(object sender, EventArgs e)

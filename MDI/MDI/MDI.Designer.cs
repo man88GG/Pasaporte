@@ -34,6 +34,9 @@ namespace MDI
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipocasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDePasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeTramiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ocupacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePasaportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,10 +56,6 @@ namespace MDI
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.tipoDePasaporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDeTramiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.centroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ocupacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +98,6 @@ namespace MDI
             this.tipocasoToolStripMenuItem,
             this.tipoDePasaporteToolStripMenuItem,
             this.tipoDeTramiteToolStripMenuItem,
-            this.centroToolStripMenuItem,
             this.ocupacionToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
@@ -111,6 +109,27 @@ namespace MDI
             this.tipocasoToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.tipocasoToolStripMenuItem.Text = "Tipo de Caso";
             this.tipocasoToolStripMenuItem.Click += new System.EventHandler(this.tipocasoToolStripMenuItem_Click);
+            // 
+            // tipoDePasaporteToolStripMenuItem
+            // 
+            this.tipoDePasaporteToolStripMenuItem.Name = "tipoDePasaporteToolStripMenuItem";
+            this.tipoDePasaporteToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.tipoDePasaporteToolStripMenuItem.Text = "Tipo de Pasaporte";
+            this.tipoDePasaporteToolStripMenuItem.Click += new System.EventHandler(this.tipoDePasaporteToolStripMenuItem_Click);
+            // 
+            // tipoDeTramiteToolStripMenuItem
+            // 
+            this.tipoDeTramiteToolStripMenuItem.Name = "tipoDeTramiteToolStripMenuItem";
+            this.tipoDeTramiteToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.tipoDeTramiteToolStripMenuItem.Text = "Tipo de Tramite";
+            this.tipoDeTramiteToolStripMenuItem.Click += new System.EventHandler(this.tipoDeTramiteToolStripMenuItem_Click);
+            // 
+            // ocupacionToolStripMenuItem
+            // 
+            this.ocupacionToolStripMenuItem.Name = "ocupacionToolStripMenuItem";
+            this.ocupacionToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.ocupacionToolStripMenuItem.Text = "Ocupacion";
+            this.ocupacionToolStripMenuItem.Click += new System.EventHandler(this.ocupacionToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -261,34 +280,6 @@ namespace MDI
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Visible = false;
             // 
-            // tipoDePasaporteToolStripMenuItem
-            // 
-            this.tipoDePasaporteToolStripMenuItem.Name = "tipoDePasaporteToolStripMenuItem";
-            this.tipoDePasaporteToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
-            this.tipoDePasaporteToolStripMenuItem.Text = "Tipo de Pasaporte";
-            this.tipoDePasaporteToolStripMenuItem.Click += new System.EventHandler(this.tipoDePasaporteToolStripMenuItem_Click);
-            // 
-            // tipoDeTramiteToolStripMenuItem
-            // 
-            this.tipoDeTramiteToolStripMenuItem.Name = "tipoDeTramiteToolStripMenuItem";
-            this.tipoDeTramiteToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
-            this.tipoDeTramiteToolStripMenuItem.Text = "Tipo de Tramite";
-            this.tipoDeTramiteToolStripMenuItem.Click += new System.EventHandler(this.tipoDeTramiteToolStripMenuItem_Click);
-            // 
-            // centroToolStripMenuItem
-            // 
-            this.centroToolStripMenuItem.Name = "centroToolStripMenuItem";
-            this.centroToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
-            this.centroToolStripMenuItem.Text = "Centro";
-            this.centroToolStripMenuItem.Click += new System.EventHandler(this.centroToolStripMenuItem_Click);
-            // 
-            // ocupacionToolStripMenuItem
-            // 
-            this.ocupacionToolStripMenuItem.Name = "ocupacionToolStripMenuItem";
-            this.ocupacionToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
-            this.ocupacionToolStripMenuItem.Text = "Ocupacion";
-            this.ocupacionToolStripMenuItem.Click += new System.EventHandler(this.ocupacionToolStripMenuItem_Click);
-            // 
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -336,7 +327,6 @@ namespace MDI
         private System.Windows.Forms.ToolStripMenuItem entregaPasaporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDePasaporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeTramiteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem centroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ocupacionToolStripMenuItem;
     }
 }

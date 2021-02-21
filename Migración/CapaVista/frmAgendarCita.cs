@@ -78,20 +78,25 @@ namespace CapaVista
                     if (dialogResult == DialogResult.OK)
                     {
                         string Codigo = txtCodigo.Text;
+                        string CodigoHistorico = txtHistorico.Text;
                         string idCentro = cmbCodigoCentro.SelectedItem.ToString();
                         string idCodigoDatosPersonales = Datos.ToString();
                         string estado = "1";
-                       List<string> datos = new List<string>();
+                        List<string> datos = new List<string>();
                         datos.Add(Codigo);
                         datos.Add(idCodigoDatosPersonales);
                         datos.Add(idCentro);             
                         datos.Add(Horario);
                         datos.Add(estado);
+                        List<string> datosHistoricos = new List<string>();
+                        datosHistoricos.Add(CodigoHistorico);
+                        datosHistoricos.Add(Codigo);
                         Cn.procDatosInsertar("programarcita", datos);
+                        Cn.procDatosInsertar("historicacitas", datosHistoricos);
                         int IDCITA = Int32.Parse(Codigo);
-                       frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre,IDCITA,Datos,boletaBanco,PersonalDPI);
-                       Confirmar.MdiParent = FormularioPadre;
-                       Confirmar.Show();
+                        frmImpresion_de_constancia Confirmar = new frmImpresion_de_constancia(FormularioPadre,IDCITA,Datos,boletaBanco,PersonalDPI);
+                        Confirmar.MdiParent = FormularioPadre;
+                        Confirmar.Show();
                         this.Close();
                     }
                     }
@@ -117,6 +122,8 @@ namespace CapaVista
             procLlenarCmb("DEPARTAMENTO", "departamento", cmbDepartamento);
             cmbDepartamento.SelectedIndex = 0;
             CodigoMaximo("programarcita", "idProgramarCita", txtCodigo);
+            CodigoMaximo("historicacitas", "idHistorica", txtHistorico);
+
         }
 
         //procedimiento para llenar cualquier comboBox 

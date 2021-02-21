@@ -62,7 +62,7 @@ namespace CapaVista
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Datos seleccionados: " + this.dgvDatos.CurrentRow.Cells[0].Value.ToString());
+            MessageBox.Show("Se genero correctamente el documento PDF, Porfavor revise sus archivos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);   
             funcCrearPdf();
         }
 
