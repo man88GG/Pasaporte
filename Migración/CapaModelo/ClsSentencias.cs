@@ -266,5 +266,13 @@ namespace CapaModelo
             }
         }
 
+        public OdbcDataAdapter llenarTbl(string tabla)
+        {
+            string sql = "SELECT *FROM " + tabla + " ;";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, Con.conexion());
+            return dataTable;
+        }
+
+
     }
 }

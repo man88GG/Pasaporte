@@ -102,6 +102,12 @@
     <Compile Include="frmAgendarCita.Designer.cs">
       <DependentUpon>frmAgendarCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBitacora.Designer.cs">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCaso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgendarCita.resx">
       <DependentUpon>frmAgendarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBitacora.resx">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCaso.resx">
       <DependentUpon>frmCaso.cs</DependentUpon>
