@@ -81,5 +81,14 @@ namespace CapaControlador
             Sn.procModificar(sql);
             return;
         }
+
+        public DataTable llenarTbl(string tabla)
+        {
+            OdbcDataAdapter dt = Sn.llenarTbl(tabla);
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+
+        }
     }
 }

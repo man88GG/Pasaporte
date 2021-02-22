@@ -347,5 +347,17 @@ namespace MDI
                 MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
             }
         }
+
+        private void herramientasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bitácoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBitacora bitacora = new frmBitacora();
+            bitacora.MdiParent = this;
+            bitacora.Show();
+        }
     }
 }
