@@ -293,3 +293,4 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\itext.sign.xml
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\itext.styledxmlparser.xml
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\itext.svg.xml
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmBitacora.resources
+D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmBitacora.resources

@@ -140,7 +140,7 @@ namespace CapaVista
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "AyudaPasaporte/AyudasPasaporte.chm", "dato-pg_0005.html");
+            Help.ShowHelp(this, "AyudaPasaporte/AyudaPasaporte.chm", "RenovarPasaporte.html");
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
