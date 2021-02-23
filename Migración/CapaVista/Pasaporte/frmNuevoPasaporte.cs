@@ -56,7 +56,7 @@ namespace CapaVista
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "AyudaPasaporte/AyudasPasaporte.chm", "dato-pg_0002.html");
+            Help.ShowHelp(this, "AyudaPasaporte/AyudaPasaporte.chm", "nuevoPasaporte.html");
         }
 
         private void FuncNumero(object sender, KeyPressEventArgs e)

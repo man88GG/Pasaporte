@@ -126,7 +126,7 @@ namespace CapaVista.Pasaporte
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "AyudaPasaporte/AyudasPasaporte.chm", "dato-pg_00011.html");
+            Help.ShowHelp(this, "AyudaPasaporte/AyudaPasaporte.chm", "EntregaPasaporte.html");
         }
 
         private void funcDesbloqueo()
