@@ -356,6 +356,13 @@ namespace MDI
         private void bitácoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+         
+
+
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             if (seguridad.PermisosAcceso("2", txtUsuario.Text) == 1)
             {
                 frmBitacora bitacora = new frmBitacora();
@@ -368,8 +375,6 @@ namespace MDI
                 bit.insert("Trato de ingresar a la aplicacion centro", 2);
                 MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
             }
-
-
         }
     }
 }
