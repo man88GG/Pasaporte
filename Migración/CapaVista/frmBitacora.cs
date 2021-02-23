@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControlador;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 namespace CapaVista
 {
     public partial class frmBitacora : Form
@@ -18,7 +21,7 @@ namespace CapaVista
         public frmBitacora()
         {
             InitializeComponent();
-          
+
         }
         public void actualizardatagriew()
         {
@@ -195,12 +198,14 @@ namespace CapaVista
                     string CONSULTA = consulta;
                     DataTable dt = cn.enviar(CONSULTA);
                     dgvBitacora.DataSource = dt;
-                }else if(rdFecha.Checked == true)
+                }
+                else if (rdFecha.Checked == true)
                 {
-                    if(dtpFechaFinal.Value.Date < dtpFechaInicio.Value.Date)
+                    if (dtpFechaFinal.Value.Date < dtpFechaInicio.Value.Date)
                     {
                         MessageBox.Show("La fecha final no puede ser menor a la fecha inicial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }else if(dtpFechaInicio.Value.Date > dtpFechaFinal.Value.Date)
+                    }
+                    else if (dtpFechaInicio.Value.Date > dtpFechaFinal.Value.Date)
 
                     {
                         MessageBox.Show("La fecha inicial no puede ser mayor a la fecha Final.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -208,19 +213,20 @@ namespace CapaVista
                     }
                     else
                     {
-                        string fechaInicial = "",fechaFinal = "";
+                        string fechaInicial = "", fechaFinal = "";
                         fechaInicial = dtpFechaInicio.Value.ToString("dd-MM-yyyy");
                         fechaFinal = dtpFechaFinal.Value.ToString("dd-MM-yyyy");
-     
-                        consulta = "SELECT pk_id_bitacora as Codigo,L.usuario_login as Usuario,A.nombre_aplicacion as Aplicacion,fechahora_bitacora Fecha,direccionhost_bitacora as Direccion_Host,nombrehost_bitacora as Nombre_Host, accion_bitacora as Accion FROM bitacora B, aplicacion A, login L where B.fk_idusuario_bitacora = L.pk_id_login and B.fk_idaplicacion_bitacora = A.pk_id_aplicacion and B.fechahora_bitacora BETWEEN '"+fechaInicial+"' and '"+fechaFinal+"' ;";
+
+                        consulta = "SELECT pk_id_bitacora as Codigo,L.usuario_login as Usuario,A.nombre_aplicacion as Aplicacion,fechahora_bitacora Fecha,direccionhost_bitacora as Direccion_Host,nombrehost_bitacora as Nombre_Host, accion_bitacora as Accion FROM bitacora B, aplicacion A, login L where B.fk_idusuario_bitacora = L.pk_id_login and B.fk_idaplicacion_bitacora = A.pk_id_aplicacion and B.fechahora_bitacora BETWEEN '" + fechaInicial + "' and '" + fechaFinal + "' ;";
                         string CONSULTA = consulta;
                         DataTable dt = cn.enviar(CONSULTA);
                         dgvBitacora.DataSource = dt;
                     }
 
-                }else if(radioButton2.Checked == true)
+                }
+                else if (radioButton2.Checked == true)
                 {
-                    if(rdInsercion.Checked == false && rdActualizacion.Checked == false && rdLogeo.Checked == false)
+                    if (rdInsercion.Checked == false && rdActualizacion.Checked == false && rdLogeo.Checked == false)
                     {
                         MessageBox.Show("Debe seleccionar una opcion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -247,7 +253,7 @@ namespace CapaVista
                         dgvBitacora.DataSource = dt;
                     }
                 }
-               
+
             }
         }
 
@@ -264,7 +270,7 @@ namespace CapaVista
             rdInsercion.Visible = false;
             rdLogeo.Visible = false;
             rdActualizacion.Visible = false;
-            radioButton2.Checked= false;
+            radioButton2.Checked = false;
             cmbUsuario.SelectedIndex = 0;
             cmbAplicacion.SelectedIndex = 0;
         }
@@ -294,6 +300,70 @@ namespace CapaVista
         private void dgvBitacora_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+            exportgridtopdf(dgvBitacora, "Bitacora");
+        }
+
+        public void exportgridtopdf(DataGridView dgw, string filename)
+        {
+            try
+            {
+                BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+                PdfPTable pdftable = new PdfPTable(dgw.Columns.Count);
+                pdftable.DefaultCell.Padding = 10;
+                pdftable.WidthPercentage = 100;
+                pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
+                pdftable.DefaultCell.BorderWidth = 1;
+
+                iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+                //add header
+
+                foreach (DataGridViewColumn column in dgw.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                    pdftable.AddCell(cell);
+                }
+
+                //add datarow
+                foreach (DataGridViewRow row in dgw.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        pdftable.AddCell(new Phrase(cell.Value.ToString(), text));
+                    }
+                }
+
+                var savefiledialoge = new SaveFileDialog();
+                savefiledialoge.FileName = filename;
+                savefiledialoge.DefaultExt = ".pdf";
+                if (savefiledialoge.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream stream = new FileStream(savefiledialoge.FileName, FileMode.Create))
+                    {
+                        Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                        PdfWriter.GetInstance(pdfdoc, stream);
+                        pdfdoc.Open();
+                        pdfdoc.Add(pdftable);
+                        pdfdoc.Close();
+                        stream.Close();
+                    }
+
+                    MessageBox.Show("PDF Guardado Correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+              
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Operacion Cancelada.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

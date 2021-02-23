@@ -40,12 +40,12 @@
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.rdInsercion = new System.Windows.Forms.RadioButton();
             this.rdActualizacion = new System.Windows.Forms.RadioButton();
             this.rdLogeo = new System.Windows.Forms.RadioButton();
@@ -187,6 +187,18 @@
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtrar Por:";
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(24, 234);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 24);
+            this.radioButton2.TabIndex = 89;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Acción";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -246,22 +258,11 @@
             this.btnImprimir.TabIndex = 88;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(24, 234);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 24);
-            this.radioButton2.TabIndex = 89;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Acción";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // rdInsercion
             // 
@@ -307,8 +308,8 @@
             // 
             // dgvBitacora
             // 
+            this.dgvBitacora.AllowUserToAddRows = false;
             this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBitacora.ColumnHeadersVisible = false;
             this.dgvBitacora.Location = new System.Drawing.Point(40, 415);
             this.dgvBitacora.Name = "dgvBitacora";
             this.dgvBitacora.ReadOnly = true;

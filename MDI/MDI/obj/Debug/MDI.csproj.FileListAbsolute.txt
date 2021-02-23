@@ -260,3 +260,4 @@ D:\Documentos\GitHub\Pasaporte\MDI\MDI\bin\Debug\Common.Logging.Core.pdb
 D:\Documentos\GitHub\Pasaporte\MDI\MDI\bin\Debug\Common.Logging.Core.xml
 D:\Documentos\GitHub\Pasaporte\MDI\MDI\bin\Debug\Common.Logging.pdb
 D:\Documentos\GitHub\Pasaporte\MDI\MDI\bin\Debug\Common.Logging.xml
+D:\Documentos\GitHub\Pasaporte\MDI\MDI\bin\Debug\itextsharp.dll
