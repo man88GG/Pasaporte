@@ -43,6 +43,8 @@ namespace CapaVista
                 rdActualizacion.Visible = false;
                 rdLogeo.Visible = false;
                 cmbAplicacion.SelectedIndex = 0;
+                txtIp.Visible = false;
+                txtIp.Text = "";
             }
         }
 
@@ -112,6 +114,8 @@ namespace CapaVista
                 rdActualizacion.Visible = false;
                 rdLogeo.Visible = false;
                 cmbUsuario.SelectedIndex = 0;
+                txtIp.Visible = false;
+                txtIp.Text = "";
             }
         }
 
@@ -128,6 +132,8 @@ namespace CapaVista
                 cmbAplicacion.Visible = false;
                 dtpFechaInicio.Visible = true;
                 dtpFechaFinal.Visible = true;
+                txtIp.Visible = false;
+                txtIp.Text = "";
             }
         }
 
@@ -146,6 +152,8 @@ namespace CapaVista
                 dtpFechaFinal.Visible = false;
                 cmbUsuario.SelectedIndex = 0;
                 cmbAplicacion.SelectedIndex = 0;
+                txtIp.Visible = false;
+                txtIp.Text = "";
             }
         }
 
@@ -156,7 +164,7 @@ namespace CapaVista
 
         private void B_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == false && rdAplicacion.Checked == false && rdFecha.Checked == false && rdUsuario.Checked == false && radioButton2.Checked == false)
+            if (rdIp.Checked == false && rdVarios.Checked == false && radioButton1.Checked == false && rdAplicacion.Checked == false && rdFecha.Checked == false && rdUsuario.Checked == false && radioButton2.Checked == false)
             {
                 MessageBox.Show("Debe seleccionar uno de los fitros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -252,6 +260,49 @@ namespace CapaVista
                         DataTable dt = cn.enviar(CONSULTA);
                         dgvBitacora.DataSource = dt;
                     }
+                }else if(rdIp.Checked == true)
+                {
+                    if (txtIp.Text.Length == 0)
+                    {
+                        MessageBox.Show("Debe llenar el campo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else {
+                        consulta = " SELECT pk_id_bitacora as Codigo,L.usuario_login as Usuario,A.nombre_aplicacion as Aplicacion,fechahora_bitacora Fecha,direccionhost_bitacora as Direccion_Host,nombrehost_bitacora as Nombre_Host, accion_bitacora as Accion FROM bitacora B, aplicacion A, login L where B.fk_idusuario_bitacora = L.pk_id_login and B.fk_idaplicacion_bitacora = A.pk_id_aplicacion and B.direccionhost_bitacora = '" + txtIp.Text + "'; ";
+                        string CONSULTA = consulta;
+                        DataTable dt = cn.enviar(CONSULTA);
+                        dgvBitacora.DataSource = dt;
+                    }
+                }else if(rdVarios.Checked == true)
+                {
+                    if (cmbCodigoUsuario.SelectedIndex == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar a un usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }else if (cmbCodigoAplicacion.SelectedIndex == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar una aplicacion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    if (dtpFechaFinal.Value.Date < dtpFechaInicio.Value.Date)
+                    {
+                        MessageBox.Show("La fecha final no puede ser menor a la fecha inicial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (dtpFechaInicio.Value.Date > dtpFechaFinal.Value.Date)
+
+                    {
+                        MessageBox.Show("La fecha inicial no puede ser mayor a la fecha Final.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                    {
+                        string fechaInicial = "", fechaFinal = "";
+                        fechaInicial = dtpFechaInicio.Value.ToString("dd-MM-yyyy");
+                        fechaFinal = dtpFechaFinal.Value.ToString("dd-MM-yyyy");
+                        consulta = "SELECT pk_id_bitacora as Codigo,L.usuario_login as Usuario,A.nombre_aplicacion as Aplicacion,fechahora_bitacora Fecha,direccionhost_bitacora as Direccion_Host,nombrehost_bitacora as Nombre_Host, accion_bitacora as Accion FROM bitacora B, aplicacion A, login L where B.fk_idusuario_bitacora = L.pk_id_login and B.fk_idaplicacion_bitacora = A.pk_id_aplicacion and B.fk_idusuario_bitacora = " + Int32.Parse(cmbCodigoUsuario.SelectedItem.ToString() )+ " and B.fk_idaplicacion_bitacora = " + Int32.Parse(cmbCodigoAplicacion.SelectedItem.ToString())+" and B.fechahora_bitacora BETWEEN '" + fechaInicial + "' and '" + fechaFinal + "' ";
+                        string CONSULTA = consulta;
+                        DataTable dt = cn.enviar(CONSULTA);
+                        dgvBitacora.DataSource = dt;
+                    }
+                  
                 }
 
             }
@@ -273,6 +324,10 @@ namespace CapaVista
             radioButton2.Checked = false;
             cmbUsuario.SelectedIndex = 0;
             cmbAplicacion.SelectedIndex = 0;
+            rdIp.Checked = false;
+            rdVarios.Checked = false;
+            txtIp.Text = "";
+            txtIp.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -294,6 +349,8 @@ namespace CapaVista
                 rdInsercion.Visible = true;
                 rdActualizacion.Visible = true;
                 rdLogeo.Visible = true;
+                txtIp.Visible = false;
+                txtIp.Text = "";
             }
         }
 
@@ -314,12 +371,14 @@ namespace CapaVista
             {
                 BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
                 PdfPTable pdftable = new PdfPTable(dgw.Columns.Count);
+                
                 pdftable.DefaultCell.Padding = 10;
                 pdftable.WidthPercentage = 100;
                 pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
                 pdftable.DefaultCell.BorderWidth = 1;
 
                 iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+               
                 //add header
 
                 foreach (DataGridViewColumn column in dgw.Columns)
@@ -346,14 +405,20 @@ namespace CapaVista
                     using (FileStream stream = new FileStream(savefiledialoge.FileName, FileMode.Create))
                     {
                         Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                      
                         PdfWriter.GetInstance(pdfdoc, stream);
+                             
                         pdfdoc.Open();
                         pdfdoc.Add(pdftable);
                         pdfdoc.Close();
                         stream.Close();
+
                     }
 
                     MessageBox.Show("PDF Guardado Correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }else
+                {
+                    MessageBox.Show("El documento PDF no fue guardado.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
               
@@ -362,8 +427,46 @@ namespace CapaVista
             catch (Exception)
             {
 
-                MessageBox.Show("Operacion Cancelada.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
+        }
+
+        private void rdIp_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvBitacora.DataSource = null;
+            consulta = "";
+            if (rdIp.Checked == true)
+            {
+                cmbUsuario.Visible = false;
+                cmbAplicacion.Visible = false;
+                dtpFechaInicio.Visible = false;
+                dtpFechaFinal.Visible = false;
+                rdInsercion.Visible = false;
+                rdActualizacion.Visible = false;
+                rdLogeo.Visible = false;
+                txtIp.Visible = true;
+            }
+        }
+
+        private void rdVarios_CheckedChanged(object sender, EventArgs e)
+        {
+            dgvBitacora.DataSource = null;
+            consulta = "";
+            if (rdVarios.Checked == true)
+            {
+                cmbUsuario.Visible = true;
+                cmbAplicacion.Visible = true;
+                dtpFechaInicio.Visible = true;
+                dtpFechaFinal.Visible = true;
+                rdInsercion.Visible = false;
+                rdActualizacion.Visible = false;
+                rdLogeo.Visible = false;
+                txtIp.Visible = false;
+                cmbAplicacion.SelectedIndex = 0;
+                cmbUsuario.SelectedIndex = 0;
+                txtIp.Text = "";
+            }
+            
         }
     }
 }
