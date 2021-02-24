@@ -81,6 +81,7 @@ namespace CapaVista
 
                         //en este boton funciona a manera de mostrar la imagen en un pictureBox, posteriormente esta el link es
                         //guardado en una variable para ser enviado a la base de datos
+                        try { 
 
                         WebRequest request = WebRequest.Create(Foto);
                         using (var response = request.GetResponse()){
@@ -90,9 +91,15 @@ namespace CapaVista
                         PbxFoto.BackgroundImageLayout = ImageLayout.Stretch;
                                   }
                         }
- 
 
+
+                    }catch (Exception ex){
+                        MessageBox.Show("La imagen no se ha logrado cargar correctamente");
+                            PbxFoto.Visible = false;
                     }
+
+
+                }
                 }
                 else
                 {
