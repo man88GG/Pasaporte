@@ -295,3 +295,5 @@ D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\itext.svg.xml
 C:\Users\yavhe\Documents\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmBitacora.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmBitacora.resources
 D:\Documentos\GitHub\Pasaporte\Migración\CapaVista\bin\Debug\itextsharp.dll
+C:\Users\opfug\Pasaporte\Migración\CapaVista\bin\Debug\itextsharp.dll
+C:\Users\opfug\Pasaporte\Migración\CapaVista\obj\Debug\CapaVista.frmBitacora.resources
