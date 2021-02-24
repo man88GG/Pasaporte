@@ -50,6 +50,9 @@
             this.rdActualizacion = new System.Windows.Forms.RadioButton();
             this.rdLogeo = new System.Windows.Forms.RadioButton();
             this.dgvBitacora = new System.Windows.Forms.DataGridView();
+            this.rdIp = new System.Windows.Forms.RadioButton();
+            this.rdVarios = new System.Windows.Forms.RadioButton();
+            this.txtIp = new System.Windows.Forms.TextBox();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
             this.SuspendLayout();
@@ -155,7 +158,7 @@
             // 
             this.dtpFechaInicio.CustomFormat = "dd-MM-yyyy HH:MM:ss";
             this.dtpFechaInicio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicio.Location = new System.Drawing.Point(219, 181);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(219, 223);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(419, 27);
             this.dtpFechaInicio.TabIndex = 10;
@@ -165,7 +168,7 @@
             // 
             this.dtpFechaFinal.CustomFormat = "dd-MM-yyyy HH:MM:ss";
             this.dtpFechaFinal.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinal.Location = new System.Drawing.Point(219, 225);
+            this.dtpFechaFinal.Location = new System.Drawing.Point(666, 223);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
             this.dtpFechaFinal.Size = new System.Drawing.Size(419, 27);
             this.dtpFechaFinal.TabIndex = 11;
@@ -173,6 +176,8 @@
             // 
             // gbFiltros
             // 
+            this.gbFiltros.Controls.Add(this.rdVarios);
+            this.gbFiltros.Controls.Add(this.rdIp);
             this.gbFiltros.Controls.Add(this.radioButton2);
             this.gbFiltros.Controls.Add(this.radioButton1);
             this.gbFiltros.Controls.Add(this.rdUsuario);
@@ -256,7 +261,7 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(190, 61);
             this.btnImprimir.TabIndex = 88;
-            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Text = "Guardar";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
@@ -318,12 +323,46 @@
             this.dgvBitacora.Size = new System.Drawing.Size(1269, 305);
             this.dgvBitacora.TabIndex = 92;
             // 
+            // rdIp
+            // 
+            this.rdIp.AutoSize = true;
+            this.rdIp.Location = new System.Drawing.Point(27, 287);
+            this.rdIp.Name = "rdIp";
+            this.rdIp.Size = new System.Drawing.Size(45, 24);
+            this.rdIp.TabIndex = 93;
+            this.rdIp.TabStop = true;
+            this.rdIp.Text = "IP";
+            this.rdIp.UseVisualStyleBackColor = true;
+            this.rdIp.CheckedChanged += new System.EventHandler(this.rdIp_CheckedChanged);
+            // 
+            // rdVarios
+            // 
+            this.rdVarios.AutoSize = true;
+            this.rdVarios.Location = new System.Drawing.Point(27, 327);
+            this.rdVarios.Name = "rdVarios";
+            this.rdVarios.Size = new System.Drawing.Size(81, 24);
+            this.rdVarios.TabIndex = 93;
+            this.rdVarios.TabStop = true;
+            this.rdVarios.Text = "Varios";
+            this.rdVarios.UseVisualStyleBackColor = true;
+            this.rdVarios.CheckedChanged += new System.EventHandler(this.rdVarios_CheckedChanged);
+            // 
+            // txtIp
+            // 
+            this.txtIp.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIp.Location = new System.Drawing.Point(219, 327);
+            this.txtIp.Name = "txtIp";
+            this.txtIp.Size = new System.Drawing.Size(419, 27);
+            this.txtIp.TabIndex = 93;
+            this.txtIp.Visible = false;
+            // 
             // frmBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1332, 746);
+            this.Controls.Add(this.txtIp);
             this.Controls.Add(this.dgvBitacora);
             this.Controls.Add(this.rdLogeo);
             this.Controls.Add(this.rdActualizacion);
@@ -373,5 +412,8 @@
         private System.Windows.Forms.RadioButton rdActualizacion;
         private System.Windows.Forms.RadioButton rdLogeo;
         private System.Windows.Forms.DataGridView dgvBitacora;
+        private System.Windows.Forms.RadioButton rdVarios;
+        private System.Windows.Forms.RadioButton rdIp;
+        private System.Windows.Forms.TextBox txtIp;
     }
 }
